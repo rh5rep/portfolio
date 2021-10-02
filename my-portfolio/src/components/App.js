@@ -104,8 +104,17 @@
 
 import { IconButton } from "@chakra-ui/button";
 import { useColorMode } from "@chakra-ui/color-mode";
-import { Flex, VStack, Heading, Text, HStack, Spacer } from "@chakra-ui/layout";
+import {
+  Flex,
+  VStack,
+  Heading,
+  Text,
+  HStack,
+  Spacer,
+  Link,
+} from "@chakra-ui/layout";
 import { FaLinkedin, FaSun, FaMoon } from "react-icons/fa";
+import Header from "./Header";
 
 function App() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -114,13 +123,17 @@ function App() {
   return (
     <VStack p="1">
       <Flex w="100%">
-        <Heading ml="8" size="md" fontWeight="semibold" color="cyan.300">
-          <Text> | Rami I. Hanna | </Text>
+        <Heading ml="8" size="small" fontWeight="semibold" color="cyan.400">
+          <Text p="0"> hannar1@wit.edu</Text>
+          <Text p="0"> (603) 293-3511</Text>
         </Heading>
         <Spacer></Spacer>
-        <IconButton ml="5" icon={<FaLinkedin />} isRound="true">
-          {" "}
-        </IconButton>
+        <Link href="https://www.linkedin.com/in/ramiihanna/" isExternal>
+          <IconButton ml="5" icon={<FaLinkedin />} isRound="true">
+            {" "}
+          </IconButton>
+        </Link>
+
         <IconButton
           ml="1"
           mr="1"
@@ -129,6 +142,8 @@ function App() {
           onClick={toggleColorMode}
         ></IconButton>
       </Flex>
+      <Spacer></Spacer>
+      <Header></Header>
     </VStack>
   );
 }
