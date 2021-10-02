@@ -13,7 +13,7 @@ function Profile() {
         templateRows="repeat(2, 1fr)"
         templateColumns="repeat(5, 1fr)"
         gap={4}
-        w="1000px"
+        w={["300px", "1000px"]}
       >
         <GridItem
           rowSpan={2}
