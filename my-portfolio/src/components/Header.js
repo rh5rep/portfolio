@@ -10,7 +10,6 @@ import {
   HStack,
 } from "@chakra-ui/layout";
 import { IconButton } from "@chakra-ui/react";
-import { EmailIcon } from "@chakra-ui/icons";
 
 function Header() {
   const { colorMode } = useColorMode();
@@ -41,17 +40,10 @@ function Header() {
             Not only is this portfolio a Work in Progress, but it is also the
             first website I am building from scratch.
           </Text>
-          <HStack>
-            <Text fontSize="large" p="2" align="center">
-              Please check back often for updates and give me any feedback you
-              may have.
-            </Text>
-            <Link href="mailto:hannar1@wit.edu" isExternal>
-              <IconButton ml="5" icon={<EmailIcon />} isRound="true">
-                {" "}
-              </IconButton>
-            </Link>
-          </HStack>
+          <Text fontSize="large" p="2" align="center">
+            Please check back often for updates and give me any feedback you may
+            have.
+          </Text>
         </VStack>
       </Center>
     </Stack>
