@@ -1,6 +1,17 @@
 import { React, Image } from "react";
 import { ColorMode, useColorMode } from "@chakra-ui/color-mode";
-import { Grid, GridItem, VStack } from "@chakra-ui/layout";
+import {
+  Divider,
+  Grid,
+  GridItem,
+  HStack,
+  VStack,
+  Text,
+  Heading,
+} from "@chakra-ui/layout";
+import resume from "./resume.png";
+
+import "./styles.css";
 
 function Profile() {
   const { colorMode } = useColorMode();
@@ -8,6 +19,23 @@ function Profile() {
 
   return (
     <VStack>
+      <HStack>
+        <img src={resume} className="resume" />
+        <Divider orientation="vertical" />
+        <VStack align="left">
+          <Heading>
+            <Text bgGradient="white" align="top">
+              Projects to be included:
+            </Text>
+          </Heading>
+          <Text align="left">- Turnafit </Text>
+          <Text align="left">- Robotics </Text>
+          <Text align="left">- Learn-It! </Text>
+          <Text align="left">- Portable Charger </Text>
+          <Text align="left">- And many more to come... </Text>
+        </VStack>
+      </HStack>
+      <Divider orientation="horizontal" />
       <Grid
         h="200px"
         templateRows="repeat(2, 1fr)"

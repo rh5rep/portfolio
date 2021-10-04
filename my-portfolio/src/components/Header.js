@@ -10,6 +10,9 @@ import {
   HStack,
 } from "@chakra-ui/layout";
 import { IconButton } from "@chakra-ui/react";
+import temppic from "./temppic.png";
+
+import "./styles.css";
 
 function Header() {
   const { colorMode } = useColorMode();
@@ -18,18 +21,23 @@ function Header() {
   return (
     <Stack>
       <Heading flex="">
-        <Text
-          bgGradient="linear(to-r, cyan.400, #9448BC)"
-          border="HighlightText"
-          borderRadius="5"
-          bgClip="text"
-          fontSize="xxx-large"
-          fontWeight="extrabold"
-          p="5"
-          align="center"
-        >
-          Hello, I am Rami Hanna.
-        </Text>
+        <HStack>
+          <Center>
+            <Text
+              bgGradient="linear(to-r, cyan.400, #9448BC)"
+              border="HighlightText"
+              borderRadius="5"
+              bgClip="text"
+              fontSize="xxx-large"
+              fontWeight="extrabold"
+              p="5"
+              align="center"
+            >
+              Hello, I am Rami Hanna.
+            </Text>
+            <img className="photo" src={temppic} />
+          </Center>
+        </HStack>
       </Heading>
       <Center>
         <VStack>
