@@ -8,10 +8,13 @@ import {
   VStack,
   Text,
   Heading,
+  Spacer,
 } from "@chakra-ui/layout";
 import resume from "./resume.png";
 
 import "./styles.css";
+
+// TO-DO add
 
 function Profile() {
   const { colorMode } = useColorMode();
@@ -19,7 +22,7 @@ function Profile() {
 
   return (
     <VStack>
-      <HStack>
+      <HStack p="1">
         <img src={resume} className="resume" />
         <Divider orientation="vertical" />
         <VStack align="left">
@@ -41,7 +44,7 @@ function Profile() {
         templateRows="repeat(2, 1fr)"
         templateColumns="repeat(5, 1fr)"
         gap={4}
-        w={["300px", "1000px"]}
+        w={["80%", "80%"]}
       >
         <GridItem
           rowSpan={2}
