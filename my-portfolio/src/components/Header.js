@@ -46,8 +46,11 @@ function Header() {
           </Text>
           <Text fontSize="large" p="2" align="center">
             Not only is this portfolio a Work in Progress, but it is also the
-            first website I am building from scratch. I am planning on a big
-            website restructing either today, (10/6/21), or tomorrow (10/7/21)
+            first website I am building from scratch.
+          </Text>
+          <Text fontSize="large" p="2" align="center">
+            I am planning on a big website restructing either today, (10/6/21),
+            or tomorrow (10/7/21).
           </Text>
           <Text fontSize="large" p="2" align="center">
             Please check back often for updates and give me any feedback you may
