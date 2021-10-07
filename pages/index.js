@@ -36,12 +36,16 @@ export default function Home() {
             </Text>
           </Heading>
           <Spacer></Spacer>
-          <a href="mailto:hannar1@wit.edu" target="_blank">
+          <a href="mailto:hannar1@wit.edu" target="_blank" rel="noreferrer">
             <IconButton ml="1" mr="1" icon={<EmailIcon />} isRound={true}>
               {" "}
             </IconButton>
           </a>
-          <a href="https://www.linkedin.com/in/ramiihanna/" target="_blank">
+          <a
+            href="https://www.linkedin.com/in/ramiihanna/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <IconButton ml="1" icon={<FaLinkedin />} isRound="true">
               {" "}
             </IconButton>
