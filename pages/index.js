@@ -12,7 +12,7 @@ import {
   Spacer,
   IconButton,
 } from "@chakra-ui/react";
-import { Link as chakraLink } from "@chakra-ui/layout";
+import { Divider, Link as chakraLink } from "@chakra-ui/layout";
 import { FaLinkedin, FaSun, FaMoon } from "react-icons/fa";
 import { EmailIcon } from "@chakra-ui/icons";
 import fav from "C:\\Users\\hannar1\\next-portfolio\\public\\temppic.png";
@@ -23,43 +23,56 @@ export default function Home() {
 
   return (
     <>
-      <VStack p="1">
-        <Flex w="100%">
-          <Heading ml="1" size="small" fontWeight="semibold" color="cyan.400">
-            <Text p="0" align="center">
-              {" "}
-              | (603) 293-3511 |
-            </Text>
-            <Text p="0" align="center">
-              {" "}
-              | hannar1@wit.edu |
-            </Text>
-          </Heading>
-          <Spacer></Spacer>
-          <a href="mailto:hannar1@wit.edu" target="_blank" rel="noreferrer">
-            <IconButton ml="1" mr="1" icon={<EmailIcon />} isRound={true}>
-              {" "}
-            </IconButton>
-          </a>
-          <a
-            href="https://www.linkedin.com/in/ramiihanna/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <IconButton ml="1" icon={<FaLinkedin />} isRound="true">
-              {" "}
-            </IconButton>
-          </a>
+      <div>
+        <header className={styles.header}>
+          <VStack p="1">
+            <Flex w="100%">
+              <Heading
+                ml="1"
+                size="small"
+                fontWeight="semibold"
+                color="cyan.400"
+              >
+                <Text p="0" align="center">
+                  {" "}
+                  | (603) 293-3511 |
+                </Text>
+                <Text p="0" align="center">
+                  {" "}
+                  | hannar1@wit.edu |
+                </Text>
+              </Heading>
+              <Spacer></Spacer>
+              <a
+                href="mailto:hannar1@wit.edu"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <IconButton ml="1" mr="1" icon={<EmailIcon />} isRound={true}>
+                  {" "}
+                </IconButton>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/ramiihanna/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <IconButton ml="1" icon={<FaLinkedin />} isRound="true">
+                  {" "}
+                </IconButton>
+              </a>
 
-          <IconButton
-            ml="1"
-            mr="1"
-            icon={isDark ? <FaSun /> : <FaMoon />}
-            isRound="true"
-            onClick={toggleColorMode}
-          ></IconButton>
-        </Flex>
-      </VStack>
+              <IconButton
+                ml="1"
+                mr="1"
+                icon={isDark ? <FaSun /> : <FaMoon />}
+                isRound="true"
+                onClick={toggleColorMode}
+              ></IconButton>
+            </Flex>
+          </VStack>
+        </header>
+      </div>
       <div className={styles.container}>
         <main className={styles.main}>
           {/* <h1 className={styles.title}>Hi, my name is Rami Hanna.</h1> */}
@@ -88,7 +101,6 @@ export default function Home() {
               </HStack>
             </Flex>
           </Heading>
-
           <p className={styles.description}>Welcome to my website.</p>
 
           <div className={styles.grid}>
