@@ -82,6 +82,7 @@ export default function Home() {
                   src={fav}
                   width="100%"
                   height="100%"
+                  alt="profpic"
                   // layout="responsive"
                 />
               </HStack>
