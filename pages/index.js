@@ -42,12 +42,16 @@ export default function Home() {
           </Text>
         </Heading>
         <Spacer></Spacer>
-        <Link href="mailto:hannar1@wit.edu" isExternal>
+        <Link href="mailto:hannar1@wit.edu" isExternal passHref>
           <IconButton ml="1" mr="1" icon={<EmailIcon />} isRound="true">
             {" "}
           </IconButton>
         </Link>
-        <Link href="https://www.linkedin.com/in/ramiihanna/" isExternal>
+        <Link
+          href="https://www.linkedin.com/in/ramiihanna/"
+          isExternal
+          passHref
+        >
           <IconButton ml="1" icon={<FaLinkedin />} isRound="true">
             {" "}
           </IconButton>
