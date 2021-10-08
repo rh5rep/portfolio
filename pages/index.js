@@ -11,6 +11,12 @@ import {
   Text,
   Spacer,
   IconButton,
+  Grid,
+  Center,
+  Box,
+  SimpleGrid,
+  LinkBox,
+  LinkOverlay,
 } from "@chakra-ui/react";
 import { Divider, Link as chakraLink } from "@chakra-ui/layout";
 import { FaLinkedin, FaSun, FaMoon } from "react-icons/fa";
@@ -20,146 +26,190 @@ import fav from "../public/temppic.png";
 export default function Home() {
   const { colorMode, toggleColorMode } = useColorMode();
   const isDark = colorMode === "dark";
+  const projectGridMaxW = "100";
 
   return (
-    <>
-      <div>
-        <header className={styles.header}>
-          <VStack p="1">
-            <Flex w="100%">
-              <Heading
-                ml="1"
-                size="small"
-                fontWeight="semibold"
-                color="cyan.400"
-              >
-                <Text p="0" align="center">
-                  {" "}
-                  | (603) 293-3511 |
-                </Text>
-                <Text p="0" align="center">
-                  {" "}
-                  | hannar1@wit.edu |
-                </Text>
-              </Heading>
-              <Spacer></Spacer>
-              <a
-                href="mailto:hannar1@wit.edu"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <IconButton ml="1" mr="1" icon={<EmailIcon />} isRound={true}>
-                  {" "}
-                </IconButton>
-              </a>
-              <a
-                href="https://www.linkedin.com/in/ramiihanna/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <IconButton ml="1" icon={<FaLinkedin />} isRound="true">
-                  {" "}
-                </IconButton>
-              </a>
-
-              <IconButton
-                ml="1"
-                mr="1"
-                icon={isDark ? <FaSun /> : <FaMoon />}
-                isRound="true"
-                onClick={toggleColorMode}
-              ></IconButton>
-            </Flex>
-          </VStack>
-        </header>
-      </div>
-      <div className={styles.container}>
-        <main className={styles.main}>
-          {/* <h1 className={styles.title}>Hi, my name is Rami Hanna.</h1> */}
-          <Heading>
-            <Flex>
-              <HStack>
-                <Text
-                  bgGradient="linear(to-r, cyan.400, #9448BC)"
-                  border="HighlightText"
-                  borderRadius="5"
-                  bgClip="text"
-                  fontSize="xxx-large"
-                  fontWeight="extrabold"
-                  p="5"
-                  align="center"
-                >
-                  Hello, I am Rami Hanna.
-                </Text>
-                <Image
-                  src={fav}
-                  width="100%"
-                  height="100%"
-                  alt="profpic"
-                  // layout="responsive"
-                />
-              </HStack>
-            </Flex>
-          </Heading>
-          <p className={styles.description}>Welcome to my website.</p>
-          <p className={styles.description}>
+    <VStack p="1">
+      <Flex w="100%">
+        <Heading ml="1" size="small" fontWeight="semibold" color="cyan.400">
+          <Text p="0" align="center">
             {" "}
-            This portfolio is a work in progress and the first website I am
-            building from scratch
-          </p>
+            | (603) 293-3511 |
+          </Text>
+          <Text p="0" align="center">
+            {" "}
+            | hannar1@wit.edu |
+          </Text>
+        </Heading>
+        <Spacer></Spacer>
+        <Link href="mailto:hannar1@wit.edu" isExternal>
+          <IconButton ml="1" mr="1" icon={<EmailIcon />} isRound="true">
+            {" "}
+          </IconButton>
+        </Link>
+        <Link href="https://www.linkedin.com/in/ramiihanna/" isExternal>
+          <IconButton ml="1" icon={<FaLinkedin />} isRound="true">
+            {" "}
+          </IconButton>
+        </Link>
 
-          <div className={styles.grid}>
-            <a href="https://nextjs.org/docs" className={styles.card}>
-              <h2>Documentation &rarr;</h2>
-              <p>Find in-depth information about Next.js features and API.</p>
-            </a>
+        <IconButton
+          ml="1"
+          mr="1"
+          icon={isDark ? <FaSun /> : <FaMoon />}
+          isRound="true"
+          onClick={toggleColorMode}
+        ></IconButton>
+      </Flex>
+      <Spacer> </Spacer>
+      <Divider></Divider>
+      <Spacer></Spacer>
 
-            <a href="https://nextjs.org/learn" className={styles.card}>
-              <h2>Learn &rarr;</h2>
-              <p>Learn about Next.js in an interactive course with quizzes!</p>
-            </a>
+      <Flex>
+        <Heading>
+          <Flex>
+            <HStack>
+              <Text
+                bgGradient="linear(to-r, cyan.400, #9448BC)"
+                border="HighlightText"
+                borderRadius="5"
+                bgClip="text"
+                fontSize="xxx-large"
+                fontWeight="extrabold"
+                p="5"
+                align="center"
+              >
+                Hello, I am Rami Hanna.
+              </Text>
+              <Image src={fav} width="200px" height="200px" alt="profpic" />
+            </HStack>
+          </Flex>
+        </Heading>
+      </Flex>
+      <Flex>
+        <Center>
+          <VStack>
+            <Text fontSize="large" align="center" p="2">
+              Welcome to my website. Not only is this portfolio a Work in
+              Progress, but it is also the first website I am building from
+              scratch.
+            </Text>
+            <Text fontSize="large" align="center" p="2">
+              Please check back often for updates and give me any feedback you
+              may have.
+            </Text>
+          </VStack>
+        </Center>
+      </Flex>
+      <Spacer></Spacer>
+      <Divider w="90%"></Divider>
+      <Spacer></Spacer>
 
-            <a
-              href="https://github.com/vercel/next.js/tree/master/examples"
-              className={styles.card}
-            >
-              <h2>Examples &rarr;</h2>
-              <p>Discover and deploy boilerplate example Next.js projects.</p>
-            </a>
-
-            <a
-              href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              className={styles.card}
-            >
-              <h2>Deploy &rarr;</h2>
-              <p>
-                Instantly deploy your Next.js site to a public URL with Vercel.
-              </p>
-            </a>
-            <Link href="/test">
-              <a>Test</a>
-            </Link>
-          </div>
-        </main>
-
-        <footer className={styles.footer}>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Powered by{" "}
-            <span className={styles.logo}>
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                width={72}
-                height={16}
-              />
-            </span>
-          </a>
-        </footer>
-      </div>
-    </>
+      <Text
+        fontSize="2xl"
+        align="center"
+        borderBottomStyle="dotted"
+        borderBottom="2px"
+      >
+        Resume and Projects
+      </Text>
+      <Text fontSize="sm" align="center">
+        (will be added gradually, currently the resume is the only formatted
+        page)
+      </Text>
+      <Grid
+        p="2"
+        templateRows="repeat(2, 1fr)"
+        templateColumns="repeat(3, 1fr)"
+        w="100%"
+        h="100%"
+        gap={6}
+      >
+        <LinkBox as="projects">
+          <Link href="/resume" passHref>
+            <LinkOverlay>
+              <Box
+                maxW="auto"
+                borderWidth="1px"
+                borderRadius="lg"
+                overflow="hidden"
+              >
+                <Text align="center">My Resume </Text>
+              </Box>
+            </LinkOverlay>
+          </Link>
+        </LinkBox>
+        <LinkBox as="projects">
+          <Link href="/test" passHref>
+            <LinkOverlay>
+              <Box
+                maxW="auto"
+                borderWidth="1px"
+                borderRadius="lg"
+                overflow="hidden"
+              >
+                <Text align="center">Project 1 </Text>
+              </Box>
+            </LinkOverlay>
+          </Link>
+        </LinkBox>{" "}
+        <LinkBox as="projects">
+          <Link href="/test" passHref>
+            <LinkOverlay>
+              <Box
+                maxW="auto"
+                borderWidth="1px"
+                borderRadius="lg"
+                overflow="hidden"
+              >
+                <Text align="center">Project 2 </Text>
+              </Box>
+            </LinkOverlay>
+          </Link>
+        </LinkBox>{" "}
+        <LinkBox as="projects">
+          <Link href="/test" passHref>
+            <LinkOverlay>
+              <Box
+                maxW="auto"
+                borderWidth="1px"
+                borderRadius="lg"
+                overflow="hidden"
+              >
+                <Text align="center">Project 3 </Text>
+              </Box>
+            </LinkOverlay>
+          </Link>
+        </LinkBox>{" "}
+        <LinkBox as="projects">
+          <Link href="/test" passHref>
+            <LinkOverlay>
+              <Box
+                maxW="auto"
+                borderWidth="1px"
+                borderRadius="lg"
+                overflow="hidden"
+              >
+                <Text align="center">Project 4 </Text>
+              </Box>
+            </LinkOverlay>
+          </Link>
+        </LinkBox>{" "}
+        <LinkBox as="projects">
+          <Link href="/test" passHref>
+            <LinkOverlay>
+              <Box
+                maxW="auto"
+                borderWidth="1px"
+                borderRadius="lg"
+                overflow="hidden"
+              >
+                <Text align="center">Project 5 </Text>
+              </Box>
+            </LinkOverlay>
+          </Link>
+        </LinkBox>{" "}
+      </Grid>
+    </VStack>
   );
 }
