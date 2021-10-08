@@ -15,7 +15,7 @@ import {
 import { Divider, Link as chakraLink } from "@chakra-ui/layout";
 import { FaLinkedin, FaSun, FaMoon } from "react-icons/fa";
 import { EmailIcon } from "@chakra-ui/icons";
-import fav from "C:\\Users\\hannar1\\next-portfolio\\public\\temppic.png";
+import fav from "../public/temppic.png";
 
 export default function Home() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -102,6 +102,11 @@ export default function Home() {
             </Flex>
           </Heading>
           <p className={styles.description}>Welcome to my website.</p>
+          <p className={styles.description}>
+            {" "}
+            This portfolio is a work in progress and the first website I am
+            building from scratch
+          </p>
 
           <div className={styles.grid}>
             <a href="https://nextjs.org/docs" className={styles.card}>
