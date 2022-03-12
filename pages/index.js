@@ -1,3 +1,4 @@
+import Layout from "../components/layout";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
@@ -23,52 +24,19 @@ import { FaLinkedin, FaSun, FaMoon } from "react-icons/fa";
 import { EmailIcon } from "@chakra-ui/icons";
 import fav from "../public/temppic.png";
 
-export default function Home() {
+export default function Home({ Component, pageProps }) {
   const { colorMode, toggleColorMode } = useColorMode();
   const isDark = colorMode === "dark";
   const projectGridMaxW = "100";
 
   return (
     <VStack p="1">
-      <Flex w="100%">
-        <Heading ml="1" size="small" fontWeight="semibold" color="cyan.400">
-          <Text p="0" align="center">
-            {" "}
-            | (603) 293-3511 |
-          </Text>
-          <Text p="0" align="center">
-            {" "}
-            | hannar1@wit.edu |
-          </Text>
-        </Heading>
-        <Spacer></Spacer>
-        <Link href="mailto:hannar1@wit.edu" isExternal passHref>
-          <IconButton ml="1" mr="1" icon={<EmailIcon />} isRound="true">
-            {" "}
-          </IconButton>
-        </Link>
-        <Link
-          href="https://www.linkedin.com/in/ramiihanna/"
-          isExternal
-          passHref
-        >
-          <IconButton ml="1" icon={<FaLinkedin />} isRound="true">
-            {" "}
-          </IconButton>
-        </Link>
-
-        <IconButton
-          ml="1"
-          mr="1"
-          icon={isDark ? <FaSun /> : <FaMoon />}
-          isRound="true"
-          onClick={toggleColorMode}
-        ></IconButton>
-      </Flex>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
       <Spacer> </Spacer>
       <Divider></Divider>
       <Spacer></Spacer>
-
       <Flex>
         <Heading>
           <Flex>
@@ -108,7 +76,6 @@ export default function Home() {
       <Spacer></Spacer>
       <Divider w="90%"></Divider>
       <Spacer></Spacer>
-
       <Text
         fontSize="2xl"
         align="center"
@@ -144,7 +111,7 @@ export default function Home() {
           </Link>
         </LinkBox>
         <LinkBox as="projects">
-          <Link href="/test" passHref>
+          <Link href="/learnit" passHref>
             <LinkOverlay>
               <Box
                 maxW="auto"
@@ -152,7 +119,7 @@ export default function Home() {
                 borderRadius="lg"
                 overflow="hidden"
               >
-                <Text align="center">Project 1 </Text>
+                <Text align="center">Learn-It </Text>
               </Box>
             </LinkOverlay>
           </Link>
@@ -214,6 +181,22 @@ export default function Home() {
           </Link>
         </LinkBox>{" "}
       </Grid>
+      {/* Adding a next steps page for website */}
+      <LinkBox as="abouts">
+        <Link href="/nextsteps" passHref>
+          <LinkOverlay>
+            <Box
+              maxW="auto"
+              borderWidth="1px"
+              borderRadius="lg"
+              overflow="hidden"
+              p="2"
+            >
+              <Text align="center">Next Steps </Text>
+            </Box>
+          </LinkOverlay>
+        </Link>
+      </LinkBox>{" "}
     </VStack>
   );
 }

@@ -4,37 +4,16 @@ import Link from "next/link";
 import { FaLinkedin, FaSun, FaMoon } from "react-icons/fa";
 import { EmailIcon } from "@chakra-ui/icons";
 import { useColorMode } from "@chakra-ui/color-mode";
+import Layout from "../components/layout";
 
-export default function Resume() {
+export default function Resume({ Component, pageProps }) {
   const { colorMode, toggleColorMode } = useColorMode();
   const isDark = colorMode === "dark";
   return (
     <VStack p="1">
-      <Flex w="100%">
-        <Spacer></Spacer>
-        <Link href="mailto:hannar1@wit.edu" isExternal passHref>
-          <IconButton ml="1" mr="1" icon={<EmailIcon />} isRound="true">
-            {" "}
-          </IconButton>
-        </Link>
-        <Link
-          href="https://www.linkedin.com/in/ramiihanna/"
-          isExternal
-          passHref
-        >
-          <IconButton ml="1" icon={<FaLinkedin />} isRound="true">
-            {" "}
-          </IconButton>
-        </Link>
-
-        <IconButton
-          ml="1"
-          mr="1"
-          icon={isDark ? <FaSun /> : <FaMoon />}
-          isRound="true"
-          onClick={toggleColorMode}
-        ></IconButton>
-      </Flex>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
       <Spacer></Spacer>
       <Divider></Divider>
       <Flex>
@@ -42,7 +21,7 @@ export default function Resume() {
           <Text
             fontWeight="bold"
             fontSize="xl"
-            fontFamily="serif"
+            fontFamily="Roboto"
             align="Center"
             p="2"
             color="cyan.400"
@@ -51,7 +30,7 @@ export default function Resume() {
             Main Focus:
           </Text>
           <Divider orientation="vertical"></Divider>
-          <Text p="2" fontFamily="serif">
+          <Text p="2" fontFamily="Roboto">
             A creative, observant, and self-driven team player always striving
             to learn and contribute insightful solutions to challenging
             problems. Eager to expand my knowledge in robotics, mechanical and
@@ -66,7 +45,7 @@ export default function Resume() {
           <Text
             fontWeight="bold"
             fontSize="xl"
-            fontFamily="serif"
+            fontFamily="Roboto"
             align="Center"
             p="2"
             color="cyan.400"
@@ -77,7 +56,7 @@ export default function Resume() {
           <Text
             fontWeight="bold"
             fontSize="lg"
-            fontFamily="serif"
+            fontFamily="Roboto"
             align="Center"
             p="2"
             color="cyan.400"
