@@ -20,17 +20,9 @@ export default function nextsteps({ Component, pageProps }) {
             {/* want to get an outline to the ordered list. Currently not working. */}
             <Box border={"1"} borderColor={"white"}>
               <OrderedList>
-                <ListItem>Finish Learn It! page information</ListItem>
-                <ListItem>Finish Learn It! page formatting</ListItem>
-                <ListItem>
-                  Figure out how to rotate text 90 degrees (specifically for
-                  resume)
-                </ListItem>
-                <ListItem>Finish Resume page information</ListItem>
-                <ListItem>Finish Resume page formatting</ListItem>
-                <ListItem>
-                  Continue working on Figma/similar software to storyboard
-                </ListItem>
+                <ListItem>Good progress was made with the slideshow as seen in the Capstone page. Working on:</ListItem>
+                <ListItem>Properly sizing the images</ListItem>
+                <ListItem>Adding a hover option for description of the images</ListItem>
               </OrderedList>
             </Box>
             <Text align={"center"} as={"i"}>

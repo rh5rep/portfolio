@@ -8,37 +8,35 @@ import { useColorMode } from "@chakra-ui/color-mode";
 export default function Layout({ children }) {
   const { colorMode, toggleColorMode } = useColorMode();
   const isDark = colorMode === "dark";
-  return (
-    <Flex w="100%">
-      <Heading ml="1" size="small" fontWeight="semibold" color="cyan.400">
-        <Text p="0" align="center">
-          {" "}
-          | (603) 293-3511 |
-        </Text>
-        <Text p="0" align="center">
-          {" "}
-          | hannar1@wit.edu |
-        </Text>
-      </Heading>
-      <Spacer></Spacer>
-      <Link href="mailto:hannar1@wit.edu" isExternal passHref>
-        <IconButton ml="1" mr="1" icon={<EmailIcon />} isRound="true">
-          {" "}
-        </IconButton>
-      </Link>
-      <Link href="https://www.linkedin.com/in/ramiihanna/" isExternal passHref>
-        <IconButton ml="1" icon={<FaLinkedin />} isRound="true">
-          {" "}
-        </IconButton>
-      </Link>
 
-      <IconButton
-        ml="1"
-        mr="1"
-        icon={isDark ? <FaSun /> : <FaMoon />}
-        isRound="true"
-        onClick={toggleColorMode}
-      ></IconButton>
-    </Flex>
+  return (
+    <VStack width="100%" align="stretch">
+      <Flex justify="space-between" align="center" mb={4}>
+        <Heading size="small" fontWeight="semibold" color="cyan.400">
+          <VStack align="start">
+            <Text p="0" align="center">
+              | (603) 293-3511 |
+            </Text>
+            <Text p="0" align="center">
+              | hannar1@wit.edu |
+            </Text>
+          </VStack>
+        </Heading>
+        <HStack spacing={1}>
+          <Link href="mailto:hannar1@wit.edu" isExternal passHref>
+            <IconButton icon={<EmailIcon />} isRound="true" />
+          </Link>
+          <Link href="https://www.linkedin.com/in/ramiihanna/" isExternal passHref>
+            <IconButton icon={<FaLinkedin />} isRound="true" />
+          </Link>
+          <IconButton
+            icon={isDark ? <FaSun /> : <FaMoon />}
+            isRound="true"
+            onClick={toggleColorMode}
+          />
+        </HStack>
+      </Flex>
+      <Divider />
+    </VStack>
   );
 }

@@ -3,7 +3,7 @@ import Layout from "../components/layout";
 
 export default function learnit({ Component, pageProps }) {
   return (
-    <VStack>
+    <VStack p="4" spacing="6">
       <Layout>
         <Component {...pageProps} />
       </Layout>
