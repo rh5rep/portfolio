@@ -10,10 +10,11 @@
 
 # next.js
 /.next/
-/out/
+# /out/ comment about folder... testing?
 
 # production
 /build
+/out
 
 # misc
 .DS_Store
