@@ -2,7 +2,7 @@ import { Text, Flex, Heading, HStack, IconButton } from "@chakra-ui/react";
 import { Divider, Spacer, VStack } from "@chakra-ui/layout";
 import Link from "next/link";
 import { FaLinkedin, FaSun, FaMoon } from "react-icons/fa";
-import { EmailIcon } from "@chakra-ui/icons";
+import { EmailIcon, ArrowLeftIcon } from "@chakra-ui/icons";
 import { useColorMode } from "@chakra-ui/color-mode";
 
 export default function Layout({ children }) {
@@ -23,6 +23,9 @@ export default function Layout({ children }) {
           </VStack>
         </Heading>
         <HStack spacing={1}>
+        <Link href="/" isExternal passHref>
+            <IconButton icon={<ArrowLeftIcon />} isRound="true" />
+          </Link>
           <Link href="mailto:hannar1@wit.edu" isExternal passHref>
             <IconButton icon={<EmailIcon />} isRound="true" />
           </Link>
