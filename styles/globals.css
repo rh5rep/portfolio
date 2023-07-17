@@ -14,3 +14,7 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.blah:hover {
+  opacity: 0.1;
+}

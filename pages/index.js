@@ -12,7 +12,7 @@ export default function Home({ Component, pageProps }) {
   const projectGridMaxW = "100";
 
   return (
-    <VStack p="4" spacing="6">
+    <VStack>
       <Layout>
       <Component {...pageProps} />
       </Layout>
@@ -39,7 +39,7 @@ export default function Home({ Component, pageProps }) {
           Please check back often for updates and give me any feedback you may have.
         </Text>
       </VStack>
-      <Divider w="90%" />
+      <Divider w="90%"/>
       <Heading as='u'> Resume and Projects</Heading>
       <Grid
         templateColumns="repeat(3, 1fr)"
@@ -87,6 +87,20 @@ export default function Home({ Component, pageProps }) {
             cursor="pointer"
           >
             <Text align="center">Senior Capstone</Text>
+          </Box>
+        </Link>
+        <Link href="/heartrate">
+          <Box
+            maxW="sm"
+            p="4"
+            borderWidth="1px"
+            borderRadius="lg"
+            overflow="hidden"
+            boxShadow="md"
+            _hover={{ boxShadow: "xl" }}
+            cursor="pointer"
+          >
+            <Text align="center">Extracting Heartrate from Cell Phone Videos</Text>
           </Box>
         </Link>
         {/* Add more project links here */}
