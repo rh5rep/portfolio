@@ -1,5 +1,5 @@
 import Layout from "../components/layout";
-import { VStack, Flex, Heading, Text, Spacer, Grid, Box, Divider } from "@chakra-ui/react";
+import { VStack, Flex, Heading, Text, Spacer, Grid, Box, Divider, StackDivider } from "@chakra-ui/react";
 import Link from "next/link";
 import Image from "next/image";
 import fav from "../public/rami.png";
@@ -12,7 +12,7 @@ export default function Home({ Component, pageProps }) {
   const projectGridMaxW = "100";
 
   return (
-    <VStack p="4" spacing="6">
+    <VStack>
       <Layout>
       <Component {...pageProps} />
       </Layout>
@@ -24,6 +24,9 @@ export default function Home({ Component, pageProps }) {
           fontWeight="extrabold"
           p="5"
           align="center"
+          // boxShadow={"lg"}
+          borderRadius={"1rem"}
+          _hover={{ shadow:'xs', fontStretch:'110%'}}
         >
           Hello, I am Rami Hanna.
         </Heading>
@@ -39,8 +42,8 @@ export default function Home({ Component, pageProps }) {
           Please check back often for updates and give me any feedback you may have.
         </Text>
       </VStack>
-      <Divider w="90%" />
-      <Heading as='u'> Resume and Projects</Heading>
+      <Divider w="90%"/>
+      <Heading as='u' paddingBottom={4}> Resume and Projects</Heading>
       <Grid
         templateColumns="repeat(3, 1fr)"
         gap={6}
@@ -52,10 +55,10 @@ export default function Home({ Component, pageProps }) {
             maxW="sm"
             p="4"
             borderWidth="1px"
-            borderRadius="lg"
+            borderRadius="1rem"
             overflow="hidden"
             boxShadow="md"
-            _hover={{ boxShadow: "xl" }}
+            _hover={{ boxShadow: "dark-lg" }}
             cursor="pointer"
           >
             <Text align="center">My Resume</Text>
@@ -66,10 +69,10 @@ export default function Home({ Component, pageProps }) {
             maxW="sm"
             p="4"
             borderWidth="1px"
-            borderRadius="lg"
+            borderRadius="1rem"
             overflow="hidden"
             boxShadow="md"
-            _hover={{ boxShadow: "xl" }}
+            _hover={{ boxShadow: "dark-lg" }}
             cursor="pointer"
           >
             <Text align="center">Learn-It</Text>
@@ -80,13 +83,27 @@ export default function Home({ Component, pageProps }) {
             maxW="sm"
             p="4"
             borderWidth="1px"
-            borderRadius="lg"
+            borderRadius="1rem"
             overflow="hidden"
             boxShadow="md"
-            _hover={{ boxShadow: "xl" }}
+            _hover={{ boxShadow: "dark-lg" }}
             cursor="pointer"
           >
             <Text align="center">Senior Capstone</Text>
+          </Box>
+        </Link>
+        <Link href="/heartrate">
+          <Box
+            maxW="sm"
+            p="4"
+            borderWidth="1px"
+            borderRadius="1rem"
+            overflow="hidden"
+            boxShadow="md"
+            _hover={{ boxShadow: "dark-lg" }}
+            cursor="pointer"
+          >
+            <Text align="center">Extracting Heartrate from Cell Phone Videos</Text>
           </Box>
         </Link>
         {/* Add more project links here */}
@@ -97,10 +114,10 @@ export default function Home({ Component, pageProps }) {
           maxW="sm"
           p="4"
           borderWidth="1px"
-          borderRadius="lg"
+          borderRadius="1rem"
           overflow="hidden"
           boxShadow="md"
-          _hover={{ boxShadow: "xl" }}
+          _hover={{ boxShadow: "dark-lg" }}
           cursor="pointer"
         >
           <Text align="center">Next Steps</Text>
