@@ -1,19 +1,21 @@
 import { useState } from 'react';
 import Layout from "../components/layout";
-import { Box, Image, IconButton, VStack, HStack, Button, Link, Text, Center, Heading, Flex, Divider, StackDivider, Icon, Spacer } from '@chakra-ui/react';
+import { Box, IconButton, VStack, HStack, Button, Link, Text, Center, Heading, Flex, Divider, StackDivider, Icon, Spacer } from '@chakra-ui/react';
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
 import { FaArrowRight, FaArrowLeft } from 'react-icons/fa';
 import { transform } from 'framer-motion';
 import { motion, AnimatePresence } from 'framer-motion';
 import ReactPlayer from 'react-player';
 import { useColorMode } from "@chakra-ui/color-mode";
+import Image from "next/image";
+
 
 const mediaItems = [
-  // {type: 'image',
-  //  source: '../images/RamiHover.png',
-  //  description: ' changes such as adding a linear rail, tool-changer, and programming changes were all made.'
+  {type: 'image',
+   source: '../images/RamiHover.png',
+   description: ' changes such as adding a linear rail, tool-changer, and programming changes were all made.'
 
-  // },
+  },
   {type: 'image',
    source: '../images/Cartesian-Robot.jpg',
    description: 'The prior capstone group robot. Many mechanical changes such as adding a linear rail, tool-changer, and programming changes were all made.'
@@ -87,7 +89,7 @@ The team behind this capstone project consists of three Electromechanical Engine
       <Center border={"1px"} borderRadius={"1rem"} p={"1rem"}>
         <Box maxW="800px">
           <HStack>
-          <FaArrowLeft size={50} onClick={handlePrevMedia}></FaArrowLeft>
+          <FaArrowLeft size={50} onClick={handlePrevMedia} cursor={"pointer"}></FaArrowLeft >
           <Spacer/>
           <AnimatePresence initial={false} mode='wait'>
             <motion.div
@@ -118,7 +120,7 @@ The team behind this capstone project consists of three Electromechanical Engine
 {/* ≈                <Divider opacity={0}/> */}
             <Spacer/>
 
-                <FaArrowRight size={50} onClick={handleNextMedia}></FaArrowRight>
+                <FaArrowRight size={50} onClick={handleNextMedia} cursor={"pointer"}></FaArrowRight>
         </HStack>
           <Center>
             <VStack>

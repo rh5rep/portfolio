@@ -26,7 +26,7 @@ export default function Home({ Component, pageProps }) {
           align="center"
           // boxShadow={"lg"}
           borderRadius={"1rem"}
-          _hover={{ shadow:'xs', fontStretch:'110%'}}
+          // _hover={{ shadow:'xs', fontStretch:'110%'}}
         >
           Hello, I am Rami Hanna.
         </Heading>
