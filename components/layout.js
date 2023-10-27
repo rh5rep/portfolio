@@ -38,7 +38,7 @@ export default function Layout({ children }) {
           </VStack>
         </Heading>
         <Link href={"/"}>
-        <Box w="150px" h="150px" mt="6" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+        <Box w="150px" h="150px" mt="6" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} cursor={"pointer"}>
 
           <Image src={isHovered ? logoHover : logo} layout="responsive" alt="Logo" />
 

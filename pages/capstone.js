@@ -9,6 +9,11 @@ import ReactPlayer from 'react-player';
 import { useColorMode } from "@chakra-ui/color-mode";
 
 const mediaItems = [
+  // {type: 'image',
+  //  source: '../images/RamiHover.png',
+  //  description: ' changes such as adding a linear rail, tool-changer, and programming changes were all made.'
+
+  // },
   {type: 'image',
    source: '../images/Cartesian-Robot.jpg',
    description: 'The prior capstone group robot. Many mechanical changes such as adding a linear rail, tool-changer, and programming changes were all made.'
@@ -127,6 +132,13 @@ The team behind this capstone project consists of three Electromechanical Engine
           </Center>
         </Box>
       </Center>
+      <Text> I have included our Research Paper that got published to IEEE below: </Text>
+        <iframe
+                src="../pdfs/Increasing Efficiency and Reliability of RF Machinery Testing Using Cartesian Robotics and Automatic Data Collection 8-25.pdf"
+                width="90%"
+                height="600px"
+                style={{ border: "none", borderRadius: "1rem" }}
+            />
     </VStack>
   );
 };

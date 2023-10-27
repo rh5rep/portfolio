@@ -78,6 +78,7 @@ export default function Home({ Component, pageProps }) {
             <Text align="center">Learn-It</Text>
           </Box>
         </Link>
+
         <Link href="/capstone">
           <Box
             maxW="sm"
@@ -108,6 +109,58 @@ export default function Home({ Component, pageProps }) {
         </Link>
         {/* Add more project links here */}
       </Grid>
+      <Divider w="90%" />
+      <Heading as='u' paddingBottom={4}> Hobbies and Interests </Heading>
+      <Grid
+        templateColumns="repeat(3, 1fr)"
+        gap={6}
+        align="center"
+        justifyItems="center"
+      >
+      <Link href="/travel">
+        <Box
+          maxW="sm"
+          p="4"
+          borderWidth="1px"
+          borderRadius="1rem"
+          overflow="hidden"
+          boxShadow="md"
+          _hover={{ boxShadow: "dark-lg" }}
+          cursor="pointer"
+        >
+          <Text align="center">Travel</Text>
+        </Box>
+      </Link>
+      <Link href="/language">
+        <Box
+          maxW="sm"
+          p="4"
+          borderWidth="1px"
+          borderRadius="1rem"
+          overflow="hidden"
+          boxShadow="md"
+          _hover={{ boxShadow: "dark-lg" }}
+          cursor="pointer"
+        >
+          <Text align="center">Language</Text>
+        </Box>
+      </Link>
+      <Link href="/Exercise">
+        <Box
+          maxW="sm"
+          p="4"
+          borderWidth="1px"
+          borderRadius="1rem"
+          overflow="hidden"
+          boxShadow="md"
+          _hover={{ boxShadow: "dark-lg" }}
+          cursor="pointer"
+        >
+          <Text align="center">Exercise</Text>
+        </Box>
+      </Link>
+      </Grid>
+      
       <Divider w="90%" />
       <Link href="/nextsteps">
         <Box
