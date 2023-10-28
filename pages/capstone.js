@@ -13,17 +13,13 @@ import Image from "next/image";
 const mediaItems = [
   {type: 'image',
    source: '../images/RamiHover.png',
-   description: ' 1 such as adding a linear rail, tool-changer, and programming changes were all made.'
+   description: ' changes such as adding a linear rail, tool-changer, and programming changes were all made.'
 
   },
+  <Image src="../images/Rami1.png" width={500} height={500} alt='pis'/>,
   {type: 'image',
    source: '../images/RamiHover.png',
-   description: ' 2 such as adding a linear rail, tool-changer, and programming changes were all made.'
-
-  },
-  {type: 'image',
-   source: '../images/RamiHover.png',
-   description: ' 3 such as adding a linear rail, tool-changer, and programming changes were all made.'
+   description: ' changes such as adding a linear rail, tool-changer, and programming changes were all made.'
 
   },
   {type: 'image',
