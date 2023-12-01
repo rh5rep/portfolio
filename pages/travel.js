@@ -19,8 +19,10 @@ export default function Travel({ Component, pageProps }) {
       
       <OrderedList>
         <ListItem> I want to include a map with a pin to everywhere in the world I have been. You click the pin, and images/videos and descriptions will show up</ListItem>
+        <ListItem> Do include languages/Pimsu</ListItem>
       </OrderedList>
 
     </VStack>    
     );
 }
+

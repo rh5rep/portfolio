@@ -1,4 +1,4 @@
-import { Text, Flex, Heading, HStack, IconButton } from "@chakra-ui/react";
+import { Text, Flex, Heading, HStack, IconButton, Center } from "@chakra-ui/react";
 import { Divider, Spacer, VStack } from "@chakra-ui/layout";
 import Link from "next/link";
 import { FaLinkedin, FaSun, FaMoon } from "react-icons/fa";
@@ -11,14 +11,19 @@ export default function Resume({ Component, pageProps }) {
   const isDark = colorMode === "dark";
   
   return (
-    <VStack p="4" spacing="6">
+    <VStack>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
       <Divider />
+      {/* <Center spacing="6" borderRadius={"1rem"} p={"1rem"}> */}
       <iframe
         src="/resume.pdf"
         width="100%"
         height="800px"
         style={{ border: "none" }}
       />
+      {/* </Center> */}
     </VStack>
   );
 }

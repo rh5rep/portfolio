@@ -11,20 +11,11 @@ import Image from "next/image";
 
 
 const mediaItems = [
-  {type: 'image',
-   source: '../images/RamiHover.png',
-   description: ' changes such as adding a linear rail, tool-changer, and programming changes were all made.'
 
-  },
-  <Image src="../images/Rami1.png" width={500} height={500} alt='pis'/>,
-  {type: 'image',
-   source: '../images/RamiHover.png',
-   description: ' changes such as adding a linear rail, tool-changer, and programming changes were all made.'
-
-  },
-  {type: 'image',
-   source: '../images/Cartesian-Robot.jpg',
-   description: 'The prior capstone group robot. Many mechanical changes such as adding a linear rail, tool-changer, and programming changes were all made.'
+  {
+    type: 'image',
+    source: '../images/Cartesian-Robot.jpg',
+    description: 'The prior capstone group robot. Many mechanical changes such as adding a linear rail, tool-changer, and programming changes were all made.'
 
   },
   {
@@ -64,7 +55,7 @@ export default function Capstone({ Component, pageProps }) {
   const isDark = colorMode === "dark";
 
   const [currentMediaIndex, setCurrentMediaIndex] = useState(0);
-  
+
   const handleNextMedia = () => {
     setCurrentMediaIndex((prevIndex) => (prevIndex + 1) % mediaItems.length);
   };
@@ -82,71 +73,72 @@ export default function Capstone({ Component, pageProps }) {
       <Layout>
         <Component {...pageProps} />
       </Layout>
-      <Heading p={'1rem'}>
-          Teradyne Senior Design Project
-        </Heading>
+      <Heading p={"1rem"} align={"center"}>
+        Teradyne Senior Design Project
+      </Heading>
       <Divider w={"50%"} />
-      <Text p={"1rem"}>
-      The purpose of this project was to create a device that automates the mating of coaxial connectors during testing. A Cartesian robot was designed and built that locates a specific connector within an array of connectors and then executes the desired mate using a Z-axis motion system. Additionally, an integrated tool-changer system is being developed that automatically swaps between the various toolheads used during a testing procedure.
+      <Text p={"1rem"} align={"center"} width={"95%"}>
+        The purpose of this project was to create a device that automates the mating of coaxial connectors during testing. A Cartesian robot was designed and built that locates a specific connector within an array of connectors and then executes the desired mate using a Z-axis motion system. Additionally, an integrated tool-changer system is being developed that automatically swaps between the various toolheads used during a testing procedure.
 
-The team behind this capstone project consists of three Electromechanical Engineering students at Wentworth Institute of Technology: Sam Baliki, Rami Hanna, and Paul Miller. They are supported and mentored by Professor James McCusker and Brian C. Wadell at Teradyne.
+        The team behind this capstone project consists of three Electromechanical Engineering students at Wentworth Institute of Technology: Sam Baliki, Rami Hanna, and Paul Miller. They are supported and mentored by Professor James McCusker and Brian C. Wadell at Teradyne.
       </Text>
 
       <Center border={"1px"} borderRadius={"1rem"} p={"1rem"}>
-        <Box maxW="800px">
+        {/* <Box maxW="800px"> */}
+        <Box >
           <HStack>
-          <FaArrowLeft size={50} onClick={handlePrevMedia} cursor={"pointer"}></FaArrowLeft >
-          <Spacer/>
-          <AnimatePresence initial={false} mode='wait'>
-            <motion.div
-              key={currentMediaIndex}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-            >
-              {currentMediaItem.type === 'video' ? (
-                <div style={{ borderRadius: '1rem', overflow: 'hidden' }}>
-                  <ReactPlayer
-                    url={currentMediaItem.source}
-                    controls
+            <FaArrowLeft size={50} onClick={handlePrevMedia} cursor={"pointer"}></FaArrowLeft >
+            <Spacer />
+            <AnimatePresence initial={false} mode='wait'>
+              <motion.div
+                key={currentMediaIndex}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+              >
+                {currentMediaItem.type === 'video' ? (
+                  <div style={{ borderRadius: '1rem', overflow: 'hidden' }}>
+                    <ReactPlayer
+                      url={currentMediaItem.source}
+                      controls
+                      width="100%"
+                      height="400px"
+                    />
+                  </div>
+                ) : (
+                  <img
+                    src={currentMediaItem.source}
+                    alt="Image"
                     width="100%"
-                    height="400px"
+                    style={{ borderRadius: '1rem' }}
                   />
-                </div>
-              ) : (
-                <img
-                  src={currentMediaItem.source}
-                  alt="Image"
-                  width="100%"
-                  style={{ borderRadius: '1rem' }} 
-                />
-              )}
-            </motion.div>
-          </AnimatePresence>
-{/* ≈                <Divider opacity={0}/> */}
-            <Spacer/>
+                )}
+              </motion.div>
+            </AnimatePresence>
+            {/* ≈                <Divider opacity={0}/> */}
+            <Spacer />
 
-                <FaArrowRight size={50} onClick={handleNextMedia} cursor={"pointer"}></FaArrowRight>
-        </HStack>
+            <FaArrowRight size={50} onClick={handleNextMedia} cursor={"pointer"}></FaArrowRight>
+          </HStack>
           <Center>
             <VStack>
               <Text align={'center'} p={"4"} >{currentMediaItem.description}</Text>
               {/* <HStack spacing={4}> */}
-                {/* <FaArrowLeft size={50} onClick={handlePrevMedia}></FaArrowLeft> */}
-                {/* <Divider opacity={0}/> */}
-                {/* <FaArrowRight size={50} onClick={handleNextMedia}></FaArrowRight> */}
+              {/* <FaArrowLeft size={50} onClick={handlePrevMedia}></FaArrowLeft> */}
+              {/* <Divider opacity={0}/> */}
+              {/* <FaArrowRight size={50} onClick={handleNextMedia}></FaArrowRight> */}
               {/* </HStack> */}
             </VStack>
           </Center>
         </Box>
       </Center>
-      <Text> I have included our Research Paper that got published to IEEE below: </Text>
-        <iframe
-                src="../pdfs/Increasing Efficiency and Reliability of RF Machinery Testing Using Cartesian Robotics and Automatic Data Collection 8-25.pdf"
-                width="90%"
-                height="600px"
-                style={{ border: "none", borderRadius: "1rem" }}
-            />
+      <Text p={"1rem"} align={"center"}> I have included our Research Paper that got published to IEEE below: </Text>
+      <iframe
+        src="../pdfs/Increasing Efficiency and Reliability of RF Machinery Testing Using Cartesian Robotics and Automatic Data Collection 8-25.pdf"
+        width="90%"
+        height="600px"
+        style={{ border: "none", borderRadius: "1rem" }}
+      />
     </VStack>
   );
 };
