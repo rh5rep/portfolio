@@ -1,4 +1,4 @@
-import { Text, Flex, Heading, HStack, IconButton, Box } from "@chakra-ui/react";
+import {Text, Flex, Heading, HStack, IconButton, Box, Center } from "@chakra-ui/react";
 import { Divider, Spacer, VStack } from "@chakra-ui/layout";
 import Link from "next/link";
 import { FaLinkedin, FaSun, FaMoon,FaHome } from "react-icons/fa";
@@ -25,24 +25,22 @@ export default function Layout({ children }) {
 
 
   return (
-    <VStack width="100%" align="stretch">
-      <Flex justify="space-between" align="center" mb={4}>
+    <VStack width="95%" align="stretch" p={"1rem"}>
+     <Flex align="center" justify="space-between" direction={{ base: "column", md: "row" }}>
         <Heading size="small" fontWeight="semibold" color="cyan.400">
           <VStack align="start">
-            <Text p="2" align="center">
-              | +1 (603) 293-3511 |
-            </Text>
-            <Text p="2" align="center">
-              | hannar1@wit.edu |
-            </Text>
+            <Text p={"1rem"} align="center">+1 603-293-3511</Text>
+            <Text p={"1rem"} align="center">hannar1@wit.edu</Text>
           </VStack>
         </Heading>
         <Link href={"/"}>
-        <Box w="150px" h="150px" mt="6" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+          <Center>
+        <Box w="150px" h="150px" mt="6" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} cursor={"pointer"}>
 
           <Image src={isHovered ? logoHover : logo} layout="responsive" alt="Logo" />
 
         </Box>
+        </Center>
         </Link>
         <HStack spacing={1}>
         <Link href="/" isExternal passHref>
