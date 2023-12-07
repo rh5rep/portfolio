@@ -132,9 +132,11 @@ export default function Capstone({ Component, pageProps }) {
           </Center>
         </Box>
       </Center>
-      <Text p={"1rem"} align={"center"}> I have included our Research Paper that got published to IEEE below: </Text>
+      <Link download={"RHanna - IEEE SII/SICE 2024 - Capstone"} href='../pdfs/Increasing Efficiency and Reliability of RF Machinery Testing Using Cartesian Robotics and Automatic Data Collection Cam Ready.pdf'>
+      <Text p={"1rem"} align={"center"}> I have included our Research Paper that got published to IEEE below (click here to download pdf): </Text>
+      </Link>
       <iframe
-        src="../pdfs/Increasing Efficiency and Reliability of RF Machinery Testing Using Cartesian Robotics and Automatic Data Collection 8-25.pdf"
+        src="../pdfs/Increasing Efficiency and Reliability of RF Machinery Testing Using Cartesian Robotics and Automatic Data Collection Cam Ready.pdf"
         width="90%"
         height="600px"
         style={{ border: "none", borderRadius: "1rem" }}

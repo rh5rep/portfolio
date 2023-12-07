@@ -47,7 +47,7 @@ export default function Home({ Component, pageProps }) {
         </VStack>
         <Divider w="95%" />
         <Center>
-          <Heading as='u' paddingBottom={4}> Resume and Projects</Heading>
+          <Heading as='u' paddingBottom={4}> Résumé and Projects</Heading>
         </Center>
         <Grid
           templateColumns="repeat(3, 1fr)"
@@ -68,7 +68,7 @@ export default function Home({ Component, pageProps }) {
               _hover={{ boxShadow: "dark-lg" }}
               cursor="pointer"
             >
-              <Text  align="center">My Resume</Text>
+              <Text  align="center">My Résumé</Text>
             </Box>
           </Link>
           <Link href="/learnit">
@@ -112,6 +112,34 @@ export default function Home({ Component, pageProps }) {
               cursor="pointer"
             >
               <Text align="center">Extracting Heartrate from Cell Phone Videos</Text>
+            </Box>
+          </Link>
+          <Link href="/pomodoro">
+            <Box
+              maxW="sm"
+              p="4"
+              borderWidth="1px"
+              borderRadius="1rem"
+              overflow="hidden"
+              boxShadow="md"
+              _hover={{ boxShadow: "dark-lg" }}
+              cursor="pointer"
+            >
+              <Text align="center">Pomodoro Timer!</Text>
+            </Box>
+          </Link>
+          <Link href="/caradapter">
+            <Box
+              maxW="sm"
+              p="4"
+              borderWidth="1px"
+              borderRadius="1rem"
+              overflow="hidden"
+              boxShadow="md"
+              _hover={{ boxShadow: "dark-lg" }}
+              cursor="pointer"
+            >
+              <Text align="center">Bluetooth Car Adapter</Text>
             </Box>
           </Link>
           {/* Add more project links here */}
