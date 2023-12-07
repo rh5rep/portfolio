@@ -9,13 +9,18 @@ import Layout from "../components/layout";
 export default function Resume({ Component, pageProps }) {
   const { colorMode, toggleColorMode } = useColorMode();
   const isDark = colorMode === "dark";
-  
+
   return (
     <VStack>
       <Layout>
         <Component {...pageProps} />
       </Layout>
-      <Divider />
+      {/* <Divider /> */}
+      <Link download={"RHanna - Resume"} href={"/resume.pdf"}>
+        <Text align="center" as={"u"}>
+          Click here to download my résumé!
+        </Text>
+      </Link> 
       {/* <Center spacing="6" borderRadius={"1rem"} p={"1rem"}> */}
       <iframe
         src="/resume.pdf"
