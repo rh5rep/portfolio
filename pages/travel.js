@@ -38,6 +38,7 @@ const PORTO = [41.1579, -8.6291];
 const PULA = [44.8666, 13.8496];
 const ZADAR = [44.1194, 15.2314];
 const SPLIT = [43.5081, 16.4402];
+const MOSTAR = [43.34333, 17.80806];
 const DUBROVNIK = [42.6507, 18.0944];
 const KOTOR = [42.4247, 18.7712];
 const BELGRADE = [44.7866, 20.4489];
@@ -49,6 +50,8 @@ const CANCUN = [21.1619, -86.8515];
 const COLORADOSPRINGS = [38.8339, -104.8214];
 const STPETESBEACH = [27.7465, -82.7415];
 const LOSANGELES = [34.0522, -118.2437];
+const SANTAMONICA = [34.005166646, -118.49249803];
+const LASVEGAS = [36.17497, -115.13722]
 const YOSEMITE = [37.8651, -119.5383];
 const GRANDCANYON = [36.1069, -112.1129];
 const BEIJING = [39.9042, 116.4074];
@@ -56,6 +59,21 @@ const ARUBA = [12.5211, -69.9683];
 const MONTREAL = [45.5017, -73.5673];
 const CUERNAVACA = [18.9242, -99.2216];
 const MEXICO_CITY = [19.4326, -99.1332];
+const LARNACA = [34.92291, 33.6233];
+const HANOI = [21.0285, 105.8542];
+const HA_LONG = [20.9101, 107.1839];
+const HA_GIANG = [22.8136, 104.9836];
+const NINH_BINH = [20.2528, 105.9750];
+const PHONG_NHA = [17.5904, 106.2838];
+const HOI_AN = [15.8801, 108.3380];
+
+const BANGKOK = [13.7563, 100.5018];
+const CHIANG_MAI = [18.7061, 98.9817];
+const PAI = [19.3592, 98.4396];
+const KRABI = [8.0863, 98.9063];
+const KOH_PHI_PHI = [7.7407, 98.7784];
+const KOH_TAO = [10.09808, 99.83809];
+const KOH_PHANGAN = [9.7317, 100.0136];
 
 const locations = [
   { name: 'District of Columbia', coords: DC },
@@ -86,6 +104,7 @@ const locations = [
   { name: 'Pula', coords: PULA },
   { name: 'Zadar', coords: ZADAR },
   { name: 'Split', coords: SPLIT },
+  { name: 'Mostar', coords: MOSTAR},
   { name: 'Dubrovnik', coords: DUBROVNIK },
   { name: 'Kotor', coords: KOTOR },
   { name: 'Belgrade', coords: BELGRADE },
@@ -98,16 +117,32 @@ const locations = [
   { name: 'Colorado Springs', coords: COLORADOSPRINGS },
   { name: 'St. Pete Beach', coords: STPETESBEACH },
   { name: 'Los Angeles', coords: LOSANGELES },
+  { name: 'Santa Monica', coords: SANTAMONICA },
+  { name: 'Las Vegas', coords: LASVEGAS},
   { name: 'Yosemite', coords: YOSEMITE },
   { name: 'Grand Canyon', coords: GRANDCANYON },
   { name: 'Beijing', coords: BEIJING },
   { name: 'Lagos', coords: LAGOS },
   { name: 'Lisbon', coords: LISBON },
   { name: 'Porto', coords: PORTO },
-  { name: 'Aruba', coords: ARUBA },
+  { name: 'Oranjestad', coords: ARUBA },
   { name: 'Cuernavaca', coords: CUERNAVACA},
   { name: 'Montreal', coords: MONTREAL},
   { name: 'Mexico City', coords: MEXICO_CITY},
+  { name: "Larnaca", coords: LARNACA},
+  { name: "Hanoi", coords: HANOI},
+  { name: "Ha Long Bay", coords: HA_LONG},
+  { name: "Ha Giang", coords: HA_GIANG},
+  { name: "Ninh Binh", coords: NINH_BINH},
+  { name: "Phong Nha", coords: PHONG_NHA},
+  { name: "Hoi An", coords: HOI_AN},
+  { name: "Bangkok", coords: BANGKOK},
+  { name: "Chiang Mai", coords: CHIANG_MAI},
+  { name: "Pai", coords: PAI},
+  { name: "Krabi", coords: KRABI},
+  { name: "Koh Phi Phi", coords: KOH_PHI_PHI},
+  { name: "Koh Tao", coords: KOH_TAO},
+  { name: "Koh Phanang", coords: KOH_PHANGAN},
 ];
 
 
