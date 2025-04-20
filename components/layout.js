@@ -1,9 +1,8 @@
-import {Text, Flex, Heading, HStack, IconButton, Box, Center } from "@chakra-ui/react";
-import { Divider, Spacer, VStack } from "@chakra-ui/layout";
+import {Text, Flex, Heading, HStack, IconButton, Box, Center, useColorMode } from "@chakra-ui/react";
+import { Divider, Spacer, VStack } from "@chakra-ui/react";
 import Link from "next/link";
 import { FaLinkedin, FaSun, FaMoon,FaHome } from "react-icons/fa";
 import { EmailIcon, ArrowLeftIcon } from "@chakra-ui/icons";
-import { useColorMode } from "@chakra-ui/color-mode";
 import Image from "next/image";
 import logo from "../public/images/Rami1.png";
 import logoHover from "../public/images/RamiHover.png"

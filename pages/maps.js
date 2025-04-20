@@ -3,8 +3,7 @@ import styles from '../styles/Home.module.css';
 import Layout from "../components/layout";
 import Link from "next/link";
 import Image from "next/image";
-import { Flex, VStack, Text } from '@chakra-ui/react';
-import { useColorMode } from "@chakra-ui/color-mode";
+import { Flex, VStack, Text, useColorMode } from '@chakra-ui/react';
 
 const DEFAULT_CENTER = [38.907132, -77.036546]
 

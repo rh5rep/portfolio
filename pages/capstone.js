@@ -6,7 +6,7 @@ import { FaArrowRight, FaArrowLeft } from 'react-icons/fa';
 import { transform } from 'framer-motion';
 import { motion, AnimatePresence } from 'framer-motion';
 import ReactPlayer from 'react-player';
-import { useColorMode } from "@chakra-ui/color-mode";
+import { useColorMode } from "@chakra-ui/react";
 import Image from "next/image";
 
 
@@ -26,7 +26,7 @@ const mediaItems = [
   {
     type: 'image',
     source: '../images/30_min_drift_10_min_tare_2.png',
-    description: 'A major addition to the project was adding a load cell to determine ample force needed to mate a connector -- for automation purposes. Here is an initial test of 50g on a cantilever load cell with 10 min tares.'
+    description: 'A major addition to the project was adding a load cell to determine ample force needed to mate a connector -- for automation purposes. Here is an initial test of 50g on a cantilever load cell with 10 minute tares.'
   },
   {
     type: 'image',
@@ -83,11 +83,10 @@ export default function Capstone({ Component, pageProps }) {
         The team behind this capstone project consists of three Electromechanical Engineering students at Wentworth Institute of Technology: Sam Baliki, Rami Hanna, and Paul Miller. They are supported and mentored by Professor James McCusker and Brian C. Wadell at Teradyne.
       </Text>
 
-      <Center border={"1px"} borderRadius={"1rem"} p={"1rem"}>
-        {/* <Box maxW="800px"> */}
-        <Box >
+      <Center borderRadius={"1rem"} p={"1rem"} width="800px">
+        <Box>
           <HStack>
-            <FaArrowLeft size={50} onClick={handlePrevMedia} cursor={"pointer"}></FaArrowLeft >
+            <FaArrowLeft size={50} onClick={handlePrevMedia} cursor={"pointer"} />
             <Spacer />
             <AnimatePresence initial={false} mode='wait'>
               <motion.div
@@ -96,47 +95,45 @@ export default function Capstone({ Component, pageProps }) {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
               >
-                {currentMediaItem.type === 'video' ? (
-                  <div style={{ borderRadius: '1rem', overflow: 'hidden' }}>
+                <div style={{ borderRadius: '1rem', overflow: 'hidden', width: '800px', height: '400px' }}>
+                  {currentMediaItem.type === 'video' ? (
                     <ReactPlayer
                       url={currentMediaItem.source}
                       controls
-                      width="100%"
+                      width="800px"
                       height="400px"
                     />
-                  </div>
-                ) : (
-                  <img
-                    src={currentMediaItem.source}
-                    alt="Image"
-                    width="100%"
-                    style={{ borderRadius: '1rem' }}
-                  />
-                )}
+                  ) : (
+                    <img
+                      src={currentMediaItem.source}
+                      alt="Image"
+                      width="800px"
+                      height="400px"
+                      style={{ borderRadius: '1rem' }}
+                    />
+                  )}
+                </div>
               </motion.div>
             </AnimatePresence>
-            {/* ≈                <Divider opacity={0}/> */}
             <Spacer />
-
-            <FaArrowRight size={50} onClick={handleNextMedia} cursor={"pointer"}></FaArrowRight>
+            <FaArrowRight size={50} onClick={handleNextMedia} cursor={"pointer"} />
           </HStack>
           <Center>
             <VStack>
               <Text align={'center'} p={"4"} >{currentMediaItem.description}</Text>
-              {/* <HStack spacing={4}> */}
-              {/* <FaArrowLeft size={50} onClick={handlePrevMedia}></FaArrowLeft> */}
-              {/* <Divider opacity={0}/> */}
-              {/* <FaArrowRight size={50} onClick={handleNextMedia}></FaArrowRight> */}
-              {/* </HStack> */}
             </VStack>
           </Center>
         </Box>
       </Center>
-      <Link download={"RHanna - IEEE SII/SICE 2024 - Capstone"} href='../pdfs/Increasing Efficiency and Reliability of RF Machinery Testing Using Cartesian Robotics and Automatic Data Collection Cam Ready.pdf'>
-      <Text p={"1rem"} align={"center"}> I have included our Research Paper that got published to IEEE below (click here to download pdf): </Text>
+
+      {/* <Link download={"RHanna - IEEE SII/SICE 2024 - Capstone"} href='../pdfs/Increasing Efficiency and Reliability of RF Machinery Testing Using Cartesian Robotics and Automatic Data Collection Cam Ready.pdf'> */}
+      <Link download={"RHanna - IEEE SII/SICE 2024 - Capstone"} href='../pdfs/modified_capstone.pdf'>
+
+        <Text p={"1rem"} align={"center"}> I have included our Research Paper that got published to IEEE below (click here to download pdf): </Text>
       </Link>
       <iframe
-        src="../pdfs/Increasing Efficiency and Reliability of RF Machinery Testing Using Cartesian Robotics and Automatic Data Collection Cam Ready.pdf"
+        // src="../pdfs/Increasing Efficiency and Reliability of RF Machinery Testing Using Cartesian Robotics and Automatic Data Collection Cam Ready.pdf"
+        src="../pdfs/modified_capstone.pdf"
         width="90%"
         height="600px"
         style={{ border: "none", borderRadius: "1rem" }}

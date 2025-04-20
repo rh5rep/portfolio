@@ -1,4 +1,4 @@
-import { Box, Center, Flex, Text, VStack } from "@chakra-ui/react";
+import { Box, Center, Flex, Text, VStack, useColorMode } from "@chakra-ui/react";
 import Layout from "../components/layout";
 import {
   List,

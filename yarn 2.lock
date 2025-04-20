@@ -1012,9 +1012,9 @@
     yargs "^17.6.0"
 
 "@netlify/config@^20.6.0":
-  version "20.21.4"
-  resolved "https://registry.yarnpkg.com/@netlify/config/-/config-20.21.4.tgz#534f3f2e32b1e975ae69d3eeea873f03fb5de05e"
-  integrity sha512-Pkp2/WHIR15lFaVp5rgS3tvbsV/HwsmIC5jsp92WmYtzRcoUZC2wY75OAjCT+YSJpJq455hraAHpxVvHp7Lh3Q==
+  version "20.21.2"
+  resolved "https://registry.yarnpkg.com/@netlify/config/-/config-20.21.2.tgz#cd86ce5c758a4321b923a29713f67250abe3961f"
+  integrity sha512-W1D3yc79VU7B8L0h4iREjaCpQbudPAQTnmkNLlJhuvLDJn6SlsDiitGDvUpp+9VYAhwX5SJgYMvDGOlbWk+tMA==
   dependencies:
     "@iarna/toml" "^2.2.5"
     "@netlify/headers-parser" "^7.3.0"
@@ -1032,7 +1032,7 @@
     is-plain-obj "^4.0.0"
     js-yaml "^4.0.0"
     map-obj "^5.0.0"
-    netlify "^13.3.0"
+    netlify "^13.2.1"
     node-fetch "^3.3.1"
     omit.js "^2.0.2"
     p-locate "^6.0.0"
@@ -1227,11 +1227,11 @@
     semver "^7.3.8"
 
 "@netlify/functions-utils@^5.2.18":
-  version "5.3.3"
-  resolved "https://registry.yarnpkg.com/@netlify/functions-utils/-/functions-utils-5.3.3.tgz#63865023cf93d0587f396405c7efd57d4e92997e"
-  integrity sha512-8Jrag6Qyda5P17OGTNw8/jLRm1xAhEXlwTDawNem8sXs93JlLi2riNtHzZquwZsMsmCkoMekV8Hj9B3H63l5tA==
+  version "5.3.2"
+  resolved "https://registry.yarnpkg.com/@netlify/functions-utils/-/functions-utils-5.3.2.tgz#7d3aa0cab963492d85459df8600a2e06f45def7f"
+  integrity sha512-IAqIA3w+a+fnDeR5GwRQY1T3f5THtFByRVbLrK79nt+CY131h9csBQQco6YsV1hSjCu8EODHDIIBfpvdBcsTzQ==
   dependencies:
-    "@netlify/zip-it-and-ship-it" "9.42.3"
+    "@netlify/zip-it-and-ship-it" "9.42.2"
     cpy "^9.0.0"
     path-exists "^5.0.0"
 
@@ -1374,7 +1374,7 @@
   resolved "https://registry.yarnpkg.com/@netlify/serverless-functions-api/-/serverless-functions-api-1.5.1.tgz#8087e130f0f9391b917286cd941de16ecf2bb98a"
   integrity sha512-c8RjIu+fkpfOGLaW0Z0iFG39GUK7sCa6M3Qy3fqouMpT00TaiheiyssnnDZGSLkNp4o+UtbRnITB1zuwDeHMLw==
 
-"@netlify/serverless-functions-api@^1.32.0", "@netlify/serverless-functions-api@^1.5.1":
+"@netlify/serverless-functions-api@^1.31.1", "@netlify/serverless-functions-api@^1.5.1":
   version "1.32.0"
   resolved "https://registry.yarnpkg.com/@netlify/serverless-functions-api/-/serverless-functions-api-1.32.0.tgz#0c8806f468c898d74c442f359a701fa803caec18"
   integrity sha512-dRKNGox2wdKb8ONoMc4mtLyUSxYvCYDFM1iyJUCb+9Nit9Azvtr8htD9D8z9bH1L4MKraHJJE756OSfLL3jduQ==
@@ -1418,15 +1418,15 @@
     unixify "^1.0.0"
     yargs "^17.0.0"
 
-"@netlify/zip-it-and-ship-it@9.42.3":
-  version "9.42.3"
-  resolved "https://registry.yarnpkg.com/@netlify/zip-it-and-ship-it/-/zip-it-and-ship-it-9.42.3.tgz#ec25e1dc13ee58046223db89c897cef79c6dd445"
-  integrity sha512-CodOV1rbYrYZwz9Y6VrF6IeJn3UufMw1CEkvzE9/NlyN4yU6QYCu4yz5O9bOTvwQdharBpymImr6Q3t+zXPJXQ==
+"@netlify/zip-it-and-ship-it@9.42.2":
+  version "9.42.2"
+  resolved "https://registry.yarnpkg.com/@netlify/zip-it-and-ship-it/-/zip-it-and-ship-it-9.42.2.tgz#ecd5472e8fb5229f5c9ba36db965fb5e1e6e7602"
+  integrity sha512-2J+Nc2XkTmcb0Q3D/Mk+wmMUS6VVyLaIyn+A/GET6sKG+FSTJkH2mzgPfCUSIfSb+yae/ll8FYyH7Ym//6F/bA==
   dependencies:
     "@babel/parser" "^7.22.5"
     "@babel/types" "7.26.3"
     "@netlify/binary-info" "^1.0.0"
-    "@netlify/serverless-functions-api" "^1.32.0"
+    "@netlify/serverless-functions-api" "^1.31.1"
     "@vercel/nft" "0.27.7"
     archiver "^7.0.0"
     common-path-prefix "^3.0.0"
@@ -2288,9 +2288,9 @@
   integrity sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==
 
 "@types/node@*", "@types/node@>=13.7.0":
-  version "22.10.7"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-22.10.7.tgz#14a1ca33fd0ebdd9d63593ed8d3fbc882a6d28d7"
-  integrity sha512-V09KvXxFiutGp6B7XkpaDXlNadZxrzajcY50EuoLIpQ6WWYCSvf19lVIazzfIzQvhUN2HjX12spLojTnhuKlGg==
+  version "22.10.6"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-22.10.6.tgz#5c6795e71635876039f853cbccd59f523d9e4239"
+  integrity sha512-qNiuwC4ZDAUNcY47xgaSuS92cjf8JbSUoaKS77bmLG1rU7MlATVSiw/IlrjtIyyskXBZ8KkNfjK/P5na7rgXbQ==
   dependencies:
     undici-types "~6.20.0"
 
@@ -8323,10 +8323,10 @@ netlify@13.1.10:
     p-wait-for "^4.0.0"
     qs "^6.9.6"
 
-netlify@^13.1.10, netlify@^13.3.0:
-  version "13.3.0"
-  resolved "https://registry.yarnpkg.com/netlify/-/netlify-13.3.0.tgz#ce9915965c22b2ded7407482a10f6b54e2527753"
-  integrity sha512-mHhNLFhe4RQffo7hvoJljJ5+dMSz0o1lSlP9Q8+dB7MvtnL8vG6yA8vaHUTi9+UWa/fXEM730UmWiJotzv8omQ==
+netlify@^13.1.10, netlify@^13.2.1:
+  version "13.2.1"
+  resolved "https://registry.yarnpkg.com/netlify/-/netlify-13.2.1.tgz#4eb5043c311a4598145a9104d7e088a8068e2940"
+  integrity sha512-H74wp5O8Rxv1pRHSd+Ewc9pmw4ZDaH9B3C9Wtj7LB5BeE9gZwZyrXkSoSAHZlN9R5cnkI93CwBBfTaWdWy663Q==
   dependencies:
     "@netlify/open-api" "^2.35.0"
     lodash-es "^4.17.21"

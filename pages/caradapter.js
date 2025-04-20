@@ -3,8 +3,7 @@ import { VStack, Flex, Heading, Text, Spacer, Grid, Box, Divider, StackDivider, 
 import Link from "next/link";
 import Image from "next/image";
 import fav from "../public/rami.png";
-import { useColorMode } from "@chakra-ui/color-mode";
-
+import { useColorMode } from "@chakra-ui/react"; 
 
 export default function Adapter({ Component, pageProps }) {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -14,9 +13,8 @@ export default function Adapter({ Component, pageProps }) {
   return (
     <VStack>
       <Layout>
-      <Component {...pageProps} />
+        <Component {...pageProps} />
       </Layout>
-      
     </VStack>    
-    );
+  );
 }

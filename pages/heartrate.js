@@ -1,8 +1,7 @@
-import { Text, Flex, Heading, HStack, IconButton } from "@chakra-ui/react";
-import { Divider, Spacer, VStack, Box } from "@chakra-ui/layout";
+import { Text, Flex, Heading, HStack, IconButton, useColorMode} from "@chakra-ui/react";
+import { Divider, Spacer, VStack, Box } from "@chakra-ui/react";
 import Link from "next/link";
 import { EmailIcon } from "@chakra-ui/icons";
-import { useColorMode } from "@chakra-ui/color-mode";
 import Layout from "../components/layout";
 
 export default function Heartrate({ Component, pageProps }) {
