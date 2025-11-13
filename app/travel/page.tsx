@@ -1,19 +1,9 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { useEffect } from "react";
-import "leaflet/dist/leaflet.css";
-import L from "leaflet";
 
-const icon = L.icon({
-  iconUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
-  iconRetinaUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png",
-  shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-  shadowSize: [41, 41],
-});
+// Dynamically import client-only map
+const TravelMap = dynamic(() => import("@/components/TravelMap"), { ssr: false });
 
 const locations = [
   { name: 'District of Columbia', coords: [38.907132, -77.036546] as [number, number] },
@@ -85,33 +75,11 @@ const locations = [
   { name: "Koh Phanang", coords: [9.7317, 100.0136] as [number, number] },
 ];
 
-// Dynamically import MapContainer to avoid SSR issues
-const MapContainer = dynamic(
-  () => import("react-leaflet").then((mod) => mod.MapContainer),
-  { ssr: false }
-);
-
-const TileLayer = dynamic(
-  () => import("react-leaflet").then((mod) => mod.TileLayer),
-  { ssr: false }
-);
-
-const Marker = dynamic(
-  () => import("react-leaflet").then((mod) => mod.Marker),
-  { ssr: false }
-);
-
-const Popup = dynamic(
-  () => import("react-leaflet").then((mod) => mod.Popup),
-  { ssr: false }
-);
-
 export default function Travel() {
   return (
     <div className="w-full flex flex-col items-center p-4">
       <div className="w-full max-w-7xl">
         <h1 className="text-4xl font-bold text-center mb-8">Travel</h1>
-        
         <p className="text-center p-4">
           Exploring new destinations has always been a passion of mine. Each journey, 
           whether immersed in unique languages, enriched cultural experiences, or the 
@@ -120,23 +88,8 @@ export default function Travel() {
           I have traveled to on my website.
         </p>
 
-        <div className="w-full h-[600px] rounded-2xl overflow-hidden shadow-lg my-8">
-          <MapContainer
-            center={[30, 0]}
-            zoom={2}
-            style={{ height: "100%", width: "100%" }}
-          >
-            <TileLayer
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-            />
-            {locations.map((location, index) => (
-              <Marker key={index} position={location.coords} icon={icon}>
-                <Popup>{location.name}</Popup>
-              </Marker>
-            ))}
-          </MapContainer>
-        </div>
+        {/* Replace direct MapContainer usage with the dynamic client-only component */}
+        <TravelMap locations={locations} center={[30, 0]} zoom={2} />
       </div>
     </div>
   );

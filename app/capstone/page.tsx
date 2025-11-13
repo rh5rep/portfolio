@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import ReactPlayer from "react-player";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -94,12 +93,12 @@ export default function Capstone() {
                   className="rounded-2xl overflow-hidden"
                 >
                   {currentMediaItem.type === "video" ? (
-                    <div className="aspect-video">
-                      <ReactPlayer
-                        url={currentMediaItem.source}
+                    <div className="relative w-full aspect-video">
+                      <video
+                        src={currentMediaItem.source}
                         controls
-                        width="100%"
-                        height="100%"
+                        preload="metadata"
+                        className="w-full h-full rounded-2xl"
                       />
                     </div>
                   ) : (
