@@ -1,96 +1,118 @@
-"use client";
+import Link from "next/link";
+import SiteHeader from "@/components/SiteHeader";
+import MapPanel from "./map-panel";
+import { totalTravelPlaces, travelLocations, travelRegions } from "./travel-data";
 
-import dynamic from "next/dynamic";
+export const metadata = {
+  title: "Travel Atlas | Rami Hanna",
+  description: "Travel, curiosity, and a map-first record of places Rami Hanna has spent time in.",
+};
 
-// Dynamically import client-only map
-const TravelMap = dynamic(() => import("@/components/TravelMap"), { ssr: false });
-
-const locations = [
-  { name: 'District of Columbia', coords: [38.907132, -77.036546] as [number, number] },
-  { name: 'Concord', coords: [43.20814, -71.53757] as [number, number] },
-  { name: 'Boston', coords: [42.35843, -71.05977] as [number, number] },
-  { name: 'San Fransisco', coords: [37.773972, -122.431297] as [number, number] },
-  { name: 'Beirut', coords: [33.8938, 35.5018] as [number, number] },
-  { name: 'La Fortuna', coords: [10.4625, -84.7033] as [number, number] },
-  { name: 'Monteverde', coords: [10.3084, -84.8046] as [number, number] },
-  { name: 'Tamarindo', coords: [10.2998, -85.8374] as [number, number] },
-  { name: 'London', coords: [51.5074, -0.1278] as [number, number] },
-  { name: 'Cambridge', coords: [52.2053, 0.1218] as [number, number] },
-  { name: 'York', coords: [53.9591, -1.0815] as [number, number] },
-  { name: 'Skye', coords: [57.5359, -6.2263] as [number, number] },
-  { name: 'Edinburgh', coords: [55.9533, -3.1883] as [number, number] },
-  { name: 'Paris', coords: [48.8566, 2.3522] as [number, number] },
-  { name: 'Geneva', coords: [46.2044, 6.1432] as [number, number] },
-  { name: 'Milan', coords: [45.4642, 9.1900] as [number, number] },
-  { name: 'Venice', coords: [45.4408, 12.3155] as [number, number] },
-  { name: 'Passo di Giau', coords: [46.4825, 12.053889] as [number, number] },
-  { name: 'Bologna', coords: [44.4949, 11.3426] as [number, number] },
-  { name: 'Florence', coords: [43.7696, 11.2558] as [number, number] },
-  { name: 'Rome', coords: [41.9028, 12.4964] as [number, number] },
-  { name: 'Napoli', coords: [40.8522, 14.2681] as [number, number] },
-  { name: 'Pompeii', coords: [40.7510, 14.4924] as [number, number] },
-  { name: 'Barcelona', coords: [41.3851, 2.1734] as [number, number] },
-  { name: 'Madrid', coords: [40.4168, -3.7038] as [number, number] },
-  { name: 'Pula', coords: [44.8666, 13.8496] as [number, number] },
-  { name: 'Zadar', coords: [44.1194, 15.2314] as [number, number] },
-  { name: 'Split', coords: [43.5081, 16.4402] as [number, number] },
-  { name: 'Mostar', coords: [43.34333, 17.80806] as [number, number] },
-  { name: 'Dubrovnik', coords: [42.6507, 18.0944] as [number, number] },
-  { name: 'Kotor', coords: [42.4247, 18.7712] as [number, number] },
-  { name: 'Belgrade', coords: [44.7866, 20.4489] as [number, number] },
-  { name: 'Budapest', coords: [47.4979, 19.0402] as [number, number] },
-  { name: 'Vienna', coords: [48.2082, 16.3738] as [number, number] },
-  { name: 'Munich', coords: [48.1351, 11.5820] as [number, number] },
-  { name: 'Prague', coords: [50.0755, 14.4378] as [number, number] },
-  { name: 'Sevilla', coords: [37.3886, -5.9823] as [number, number] },
-  { name: 'Cancun', coords: [21.1619, -86.8515] as [number, number] },
-  { name: 'Colorado Springs', coords: [38.8339, -104.8214] as [number, number] },
-  { name: 'St. Pete Beach', coords: [27.7465, -82.7415] as [number, number] },
-  { name: 'Los Angeles', coords: [34.0522, -118.2437] as [number, number] },
-  { name: 'Santa Monica', coords: [34.005166646, -118.49249803] as [number, number] },
-  { name: 'Las Vegas', coords: [36.17497, -115.13722] as [number, number] },
-  { name: 'Yosemite', coords: [37.8651, -119.5383] as [number, number] },
-  { name: 'Grand Canyon', coords: [36.1069, -112.1129] as [number, number] },
-  { name: 'Beijing', coords: [39.9042, 116.4074] as [number, number] },
-  { name: 'Lagos', coords: [37.1020, -8.6741] as [number, number] },
-  { name: 'Lisbon', coords: [38.7223, -9.1393] as [number, number] },
-  { name: 'Porto', coords: [41.1579, -8.6291] as [number, number] },
-  { name: 'Oranjestad', coords: [12.5211, -69.9683] as [number, number] },
-  { name: 'Cuernavaca', coords: [18.9242, -99.2216] as [number, number] },
-  { name: 'Montreal', coords: [45.5017, -73.5673] as [number, number] },
-  { name: 'Mexico City', coords: [19.4326, -99.1332] as [number, number] },
-  { name: "Larnaca", coords: [34.92291, 33.6233] as [number, number] },
-  { name: "Hanoi", coords: [21.0285, 105.8542] as [number, number] },
-  { name: "Ha Long Bay", coords: [20.9101, 107.1839] as [number, number] },
-  { name: "Ha Giang", coords: [22.8136, 104.9836] as [number, number] },
-  { name: "Ninh Binh", coords: [20.2528, 105.9750] as [number, number] },
-  { name: "Phong Nha", coords: [17.5904, 106.2838] as [number, number] },
-  { name: "Hoi An", coords: [15.8801, 108.3380] as [number, number] },
-  { name: "Bangkok", coords: [13.7563, 100.5018] as [number, number] },
-  { name: "Chiang Mai", coords: [18.7061, 98.9817] as [number, number] },
-  { name: "Pai", coords: [19.3592, 98.4396] as [number, number] },
-  { name: "Krabi", coords: [8.0863, 98.9063] as [number, number] },
-  { name: "Koh Phi Phi", coords: [7.7407, 98.7784] as [number, number] },
-  { name: "Koh Tao", coords: [10.09808, 99.83809] as [number, number] },
-  { name: "Koh Phanang", coords: [9.7317, 100.0136] as [number, number] },
-];
+const buttonClassName =
+  "inline-flex items-center justify-center rounded-full border border-stone-300/80 bg-[rgba(255,250,244,0.92)] px-5 py-2.5 text-sm font-medium text-stone-900 transition hover:-translate-y-0.5 hover:border-[var(--accent)] hover:text-stone-950";
 
 export default function Travel() {
   return (
-    <div className="w-full flex flex-col items-center p-4">
-      <div className="w-full max-w-7xl">
-        <h1 className="text-4xl font-bold text-center mb-8">Travel</h1>
-        <p className="text-center p-4">
-          Exploring new destinations has always been a passion of mine. Each journey, 
-          whether immersed in unique languages, enriched cultural experiences, or the 
-          thrilling adventure of exploration, holds its own special significance. It is 
-          only right that I have incorporated a map highlighting the remarkable places 
-          I have traveled to on my website.
-        </p>
+    <main className="pb-24">
+      <SiteHeader />
 
-        {/* Replace direct MapContainer usage with the dynamic client-only component */}
-        <TravelMap locations={locations} center={[30, 0]} zoom={2} />
-      </div>
-    </div>
+      <section className="mx-auto max-w-7xl px-4 pt-12 sm:px-6 lg:px-8 lg:pt-16">
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,0.86fr)_minmax(0,1.14fr)] lg:items-start">
+          <div className="rounded-[2.25rem] border border-stone-200/80 bg-[rgba(255,249,241,0.92)] p-8 shadow-[0_28px_90px_rgba(45,33,22,0.08)] sm:p-10">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-stone-500">
+              Travel atlas
+            </p>
+            <h1 className="mt-4 max-w-4xl font-serif text-4xl leading-tight text-stone-950 sm:text-5xl">
+              A map of places I keep returning to in my head.
+            </h1>
+            <div className="mt-5 grid gap-4 text-base leading-7 text-stone-700 sm:text-lg">
+              <p>
+                I like noticing how geography changes routine, pace, and attention. The atlas is a
+                simple way to keep that part of life visible.
+              </p>
+            </div>
+
+            <div className="mt-8 grid gap-3 sm:grid-cols-3">
+              <div className="rounded-[1.4rem] border border-stone-200 bg-[#f7f1e9] p-4">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-stone-500">
+                  Places logged
+                </p>
+                <p className="mt-2 font-serif text-4xl text-stone-950">{totalTravelPlaces}</p>
+              </div>
+              <div className="rounded-[1.4rem] border border-stone-200 bg-[#dde7e8] p-4">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-stone-500">
+                  Regions
+                </p>
+                <p className="mt-2 font-serif text-4xl text-stone-950">{travelRegions.length}</p>
+              </div>
+              <div className="rounded-[1.4rem] border border-stone-200 bg-[#f7f1e9] p-4">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-stone-500">
+                  Current base
+                </p>
+                <p className="mt-2 font-serif text-[2rem] leading-none text-stone-950">
+                  Copenhagen
+                </p>
+                <p className="mt-2 text-sm text-stone-600">Denmark</p>
+              </div>
+            </div>
+
+            <div className="mt-8 flex flex-wrap gap-2">
+              {["Australia", "Indonesia", "Sri Lanka", "New Zealand"].map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-stone-200 bg-[rgba(255,250,244,0.96)] px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-stone-600"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link href="/life" className={buttonClassName}>
+                Back to life
+              </Link>
+              <Link href="/language" className={buttonClassName}>
+                Language
+              </Link>
+            </div>
+          </div>
+
+          <article className="rounded-[2.25rem] border border-stone-200/80 bg-[rgba(255,249,241,0.88)] p-4 shadow-[0_28px_90px_rgba(45,33,22,0.08)] sm:p-5">
+            <MapPanel locations={travelLocations} heightClassName="h-[560px]" />
+          </article>
+        </div>
+      </section>
+
+      <section className="mx-auto mt-8 max-w-7xl px-4 sm:px-6 lg:px-8">
+        <section className="rounded-[2.1rem] border border-stone-200/80 bg-[rgba(255,249,241,0.9)] p-6 shadow-[0_24px_70px_rgba(45,33,22,0.08)] sm:p-8">
+          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-stone-500">
+            Region overview
+          </p>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+            {travelRegions.map((group) => (
+              <article
+                key={group.region}
+                className="rounded-[1.5rem] border border-stone-200/80 bg-[#f7f1e9] p-5"
+              >
+                <div className="flex items-center justify-between gap-4">
+                  <h2 className="font-serif text-2xl text-stone-950">{group.region}</h2>
+                  <p className="text-sm font-medium text-stone-500">{group.places.length} places</p>
+                </div>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {group.places.map((place) => (
+                    <span
+                      key={place}
+                      className="rounded-full border border-stone-200 bg-[rgba(255,250,244,0.96)] px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-stone-600"
+                    >
+                      {place}
+                    </span>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      </section>
+    </main>
   );
 }

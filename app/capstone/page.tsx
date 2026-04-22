@@ -1,150 +1,181 @@
-"use client";
-
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
+import SiteHeader from "@/components/SiteHeader";
 
-const mediaItems = [
+export const metadata = {
+  title: "Teradyne Capstone | Rami Hanna",
+  description: "Cartesian robotics, controls, and automation work from the Teradyne senior design project.",
+};
+
+const media = [
   {
-    type: "image",
+    type: "image" as const,
     source: "/images/Cartesian-Robot.jpg",
-    description: "The prior capstone group robot. Many mechanical changes such as adding a linear rail, tool-changer, and programming changes were all made.",
+    title: "Integrated Cartesian robot",
+    description:
+      "The full system combined motion hardware, connector targeting, and the broader automation flow around mating and verification.",
   },
   {
-    type: "image",
+    type: "image" as const,
     source: "/images/RobotRender.jpg",
-    description: "Solidworks model of our initial redesign.",
+    title: "Early redesign model",
+    description:
+      "An early CAD-stage view of the redesign, used to work through the mechanical layout before integration.",
   },
   {
-    type: "image",
-    source: "/images/30_min_drift_10_min_tare_2.png",
-    description: "A major addition to the project was adding a load cell to determine ample force needed to mate a connector -- for automation purposes. Here is an initial test of 50g on a cantilever load cell with 10 minute tares.",
-  },
-  {
-    type: "image",
-    source: "/images/30_min_drift_no_tare.png",
-    description: "This test had no taring involved, but same mass and same total duration.",
-  },
-  {
-    type: "image",
+    type: "image" as const,
     source: "/images/RobotPicture.jpg",
-    description: "Our first assembly day. Two linear rails on the X-Axis for additional support, base plate for the Maxwell Kinematic Coupling, and anti-backlash nuts.",
+    title: "Assembly and integration",
+    description:
+      "Initial assembly with linear rails, anti-backlash hardware, and the base structure for the coupling setup.",
   },
   {
-    type: "video",
+    type: "image" as const,
+    source: "/images/30_min_drift_10_min_tare_2.png",
+    title: "Load-cell characterization",
+    description:
+      "Bench testing around the cantilever load cell used for force-aware mating logic and closed-loop behavior.",
+  },
+  {
+    type: "video" as const,
     source: "/images/GUI Redesign Explaination_Trim.mp4",
-    description: "Now it was my time to shine -- Develop a redesigned, easy to use GUI that is powerful for automation. This video is commentated over to describe the scheduler I implemented.",
+    title: "Automation interface walkthrough",
+    description:
+      "A narrated look at the GUI redesign and scheduling flow developed for more usable automation control.",
   },
   {
-    type: "video",
+    type: "video" as const,
     source: "/images/vid1.MOV",
-    description: "One mate with conductivity verification. Make sure your volume is up!",
+    title: "Single automated mate",
+    description:
+      "One example of the robot executing a connector mating sequence with verification on the system side.",
   },
 ];
 
+const linkClassName =
+  "inline-flex items-center justify-center rounded-full border border-stone-300/80 bg-white/80 px-5 py-2.5 text-sm font-medium text-stone-800 transition hover:-translate-y-0.5 hover:border-stone-400 hover:bg-white";
+
 export default function Capstone() {
-  const [currentMediaIndex, setCurrentMediaIndex] = useState(0);
-
-  const handleNextMedia = () => {
-    setCurrentMediaIndex((prevIndex) => (prevIndex + 1) % mediaItems.length);
-  };
-
-  const handlePrevMedia = () => {
-    setCurrentMediaIndex(
-      (prevIndex) => (prevIndex - 1 + mediaItems.length) % mediaItems.length
-    );
-  };
-
-  const currentMediaItem = mediaItems[currentMediaIndex];
-
   return (
-    <div className="w-full flex flex-col items-center p-4">
-      <div className="w-full max-w-7xl">
-        <h1 className="text-4xl font-bold text-center p-4">
-          Teradyne Senior Design Project
-        </h1>
-        <hr className="w-1/2 mx-auto my-4 border-gray-300 dark:border-gray-700" />
-        
-        <p className="text-lg text-center p-4 w-full">
-          The purpose of this project was to create a device that automates the mating of coaxial connectors during testing. A Cartesian robot was designed and built that locates a specific connector within an array of connectors and then executes the desired mate using a Z-axis motion system. Additionally, an integrated tool-changer system is being developed that automatically swaps between the various toolheads used during a testing procedure.
-          <br /><br />
-          The team behind this capstone project consists of three Electromechanical Engineering students at Wentworth Institute of Technology: Sam Baliki, Rami Hanna, and Paul Miller. They are supported and mentored by Professor James McCusker and Brian C. Wadell at Teradyne.
-        </p>
+    <main className="pb-24">
+      <SiteHeader />
 
-        {/* Media Gallery */}
-        <div className="flex justify-center items-center p-4 my-8">
-          <div className="flex items-center gap-4 max-w-4xl">
-            <button
-              onClick={handlePrevMedia}
-              className="p-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-full transition-colors"
-            >
-              <FaArrowLeft size={40} />
-            </button>
-
-            <div className="flex-1">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={currentMediaIndex}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  className="rounded-2xl overflow-hidden"
-                >
-                  {currentMediaItem.type === "video" ? (
-                    <div className="relative w-full aspect-video">
-                      <video
-                        src={currentMediaItem.source}
-                        controls
-                        preload="metadata"
-                        className="w-full h-full rounded-2xl"
-                      />
-                    </div>
-                  ) : (
-                    <div className="relative w-full aspect-video">
-                      <Image
-                        src={currentMediaItem.source}
-                        alt="Capstone project image"
-                        fill
-                        className="object-contain rounded-2xl"
-                      />
-                    </div>
-                  )}
-                </motion.div>
-              </AnimatePresence>
-
-              <p className="text-center p-4 mt-4">
-                {currentMediaItem.description}
+      <section className="mx-auto max-w-7xl px-4 pt-12 sm:px-6 lg:px-8 lg:pt-16">
+        <div className="rounded-[2.2rem] border border-stone-200/90 bg-[rgba(255,249,241,0.9)] p-8 shadow-[0_30px_90px_rgba(42,35,26,0.08)] sm:p-10">
+          <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(320px,0.9fr)] lg:items-start">
+            <div className="grid gap-5">
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-stone-500">
+                Robotics systems + controls
               </p>
+              <h1 className="font-serif text-4xl leading-tight text-stone-950 sm:text-5xl">
+                Teradyne senior design project
+              </h1>
+              <p className="text-lg leading-8 text-stone-700">
+                This project focused on automating coaxial connector mating during test procedures
+                with a Cartesian robot, tool-changing logic, and sensing-informed control.
+              </p>
+              <div className="grid gap-4 text-sm leading-7 text-stone-700 sm:grid-cols-2">
+                <div>
+                  <p className="font-semibold text-stone-950">What I contributed</p>
+                  <p>
+                    I handled the programming side of the system, including remote operation,
+                    automatic tool changing, load-cell-based closed-loop control, and a redesigned
+                    GUI that made automation workflows easier to use.
+                  </p>
+                </div>
+                <div>
+                  <p className="font-semibold text-stone-950">What came out of it</p>
+                  <p>
+                    The project reached 0.01 mm travel precision and 0.5 g load standard deviation,
+                    and the work was associated with an IEEE publication.
+                  </p>
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-3 pt-2">
+                <Link
+                  href="/pdfs/modified_capstone.pdf"
+                  download="Rami_Hanna_Teradyne_IEEE_Paper.pdf"
+                  className={linkClassName}
+                >
+                  Download paper
+                </Link>
+                <Link href="/learnit" className={linkClassName}>
+                  Back to archive
+                </Link>
+              </div>
             </div>
 
-            <button
-              onClick={handleNextMedia}
-              className="p-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-full transition-colors"
-            >
-              <FaArrowRight size={40} />
-            </button>
+            <aside className="rounded-[1.9rem] border border-stone-200 bg-[#efe3d6] p-6 text-stone-900">
+              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-stone-500">
+                Project frame
+              </p>
+              <div className="mt-5 grid gap-5 text-sm leading-7 text-stone-700">
+                <p>
+                  Team: three Electromechanical Engineering students at Wentworth Institute of
+                  Technology with guidance from Professor James McCusker and Brian C. Wadell at
+                  Teradyne.
+                </p>
+                <p>
+                  System scope: detect and execute connector mating within an array, support
+                  automation around changing toolheads, and make the operator workflow much more
+                  practical than a one-off demo.
+                </p>
+                <p>
+                  Technical themes: Cartesian robotics, scheduling, instrumentation, closed-loop
+                  control, verification logic, and interface design for real engineering use.
+                </p>
+              </div>
+            </aside>
           </div>
         </div>
+      </section>
 
-        {/* Research Paper */}
-        <Link
-          href="/pdfs/modified_capstone.pdf"
-          download="RHanna - IEEE SII/SICE 2024 - Capstone"
-          className="block text-center p-4 underline text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300"
-        >
-          I have included our Research Paper that got published to IEEE below (click here to download pdf):
-        </Link>
+      <section className="mx-auto mt-8 grid max-w-7xl gap-6 px-4 sm:px-6 md:grid-cols-2 lg:px-8 xl:grid-cols-3">
+        {media.map((item) => (
+          <article
+            key={item.source}
+            className="overflow-hidden rounded-[1.8rem] border border-stone-200/90 bg-white/85 shadow-[0_24px_60px_rgba(42,35,26,0.08)]"
+          >
+            {item.type === "image" ? (
+              <div className="relative aspect-[4/3] bg-stone-100">
+                <Image
+                  src={item.source}
+                  alt={item.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                  className="object-cover"
+                />
+              </div>
+            ) : (
+              <div className="aspect-video bg-stone-950">
+                <video
+                  src={item.source}
+                  controls
+                  preload="metadata"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            )}
 
-        <iframe
-          src="/pdfs/modified_capstone.pdf"
-          width="100%"
-          height="600px"
-          className="border-none rounded-2xl"
-          title="Capstone Research Paper"
-        />
-      </div>
-    </div>
+            <div className="grid gap-3 p-5">
+              <h2 className="font-serif text-2xl text-stone-950">{item.title}</h2>
+              <p className="text-sm leading-7 text-stone-700">{item.description}</p>
+            </div>
+          </article>
+        ))}
+      </section>
+
+      <section className="mx-auto mt-8 max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="rounded-[2rem] border border-stone-200/90 bg-[rgba(255,249,241,0.92)] p-3 shadow-[0_26px_70px_rgba(42,35,26,0.08)] sm:p-4">
+          <iframe
+            src="/pdfs/modified_capstone.pdf"
+            width="100%"
+            height="900"
+            className="min-h-[72vh] w-full rounded-[1.4rem] border-0 bg-white"
+            title="Teradyne capstone paper"
+          />
+        </div>
+      </section>
+    </main>
   );
 }
