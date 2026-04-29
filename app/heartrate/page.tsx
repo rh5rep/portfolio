@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Reveal } from "@/components/Motion";
 import SiteHeader from "@/components/SiteHeader";
 
 export const metadata = {
@@ -8,14 +9,14 @@ export const metadata = {
 };
 
 const linkClassName =
-  "inline-flex items-center justify-center rounded-full border border-stone-300/80 bg-white/86 px-5 py-2.5 text-sm font-medium text-stone-800 transition hover:-translate-y-0.5 hover:border-[var(--accent)] hover:text-stone-950";
+  "inline-flex items-center justify-center rounded-full border border-stone-300/80 bg-white/86 px-5 py-2.5 text-sm font-medium text-stone-800 shadow-[0_12px_30px_rgba(45,33,22,0.05)] transition duration-300 hover:-translate-y-0.5 hover:border-[var(--accent)] hover:bg-white hover:text-stone-950";
 
 export default function Heartrate() {
   return (
     <main className="pb-24">
       <SiteHeader />
 
-      <section className="mx-auto max-w-7xl px-4 pt-12 sm:px-6 lg:px-8 lg:pt-16">
+      <Reveal as="section" className="mx-auto max-w-7xl px-4 pt-12 sm:px-6 lg:px-8 lg:pt-16">
         <div className="rounded-[2.2rem] border border-stone-200/80 bg-[rgba(255,249,241,0.9)] p-8 shadow-[0_28px_90px_rgba(45,33,22,0.08)] sm:p-10">
           <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
             <div className="grid gap-4">
@@ -23,7 +24,8 @@ export default function Heartrate() {
                 Archived experiment
               </p>
               <h1 className="font-serif text-4xl leading-tight text-stone-950 sm:text-5xl">
-                Heart-rate extraction from cellphone video using FFT and blind source separation.
+                Heart-rate extraction from cellphone video using <span className="text-[var(--accent)]">FFT</span>{" "}
+                and blind source separation.
               </h1>
               <p className="max-w-3xl text-lg leading-8 text-stone-700">
                 Older work, but a real example of signal processing, observability, and turning
@@ -40,9 +42,9 @@ export default function Heartrate() {
             </div>
           </div>
         </div>
-      </section>
+      </Reveal>
 
-      <section className="mx-auto mt-8 grid max-w-7xl gap-6 px-4 sm:px-6 lg:grid-cols-[minmax(0,1.04fr)_minmax(340px,0.96fr)] lg:px-8">
+      <Reveal as="section" className="mx-auto mt-8 grid max-w-7xl gap-6 px-4 sm:px-6 lg:grid-cols-[minmax(0,1.04fr)_minmax(340px,0.96fr)] lg:px-8">
         <article className="rounded-[2rem] border border-stone-200/80 bg-white/88 p-4 shadow-[0_24px_70px_rgba(51,42,33,0.08)] sm:p-5">
           <video
             src="/images/heartrate.mp4"
@@ -70,9 +72,9 @@ export default function Heartrate() {
             </Link>
           </div>
         </article>
-      </section>
+      </Reveal>
 
-      <section className="mx-auto mt-8 grid max-w-7xl gap-6 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+      <Reveal as="section" className="mx-auto mt-8 grid max-w-7xl gap-6 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
         <article className="rounded-[2rem] border border-stone-200/80 bg-white/88 p-3 shadow-[0_24px_70px_rgba(51,42,33,0.08)] sm:p-4">
           <iframe
             src="/pdfs/FinalFinalDSPProject.pdf"
@@ -91,7 +93,7 @@ export default function Heartrate() {
             title="Heart-rate extraction slides"
           />
         </article>
-      </section>
+      </Reveal>
     </main>
   );
 }

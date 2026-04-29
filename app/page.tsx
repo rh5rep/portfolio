@@ -1,33 +1,35 @@
 import Image from "next/image";
 import Link from "next/link";
+import { FloatOnScroll, Reveal } from "@/components/Motion";
 import SiteHeader from "@/components/SiteHeader";
 
 const buttonClassName =
-  "inline-flex items-center justify-center rounded-full border border-stone-300/80 bg-[rgba(255,250,244,0.94)] px-5 py-2.5 text-sm font-medium text-stone-900 transition hover:-translate-y-0.5 hover:border-[var(--accent)] hover:text-stone-950";
+  "inline-flex items-center justify-center rounded-full border border-stone-300/80 bg-[rgba(255,250,244,0.94)] px-5 py-2.5 text-sm font-medium text-stone-900 shadow-[0_12px_30px_rgba(45,33,22,0.05)] transition duration-300 hover:-translate-y-0.5 hover:border-[var(--accent)] hover:bg-white hover:text-stone-950";
 
 const quietButtonClassName =
-  "inline-flex items-center justify-center rounded-full border border-stone-200/80 bg-transparent px-4 py-2 text-sm font-medium text-stone-700 transition hover:border-stone-300 hover:text-stone-950";
+  "inline-flex items-center justify-center rounded-full border border-stone-200/80 bg-transparent px-4 py-2 text-sm font-medium text-stone-700 transition duration-300 hover:-translate-y-0.5 hover:border-stone-300 hover:bg-[rgba(255,250,244,0.72)] hover:text-stone-950";
 
 const atlasButtonClassName =
-  "inline-flex items-center justify-center rounded-full border border-[#c4d6db] bg-[#dbe8eb] px-5 py-2.5 text-sm font-medium text-stone-900 transition hover:-translate-y-0.5 hover:border-[#aabfc5] hover:bg-[#d2e1e5]";
+  "inline-flex items-center justify-center rounded-full border border-[#c4d6db] bg-[#dbe8eb] px-5 py-2.5 text-sm font-medium text-stone-900 shadow-[0_12px_30px_rgba(45,33,22,0.05)] transition duration-300 hover:-translate-y-0.5 hover:border-[#aabfc5] hover:bg-[#d2e1e5]";
 
 const focusAreas = [
   "Robotics software",
-  "Sensing + data quality",
-  "Simulation + evaluation",
+  "Controls + autonomy",
+  "Mechatronics + sensing",
 ];
 
 const projects = [
   {
     name: "SunnySips",
-    eyebrow: "Consumer product + environmental modeling",
-    title: "SunnySips turns solar geometry and weather into a product people can use in seconds.",
-    body: "Built around sun position, urban occlusion, and weather attenuation, then shaped into a consumer interface that feels fast and obvious instead of technical for its own sake.",
+    eyebrow: "Applied software + environmental modeling",
+    title: "SunnySips turns geometry, weather, and map data into a fast outdoor recommendation tool.",
+    body: "The useful part is the translation layer: taking physical conditions like sun angle, urban occlusion, and weather attenuation, then making the computation reliable enough to drive a simple user-facing app.",
     bullets: [
-      "Modeled live outdoor conditions rather than relying on static cafe lists.",
-      "Tightened defaults, contracts, and snapshots to make the experience feel trustworthy.",
+      "Modeled changing outdoor conditions rather than relying on static cafe lists.",
+      "Tightened data contracts, defaults, and snapshots so the app behavior stayed predictable.",
     ],
-    pills: ["SwiftUI", "FastAPI", "Geospatial logic", "Weather systems"],
+    pills: ["SwiftUI", "FastAPI", "Geospatial modeling", "Weather data"],
+    href: "/projects/sunnysips",
     media: (
       <div className="rounded-[2rem] border border-stone-200/80 bg-[#f5ebdf] p-5">
         <div className="relative mx-auto max-w-[330px] pb-16">
@@ -59,21 +61,22 @@ const projects = [
   },
   {
     name: "TRYBE",
-    eyebrow: "Product direction + systems thinking",
+    eyebrow: "Mobile software + product architecture",
     title: (
       <>
         <span className="font-sans text-[0.84em] font-semibold uppercase italic tracking-[0.08em] text-[#d46a2e]">
           TRYBE
         </span>{" "}
-        explores how product, brand, and system design can lower the friction of trying new things.
+        explores how mobile architecture and interaction design can make a new behavior feel easy to try.
       </>
     ),
-    body: "The interesting part is the coherence. Product behavior, mobile structure, backend planning, and visual language were treated as one system with real constraints around adoption, safety, and repeat use.",
+    body: "This is the least robotics-heavy project, but it still shows how I think about software: define the loop, make the states concrete, plan the backend shape, and keep the interface honest about what the app can actually do.",
     bullets: [
-      "Designed sessions, perks, and partner logic as one believable loop.",
-      "Used UX decisions to make the concept feel concrete instead of aspirational.",
+      "Mapped sessions, perks, and partner logic into a concrete mobile flow.",
+      "Used interface decisions to expose real constraints instead of hiding them behind vague product language.",
     ],
-    pills: ["Product direction", "iOS architecture", "Backend planning", "Design system"],
+    pills: ["iOS structure", "Backend planning", "State design", "UX systems"],
+    href: "/projects/trybe",
     media: (
       <div className="rounded-[2rem] border border-stone-200/80 bg-[#f6eadb] p-5">
         <div className="grid gap-4 sm:grid-cols-2">
@@ -105,14 +108,17 @@ const projects = [
   },
   {
     name: "Thesis",
-    eyebrow: "Research + modeling",
-    title: "A simulation-first thesis on soft-finger actuation for rehabilitation-oriented hardware.",
-    body: "Current DTU thesis work focused on simplified, interpretable modeling before physical iteration gets expensive. The emphasis is on explicit assumptions, bounded claims, and bench checks that keep the model honest.",
+    eyebrow: "Robotics research + modeling",
+    title:
+      "Biomechanical modeling and experimental validation for a soft variable-stiffness finger actuator.",
+    body:
+      "M.Sc. thesis in progress: a simulation-first framework for a simplified index-finger actuation system, moving from reduced-order modeling and Python simulation toward closed-loop benchtop validation.",
     bullets: [
-      "Using simulation to narrow tendon routing and stiffness decisions.",
-      "Treating bench validation as a calibration step, not decoration.",
+      "Models tendon-routing geometry, passive joint torque, actuator leverage, tendon stroke, and tension estimates.",
+      "Plans validation through force-displacement measurement, motion tracking, repeatability tests, and model-vs-experiment error analysis.",
     ],
-    pills: ["DTU", "Biomechanical modeling", "Simulation-first", "Bench validation"],
+    pills: ["Python simulation", "Variable stiffness", "Benchtop validation", "Motion tracking"],
+    href: "/projects/thesis",
     media: (
       <div className="rounded-[2rem] border border-stone-700/60 bg-[#2e2b28] p-5 text-stone-100 shadow-[0_26px_70px_rgba(31,26,22,0.18)]">
         <div className="rounded-[1.55rem] border border-stone-600/60 bg-[linear-gradient(180deg,rgba(255,248,240,0.08),rgba(255,248,240,0.03))] p-5">
@@ -124,18 +130,18 @@ const projects = [
               <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-stone-400">
                 Thesis object
               </p>
-              <p className="font-serif text-2xl text-stone-100">Soft-finger actuator model</p>
+              <p className="font-serif text-2xl text-stone-100">Index-finger actuator model</p>
               <p className="text-sm leading-6 text-stone-300">
-                Simplified modeling for rehabilitation-oriented design choices.
+                Reduced-order simulation and validation framework under development.
               </p>
             </div>
           </div>
 
           <div className="mt-5 grid gap-3 sm:grid-cols-[1fr_auto_1fr_auto_1fr] sm:items-center">
             {[
-              "Define assumptions",
-              "Sweep parameters in simulation",
-              "Compare against bench measurements",
+              "Model kinematics",
+              "Screen actuator designs",
+              "Validate against bench data",
             ].map((item, index) => (
               <div key={item} className="contents">
                 <div className="rounded-[1.2rem] border border-stone-600/70 bg-[rgba(255,248,240,0.04)] p-4 text-sm font-medium text-stone-200">
@@ -149,7 +155,7 @@ const projects = [
           </div>
         </div>
         <div className="mt-4 grid gap-3 sm:grid-cols-3">
-          {["Model assumptions", "Simulation sweeps", "Bench checks"].map((item) => (
+          {["Tendon routing", "Closed-loop input", "Error analysis"].map((item) => (
             <div
               key={item}
               className="rounded-[1.2rem] border border-stone-600/70 bg-[rgba(255,248,240,0.06)] px-4 py-4 text-sm font-medium text-stone-100"
@@ -163,14 +169,15 @@ const projects = [
   },
   {
     name: "PerPlant",
-    eyebrow: "Robotics + data quality",
-    title: "PerPlant combined field sensing infrastructure with cleaner computer-vision dataset design.",
-    body: "Two distinct threads mattered here: ROS2 thermal capture with GPS metadata in the field, and a separate curation workflow for choosing smaller, more representative annotation sets from highly redundant agricultural imagery.",
+    eyebrow: "Robotics field tooling + sensing",
+    title: "PerPlant combined ROS2 field sensing with cleaner computer-vision dataset workflows.",
+    body: "This is closest to the robotics-software story: wiring sensing into field collection, carrying metadata through the workflow, and building data tools that make downstream perception work less brittle.",
     bullets: [
       "Thermal + GPS collection was built around real field conditions, not ideal capture.",
       "Filtering, embeddings, clustering, and grouped splits were used to reduce leakage and redundancy.",
     ],
-    pills: ["ROS2 sensing", "Thermal + GPS", "Embeddings + clustering", "Leakage control"],
+    pills: ["ROS2", "Thermal + GPS", "Field tooling", "Dataset quality"],
+    href: "/projects/perplant",
     media: (
       <div className="rounded-[2rem] border border-stone-200/80 bg-[#ede5dc] p-5">
         <div className="grid gap-4 lg:grid-cols-2">
@@ -200,24 +207,30 @@ const projects = [
   },
 ];
 
+const projectOrder = ["PerPlant", "Thesis", "SunnySips", "TRYBE"];
+const selectedProjects = projectOrder
+  .map((name) => projects.find((project) => project.name === name))
+  .filter((project): project is (typeof projects)[number] => Boolean(project));
+
 export default function Home() {
   return (
     <main className="pb-24">
       <SiteHeader />
 
-      <section className="mx-auto max-w-7xl px-4 pt-12 sm:px-6 sm:pt-16 lg:px-8 lg:pt-20">
+      <Reveal as="section" className="mx-auto max-w-7xl px-4 pt-12 sm:px-6 sm:pt-16 lg:px-8 lg:pt-20">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1.08fr)_minmax(320px,0.92fr)] lg:items-start lg:gap-12">
           <div className="grid gap-7">
             <p className="text-xs font-semibold uppercase tracking-[0.32em] text-stone-500">
               Copenhagen, Denmark | DTU M.Sc. Autonomous Systems
             </p>
             <h1 className="max-w-5xl font-serif text-5xl leading-[0.94] text-stone-950 sm:text-6xl lg:text-[4.85rem]">
-              I build robotics, sensing, and data systems that hold up outside ideal conditions.
+              I build <span className="text-[var(--accent)]">robotics</span> software, controls,
+              and sensing tools that hold up outside ideal conditions.
             </h1>
             <p className="max-w-3xl text-lg leading-8 text-stone-700 sm:text-xl">
-              My work sits where software, physical systems, and messy data meet. I care about
-              evaluation, simulation, useful interfaces, and making technical logic legible to the
-              people who need to use it.
+              My work sits where software, physical hardware, and messy data meet. I care about
+              practical implementation, simulation, evaluation, and interfaces that make technical
+              behavior clear to the people using the tool.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link href="#work" className={buttonClassName}>
@@ -242,7 +255,7 @@ export default function Home() {
             </div>
           </div>
 
-          <aside className="grid gap-4">
+          <FloatOnScroll className="grid gap-4" distance={18}>
             <div className="relative overflow-hidden rounded-[2.25rem] border border-stone-200/80 bg-[#eadbcc] p-4 shadow-[0_28px_90px_rgba(45,33,22,0.1)]">
               <div className="absolute inset-x-0 top-0 h-40 bg-[radial-gradient(circle_at_top,rgba(185,111,71,0.2),rgba(185,111,71,0))]" />
               <div className="relative overflow-hidden rounded-[1.75rem]">
@@ -265,7 +278,7 @@ export default function Home() {
                 </p>
                 <p className="mt-3 text-[15px] leading-7 text-stone-700">
                   Finishing a DTU thesis on soft-finger actuation modeling and looking for work in
-                  robotics software, simulation, and sensing-heavy systems.
+                  robotics software, controls, simulation, and sensing-heavy robotics work.
                 </p>
               </div>
               <div className="rounded-[1.6rem] border border-stone-200/80 bg-[#efe3d6] p-5 shadow-[0_18px_50px_rgba(45,33,22,0.06)]">
@@ -285,108 +298,115 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </aside>
+          </FloatOnScroll>
         </div>
-      </section>
+      </Reveal>
 
-      <section id="work" className="mx-auto max-w-7xl px-4 pt-24 sm:px-6 lg:px-8">
+      <Reveal as="section" id="work" className="mx-auto max-w-7xl px-4 pt-24 sm:px-6 lg:px-8">
         <div className="grid gap-3 lg:grid-cols-[180px_minmax(0,1fr)]">
           <p className="text-xs font-semibold uppercase tracking-[0.28em] text-stone-500">
             Selected work
           </p>
           <div className="grid gap-2">
             <h2 className="max-w-4xl font-serif text-3xl leading-tight text-stone-950 sm:text-4xl">
-              Four projects worth starting with.
+              Four projects that show the range.
             </h2>
             <p className="max-w-3xl text-base leading-7 text-stone-700 sm:text-lg">
-              They show the mix of product thinking, research discipline, and field-facing
-              engineering most clearly.
+              The first two are closest to robotics, sensing, and hardware. The later work shows
+              the same software instincts applied to modeling, data, and user-facing tools.
             </p>
           </div>
         </div>
 
-        <div className="mt-12 grid gap-16">
-          {projects.map((project, index) => {
-            const isDark = project.name === "Thesis";
-
-            return (
-              <article key={project.name} className="border-t border-stone-200/80 pt-10">
-                <div
-                  className={`grid gap-8 lg:items-center ${
-                    index % 2 === 0
-                      ? "lg:grid-cols-[minmax(320px,0.92fr)_minmax(0,1.08fr)]"
-                      : "lg:grid-cols-[minmax(0,1.08fr)_minmax(320px,0.92fr)]"
-                  }`}
-                >
-                  {index % 2 === 0 ? project.media : null}
-
-                  <div className="grid gap-5">
-                    <div className="flex items-center gap-3">
-                      <span
-                        className={`h-2.5 w-2.5 rounded-full ${
-                          isDark ? "bg-[#dcc5b3]" : "bg-[var(--accent)]"
-                        }`}
-                      />
-                      <p
-                        className={`text-xs font-semibold uppercase tracking-[0.26em] ${
-                          isDark ? "text-stone-400" : "text-stone-500"
-                        }`}
-                      >
-                        {project.eyebrow}
-                      </p>
-                    </div>
-
-                    <div className="grid gap-3">
-                      <h3 className="max-w-3xl font-serif text-3xl leading-tight text-stone-950 sm:text-4xl">
-                        {project.title}
-                      </h3>
-                      <p className="max-w-3xl text-base leading-8 text-stone-700 sm:text-lg">
-                        {project.body}
-                      </p>
-                    </div>
-
-                    <ul className="grid gap-3 text-sm leading-7 text-stone-700">
-                      {project.bullets.map((bullet) => (
-                        <li key={bullet} className="flex items-start gap-3">
-                          <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--accent)]" />
-                          <span>{bullet}</span>
-                        </li>
-                      ))}
-                    </ul>
-
-                    <div className="flex flex-wrap gap-2 pt-1">
-                      {project.pills.map((pill) => (
-                        <span
-                          key={pill}
-                          className={`rounded-full border px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] ${
-                            project.name === "Thesis"
-                              ? "border-stone-300 bg-[rgba(255,249,241,0.9)] text-stone-700"
-                              : "border-stone-200 bg-[rgba(255,250,244,0.9)] text-stone-600"
-                          }`}
-                        >
-                          {pill}
-                        </span>
-                      ))}
-                    </div>
-
-                    {project.name === "Thesis" ? (
-                      <div>
-                        <Link href="/pdfs/rami-hanna-thesis.pdf" className={quietButtonClassName}>
-                          Open thesis PDF
-                        </Link>
-                      </div>
-                    ) : null}
+        <div className="mt-10 grid gap-6 md:grid-cols-2">
+          {selectedProjects.map((project, index) => (
+            <Reveal
+              key={project.name}
+              as="article"
+              className="overflow-hidden rounded-[2rem] border border-stone-200/80 bg-[rgba(255,249,241,0.9)] shadow-[0_24px_70px_rgba(45,33,22,0.08)]"
+              delay={Math.min(index * 0.04, 0.16)}
+            >
+              <div
+                className={`flex min-h-[240px] items-center justify-center overflow-hidden p-5 ${
+                  project.name === "Thesis" ? "bg-[#2e2b28]" : "bg-[#f4eadf]"
+                }`}
+              >
+                {project.name === "SunnySips" ? (
+                  <div className="relative mx-auto flex h-[220px] w-full max-w-[360px] items-end justify-center">
+                    <Image
+                      src="/portfolio/sunnysips-map.png"
+                      alt="SunnySips map interface"
+                      width={1206}
+                      height={2622}
+                      sizes="260px"
+                      className="h-full w-auto rounded-[1.1rem] border border-stone-300/70 shadow-[0_16px_34px_rgba(73,57,32,0.12)]"
+                    />
+                    <Image
+                      src="/portfolio/sunnysips-recommendations.png"
+                      alt="SunnySips recommendations view"
+                      width={1206}
+                      height={2622}
+                      sizes="140px"
+                      className="-ml-8 h-[68%] w-auto rounded-[0.9rem] border border-stone-300/70 shadow-[0_14px_30px_rgba(73,57,32,0.12)]"
+                    />
                   </div>
+                ) : project.name === "TRYBE" ? (
+                  <div className="flex h-[220px] items-center justify-center gap-4">
+                    {["/portfolio/trybe-sessions.png", "/portfolio/trybe-perks.png"].map(
+                      (src, imageIndex) => (
+                        <Image
+                          key={src}
+                          src={src}
+                          alt={imageIndex === 0 ? "TRYBE sessions screen" : "TRYBE perks screen"}
+                          width={520}
+                          height={980}
+                          sizes="150px"
+                          className="h-full w-auto rounded-[1.1rem] border border-stone-200 bg-[#fff7f1] p-2 shadow-[0_14px_30px_rgba(45,33,22,0.08)]"
+                        />
+                      ),
+                    )}
+                  </div>
+                ) : (
+                  <div className="w-full scale-[0.88]">{project.media}</div>
+                )}
+              </div>
 
-                  {index % 2 !== 0 ? project.media : null}
+              <div className="grid gap-4 p-6">
+                <div className="flex items-center gap-3">
+                  <span className="h-2.5 w-2.5 rounded-full bg-[var(--accent)]" />
+                  <p className="text-xs font-semibold uppercase tracking-[0.24em] text-stone-500">
+                    {project.eyebrow}
+                  </p>
                 </div>
-              </article>
-            );
-          })}
-        </div>
-      </section>
 
-      <section className="mx-auto max-w-7xl px-4 pt-24 sm:px-6 lg:px-8">
+                <div className="grid gap-3">
+                  <h3 className="font-serif text-2xl leading-tight text-stone-950 sm:text-3xl">
+                    {project.title}
+                  </h3>
+                  <p className="text-sm leading-7 text-stone-700">{project.body}</p>
+                </div>
+
+                <div className="flex flex-wrap items-center gap-2">
+                  {project.pills.slice(0, 3).map((pill) => (
+                    <span
+                      key={pill}
+                      className="rounded-full border border-stone-200 bg-[rgba(255,250,244,0.9)] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-stone-600"
+                    >
+                      {pill}
+                    </span>
+                  ))}
+                </div>
+
+                <Link href={project.href} className={quietButtonClassName}>
+                  Project details
+                </Link>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </Reveal>
+
+      <Reveal as="section" className="mx-auto max-w-7xl px-4 pt-24 sm:px-6 lg:px-8">
         <div className="grid gap-8 border-t border-stone-200/80 pt-10 lg:grid-cols-[minmax(0,0.84fr)_minmax(320px,1.16fr)] lg:items-start">
           <div className="grid gap-4">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-stone-500">
@@ -456,16 +476,17 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </Reveal>
 
-      <section className="mx-auto max-w-7xl px-4 pt-24 sm:px-6 lg:px-8">
+      <Reveal as="section" className="mx-auto max-w-7xl px-4 pt-24 sm:px-6 lg:px-8">
         <div className="grid gap-8 border-t border-stone-200/80 pt-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
           <div className="grid gap-4">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-stone-500">
               Contact
             </p>
             <h2 className="max-w-3xl font-serif text-3xl leading-tight text-stone-950 sm:text-4xl">
-              Open to robotics software, sensing systems, simulation, and applied research work.
+              Open to robotics software, controls, mechatronics, simulation, and applied research
+              work.
             </h2>
           </div>
           <div className="flex flex-wrap gap-3">
@@ -477,7 +498,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
-      </section>
+      </Reveal>
     </main>
   );
 }

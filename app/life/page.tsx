@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { FloatOnScroll, Reveal } from "@/components/Motion";
 import SiteHeader from "@/components/SiteHeader";
 
 export const metadata = {
@@ -9,7 +10,7 @@ export const metadata = {
 };
 
 const buttonClassName =
-  "inline-flex items-center justify-center rounded-full border border-stone-300/80 bg-[rgba(255,250,244,0.92)] px-5 py-2.5 text-sm font-medium text-stone-900 transition hover:-translate-y-0.5 hover:border-[var(--accent)] hover:text-stone-950";
+  "inline-flex items-center justify-center rounded-full border border-stone-300/80 bg-[rgba(255,250,244,0.92)] px-5 py-2.5 text-sm font-medium text-stone-900 shadow-[0_12px_30px_rgba(45,33,22,0.05)] transition duration-300 hover:-translate-y-0.5 hover:border-[var(--accent)] hover:bg-white hover:text-stone-950";
 
 const sections = [
   {
@@ -47,19 +48,20 @@ export default function Life() {
     <main className="pb-24">
       <SiteHeader />
 
-      <section className="mx-auto max-w-7xl px-4 pt-12 sm:px-6 lg:px-8 lg:pt-16">
+      <Reveal as="section" className="mx-auto max-w-7xl px-4 pt-12 sm:px-6 lg:px-8 lg:pt-16">
         <div className="grid gap-8 lg:grid-cols-[minmax(0,0.86fr)_minmax(320px,1.14fr)] lg:items-start">
           <div className="rounded-[2.25rem] border border-stone-200/80 bg-[rgba(255,249,241,0.92)] p-8 shadow-[0_28px_90px_rgba(45,33,22,0.08)] sm:p-10">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-stone-500">
               Life
             </p>
             <h1 className="mt-4 max-w-4xl font-serif text-4xl leading-tight text-stone-950 sm:text-5xl">
-              Travel, movement, food, and the rest of the habits that keep me awake to the world.
+              Travel, <span className="text-[var(--accent)]">movement</span>, food, and the rest of
+              the habits that keep me awake to the world.
             </h1>
             <p className="mt-5 max-w-3xl text-lg leading-8 text-stone-700">
-              The work is only part of the picture. I like coastlines, mountain trails, climbing
-              walls, cooking for people, language learning, and the kinds of routines that make
-              life feel expansive rather than efficient.
+              The work is only part of the picture. I like coastlines, mountain trails,
+              climbing walls, cooking for people, language learning, and the kinds of routines that
+              make life feel expansive rather than efficient.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/travel" className={buttonClassName}>
@@ -71,7 +73,7 @@ export default function Life() {
             </div>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2">
+          <FloatOnScroll className="grid gap-4 sm:grid-cols-2" distance={16}>
             <div className="overflow-hidden rounded-[1.9rem] border border-stone-200/80 shadow-[0_22px_56px_rgba(45,33,22,0.08)] sm:col-span-2">
               <Image
                 src="/portfolio/life/hiking-highlands.jpg"
@@ -105,16 +107,18 @@ export default function Life() {
                 className="aspect-[4/5] h-auto w-full object-cover"
               />
             </div>
-          </div>
+          </FloatOnScroll>
         </div>
-      </section>
+      </Reveal>
 
-      <section className="mx-auto mt-8 max-w-7xl px-4 sm:px-6 lg:px-8">
+      <Reveal as="section" className="mx-auto mt-8 max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-6 lg:grid-cols-2">
           {sections.map((item) => (
-            <article
+            <Reveal
+              as="article"
               key={item.title}
               className={`rounded-[2rem] border border-stone-200/80 p-6 shadow-[0_24px_70px_rgba(45,33,22,0.08)] ${item.tone}`}
+              delay={sections.indexOf(item) * 0.045}
             >
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-stone-500">
                 {item.eyebrow}
@@ -128,12 +132,12 @@ export default function Life() {
                   </Link>
                 </div>
               ) : null}
-            </article>
+            </Reveal>
           ))}
         </div>
-      </section>
+      </Reveal>
 
-      <section className="mx-auto mt-8 max-w-7xl px-4 sm:px-6 lg:px-8">
+      <Reveal as="section" className="mx-auto mt-8 max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="rounded-[2.1rem] border border-stone-200/80 bg-[rgba(255,249,241,0.9)] p-6 shadow-[0_24px_70px_rgba(45,33,22,0.08)] sm:p-8">
           <div className="flex flex-wrap gap-2">
             {[
@@ -157,7 +161,7 @@ export default function Life() {
             ))}
           </div>
         </div>
-      </section>
+      </Reveal>
     </main>
   );
 }

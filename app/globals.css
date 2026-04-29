@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --background: #f2ede5;
+  --background: #f4eee6;
   --foreground: #25211d;
   --muted: #655e55;
   --line: rgba(37, 33, 29, 0.11);
@@ -16,6 +16,7 @@
 }
 
 html {
+  position: relative;
   scroll-behavior: smooth;
 }
 
@@ -23,10 +24,13 @@ body {
   min-height: 100vh;
   color: var(--foreground);
   background:
-    radial-gradient(circle at 14% 12%, rgba(185, 111, 71, 0.12), transparent 24rem),
-    radial-gradient(circle at 86% 16%, rgba(111, 138, 145, 0.1), transparent 22rem),
-    radial-gradient(circle at 62% 88%, rgba(185, 111, 71, 0.06), transparent 28rem),
-    linear-gradient(180deg, #faf6ef 0%, #f3ede4 42%, #efe7dc 100%);
+    linear-gradient(rgba(37, 33, 29, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37, 33, 29, 0.02) 1px, transparent 1px),
+    linear-gradient(180deg, #fbf7f0 0%, #f4eee6 42%, #eee4d8 100%);
+  background-size:
+    42px 42px,
+    42px 42px,
+    auto;
   font-family: var(--font-sans), sans-serif;
   text-rendering: optimizeLegibility;
 }
@@ -36,8 +40,26 @@ a {
   text-decoration: none;
 }
 
+summary {
+  list-style: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
 ::selection {
   background: rgba(196, 109, 61, 0.22);
+}
+
+strong {
+  color: var(--foreground);
+  font-weight: 700;
+}
+
+:focus-visible {
+  outline: 3px solid rgba(185, 111, 71, 0.38);
+  outline-offset: 4px;
 }
 
 @keyframes rise-fade {
@@ -48,6 +70,16 @@ a {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes dot-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 4px rgba(111, 138, 145, 0.16);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(111, 138, 145, 0.08);
   }
 }
 
@@ -97,4 +129,5 @@ a {
   border: 2px solid rgba(255, 248, 241, 0.95);
   background: var(--accent-secondary);
   box-shadow: 0 0 0 4px rgba(111, 138, 145, 0.16);
+  animation: dot-pulse 2.8s ease-in-out infinite;
 }

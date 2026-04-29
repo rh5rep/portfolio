@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FloatOnScroll, Reveal } from "@/components/Motion";
 import SiteHeader from "@/components/SiteHeader";
 import MapPanel from "./map-panel";
 import { totalTravelPlaces, travelLocations, travelRegions } from "./travel-data";
@@ -9,21 +10,22 @@ export const metadata = {
 };
 
 const buttonClassName =
-  "inline-flex items-center justify-center rounded-full border border-stone-300/80 bg-[rgba(255,250,244,0.92)] px-5 py-2.5 text-sm font-medium text-stone-900 transition hover:-translate-y-0.5 hover:border-[var(--accent)] hover:text-stone-950";
+  "inline-flex items-center justify-center rounded-full border border-stone-300/80 bg-[rgba(255,250,244,0.92)] px-5 py-2.5 text-sm font-medium text-stone-900 shadow-[0_12px_30px_rgba(45,33,22,0.05)] transition duration-300 hover:-translate-y-0.5 hover:border-[var(--accent)] hover:bg-white hover:text-stone-950";
 
 export default function Travel() {
   return (
     <main className="pb-24">
       <SiteHeader />
 
-      <section className="mx-auto max-w-7xl px-4 pt-12 sm:px-6 lg:px-8 lg:pt-16">
+      <Reveal as="section" className="mx-auto max-w-7xl px-4 pt-12 sm:px-6 lg:px-8 lg:pt-16">
         <div className="grid gap-8 lg:grid-cols-[minmax(0,0.86fr)_minmax(0,1.14fr)] lg:items-start">
           <div className="rounded-[2.25rem] border border-stone-200/80 bg-[rgba(255,249,241,0.92)] p-8 shadow-[0_28px_90px_rgba(45,33,22,0.08)] sm:p-10">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-stone-500">
               Travel atlas
             </p>
             <h1 className="mt-4 max-w-4xl font-serif text-4xl leading-tight text-stone-950 sm:text-5xl">
-              A map of places I keep returning to in my head.
+              A map of places I keep <span className="text-[var(--accent)]">returning to</span> in
+              my head.
             </h1>
             <div className="mt-5 grid gap-4 text-base leading-7 text-stone-700 sm:text-lg">
               <p>
@@ -77,22 +79,27 @@ export default function Travel() {
             </div>
           </div>
 
-          <article className="rounded-[2.25rem] border border-stone-200/80 bg-[rgba(255,249,241,0.88)] p-4 shadow-[0_28px_90px_rgba(45,33,22,0.08)] sm:p-5">
+          <FloatOnScroll
+            className="rounded-[2.25rem] border border-stone-200/80 bg-[rgba(255,249,241,0.88)] p-4 shadow-[0_28px_90px_rgba(45,33,22,0.08)] sm:p-5"
+            distance={14}
+          >
             <MapPanel locations={travelLocations} heightClassName="h-[560px]" />
-          </article>
+          </FloatOnScroll>
         </div>
-      </section>
+      </Reveal>
 
-      <section className="mx-auto mt-8 max-w-7xl px-4 sm:px-6 lg:px-8">
+      <Reveal as="section" className="mx-auto mt-8 max-w-7xl px-4 sm:px-6 lg:px-8">
         <section className="rounded-[2.1rem] border border-stone-200/80 bg-[rgba(255,249,241,0.9)] p-6 shadow-[0_24px_70px_rgba(45,33,22,0.08)] sm:p-8">
           <p className="text-xs font-semibold uppercase tracking-[0.28em] text-stone-500">
             Region overview
           </p>
           <div className="mt-6 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-            {travelRegions.map((group) => (
-              <article
+            {travelRegions.map((group, index) => (
+              <Reveal
+                as="article"
                 key={group.region}
                 className="rounded-[1.5rem] border border-stone-200/80 bg-[#f7f1e9] p-5"
+                delay={index * 0.035}
               >
                 <div className="flex items-center justify-between gap-4">
                   <h2 className="font-serif text-2xl text-stone-950">{group.region}</h2>
@@ -108,11 +115,11 @@ export default function Travel() {
                     </span>
                   ))}
                 </div>
-              </article>
+              </Reveal>
             ))}
           </div>
         </section>
-      </section>
+      </Reveal>
     </main>
   );
 }
