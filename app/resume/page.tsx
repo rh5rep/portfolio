@@ -59,12 +59,12 @@ const experience = [
 
 const projects = [
   {
-    title: "ROS2 Occupancy-Grid Mapping",
-    body: "Built a ROS2 mapping module for a simulated TurtleBot using odometry, LiDAR, TF2, and Bresenham ray tracing to publish nav_msgs/OccupancyGrid.",
+    title: "Autonomy Sensor Data & Mapping Coursework",
+    body: "DTU coursework across robot autonomy, unmanned systems, and marine robotics: ROS2 occupancy-grid mapping from `/odom` and `/scan`, TF2 transforms, Bresenham ray tracing, Crazyflie controller-validation/debugging, and ROS/Gazebo/RViz sensor-data workflows.",
   },
   {
-    title: "Crazyflie + ROS2 + MATLAB + OptiTrack",
-    body: "Developed and validated PID controllers, then debugged failures across networking, radio, middleware, OptiTrack visibility, and shared-lab infrastructure.",
+    title: "ADLCV",
+    body: "Coursework project exploring DDPM-style Super Mario level generation from 14x14 ASCII levels, using tile-to-sprite rendering plus unconditional and conditional UNet variants.",
   },
   {
     title: "Teradyne Cartesian Robot and Tool Changer",
@@ -233,7 +233,7 @@ export default function Resume() {
 
             <section className="rounded-[2rem] border border-stone-200/80 bg-[#2f2c29] p-6 text-stone-100 shadow-[0_24px_70px_rgba(33,28,24,0.18)] sm:p-8">
               <p className="text-xs font-semibold uppercase tracking-[0.28em] text-stone-400">
-                Selected robotics work
+                Selected projects + coursework
               </p>
               <div className="mt-6 grid gap-4">
                 {projects.map((item) => (

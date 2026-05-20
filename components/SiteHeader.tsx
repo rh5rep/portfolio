@@ -8,6 +8,7 @@ const navLinks = [
   { href: "/profile", label: "About" },
   { href: "/life", label: "Life" },
   { href: "/resume", label: "Resume" },
+  { href: "https://github.com/rh5rep", label: "GitHub" },
 ];
 
 const contactClassName =

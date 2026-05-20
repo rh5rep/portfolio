@@ -127,6 +127,14 @@ export default function Profile() {
             >
               LinkedIn
             </Link>
+            <Link
+              href="https://github.com/rh5rep"
+              target="_blank"
+              rel="noreferrer"
+              className={buttonClassName}
+            >
+              GitHub
+            </Link>
           </div>
         </div>
       </Reveal>
@@ -226,7 +234,15 @@ export default function Profile() {
           </div>
           <div className="flex flex-wrap gap-3">
             <Link href="mailto:s242507@dtu.dk" className={buttonClassName}>
-              s242507@dtu.dk
+              Email
+            </Link>
+            <Link
+              href="https://www.linkedin.com/in/ramiihanna/"
+              target="_blank"
+              rel="noreferrer"
+              className={buttonClassName}
+            >
+              LinkedIn
             </Link>
             <Link href="/life" className={buttonClassName}>
               Life

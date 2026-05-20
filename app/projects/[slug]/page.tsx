@@ -63,6 +63,7 @@ const projects = {
       "Used snapshots and compact data outputs to keep behavior easier to inspect.",
     ],
     stack: ["SwiftUI", "FastAPI", "Geospatial modeling", "Weather data"],
+    links: [{ href: "https://github.com/rh5rep/SunnySips", label: "View code" }],
   },
   trybe: {
     name: "TRYBE",
@@ -239,37 +240,15 @@ function ProjectVisual({ slug }: { slug: ProjectSlug }) {
 
   if (slug === "thesis") {
     return (
-      <div className="rounded-[2rem] border border-stone-700/60 bg-[#2e2b28] p-6 text-stone-100 shadow-[0_26px_70px_rgba(31,26,22,0.18)]">
-        <div className="rounded-[1.55rem] border border-stone-600/60 bg-[linear-gradient(180deg,rgba(255,248,240,0.08),rgba(255,248,240,0.03))] p-5">
-          <div className="flex items-center gap-4 rounded-[1.3rem] border border-stone-600/60 bg-[rgba(255,248,240,0.04)] p-4">
-            <div className="flex h-16 w-16 items-center justify-center rounded-[1.2rem] border border-stone-500/70 bg-[rgba(220,197,179,0.1)] text-lg font-semibold text-stone-100">
-              SF
-            </div>
-            <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-stone-400">
-                Thesis object
-              </p>
-              <p className="mt-1 font-serif text-2xl text-stone-100">
-                Index-finger actuator model
-              </p>
-              <p className="mt-2 text-sm leading-6 text-stone-300">
-                Simulation-first validation framework under development.
-              </p>
-            </div>
-          </div>
-          <div className="mt-5 grid gap-3 sm:grid-cols-3">
-            {["Model kinematics", "Screen actuator designs", "Validate against bench data"].map(
-              (item) => (
-                <div
-                  key={item}
-                  className="rounded-[1.2rem] border border-stone-600/70 bg-[rgba(255,248,240,0.04)] p-4 text-sm font-medium text-stone-200"
-                >
-                  {item}
-                </div>
-              ),
-            )}
-          </div>
-        </div>
+      <div className="overflow-hidden rounded-[2rem] border border-stone-200/80 bg-white shadow-[0_24px_70px_rgba(45,33,22,0.08)]">
+        <Image
+          src="/portfolio/thesis-workflow.svg"
+          alt="Workflow diagram for the thesis from task framing to validated mock-up"
+          width={1600}
+          height={900}
+          sizes="(max-width: 1024px) 92vw, 56vw"
+          className="h-auto w-full"
+        />
       </div>
     );
   }
@@ -325,6 +304,19 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                   Open thesis PDF
                 </Link>
               ) : null}
+              {"links" in project
+                ? project.links.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className={buttonClassName}
+                    >
+                      {link.label}
+                    </Link>
+                  ))
+                : null}
             </div>
           </div>
 
