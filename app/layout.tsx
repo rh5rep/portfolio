@@ -3,9 +3,9 @@ import type { ReactNode } from "react";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Rami Hanna | Robotics, Software, and Controls",
+  title: "Rami Hanna | Robotics Systems Engineer",
   description:
-    "Professional portfolio for Rami Hanna, featuring robotics software, controls, sensing, mechatronics, simulation, and hands-on engineering work.",
+    "Rami Hanna is a robotics engineer working across sensing, controls, simulation, and physical systems that benefit people and the real world.",
 };
 
 export default function RootLayout({

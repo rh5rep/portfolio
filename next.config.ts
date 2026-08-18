@@ -4,7 +4,9 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: __dirname,
   },
-  /* config options here */
+  images: {
+    formats: ["image/avif", "image/webp"],
+  },
 };
 
 export default nextConfig;
