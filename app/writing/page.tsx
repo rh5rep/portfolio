@@ -3,24 +3,27 @@ import SiteHeader from "@/components/SiteHeader";
 
 export const metadata = {
   title: "Writing | Rami Hanna",
-  description: "Working notes on robotics, experimentation, and making technical systems useful.",
+  description: "Notes from Rami Hanna on robotics, systems, experiments, and the human side of technical work.",
 };
 
-const notes = [
+const posts = [
   {
-    number: "01",
+    label: "Field note",
     title: "Make the real constraint observable.",
-    body: "The useful first step is rarely adding complexity. It is finding the physical, data, or human constraint that is already shaping the system—and giving the team a way to see it.",
+    deck: "A system gets easier to improve when its physical, data, or human constraints become visible to everyone working on it.",
+    topic: "Robotics · experiments",
   },
   {
-    number: "02",
+    label: "Field note",
     title: "A prototype should teach you something specific.",
-    body: "I care about the line between a convincing demonstration and an experiment that exposes what is actually happening. The second one is usually more valuable.",
+    deck: "The line between a convincing demonstration and an experiment that exposes what is actually happening is usually where the useful work begins.",
+    topic: "Engineering practice",
   },
   {
-    number: "03",
+    label: "Field note",
     title: "Good interfaces respect the work beneath them.",
-    body: "Whether it is field sensing or a small consumer app, the interface should remove friction without pretending that the real-world system is simple.",
+    deck: "An interface should remove friction without pretending that a real-world system is simple. That applies equally to sensing tools and small consumer products.",
+    topic: "Product · systems",
   },
 ];
 
@@ -29,26 +32,26 @@ export default function WritingPage() {
     <main>
       <SiteHeader />
       <section className="writing-page site-shell">
-        <div className="writing-page__intro">
-          <p className="eyebrow">Writing</p>
-          <h1>Notes on making technical work more <em>useful.</em></h1>
-          <p>Short working ideas from projects at the intersection of robotics, experiments, and product thinking.</p>
-        </div>
-        <div className="writing-list">
-          {notes.map((note) => (
-            <article key={note.number}>
-              <span>{note.number}</span>
+        <header className="writing-page__masthead">
+          <p className="eyebrow">Rami&apos;s notebook</p>
+          <h1>Thoughts from the bench, the field, and the <em>work-in-progress.</em></h1>
+          <p>Short, occasional posts on robotics, product, experiments, and whatever I am learning in public. This is intentionally a living page—not a polished archive.</p>
+          <Link className="button button--dark" href="mailto:s242507@dtu.dk?subject=Writing%20note%20or%20conversation">Reply by email</Link>
+        </header>
+        <div className="writing-list writing-list--publication">
+          {posts.map((post, index) => (
+            <article key={post.title}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
               <div>
-                <h2>{note.title}</h2>
-                <p>{note.body}</p>
+                <p className="eyebrow">{post.label} · {post.topic}</p>
+                <h2>{post.title}</h2>
+                <p>{post.deck}</p>
+                <button className="text-link" type="button" disabled aria-label={`${post.title} will be published soon`}>Publishing soon</button>
               </div>
             </article>
           ))}
         </div>
-        <div className="writing-page__footer">
-          <p>More notes will grow out of the work as the projects do.</p>
-          <Link className="text-link" href="mailto:s242507@dtu.dk?subject=Writing%20or%20project%20note">Continue the conversation <span aria-hidden="true">↗</span></Link>
-        </div>
+        <div className="writing-page__footer"><p>Want to suggest a topic or talk through an idea?</p><Link className="text-link" href="mailto:s242507@dtu.dk?subject=Writing%20or%20project%20note">Get in touch <span aria-hidden="true">↗</span></Link></div>
       </section>
     </main>
   );

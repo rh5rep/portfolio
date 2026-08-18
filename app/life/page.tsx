@@ -9,7 +9,7 @@ export const metadata = {
 
 const interests = [
   ["Travel", "Maps, coastlines, cities, and the habit of paying attention to place.", "/travel", "Open atlas"],
-  ["Movement", "Surfing, climbing, salsa, hiking, and any excuse to keep learning physically.", null, null],
+  ["Movement", "Cycling, surfing, climbing, salsa, hiking, and any excuse to keep learning physically.", null, null],
   ["Food", "Cooking as craft, hospitality, and a small experiment worth repeating.", null, null],
   ["Language", "A reminder to stay curious, listen closely, and be comfortable being a beginner.", "/language", "Language notes"],
 ];

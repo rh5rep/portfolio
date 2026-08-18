@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa";
+import { HiOutlineEnvelope } from "react-icons/hi2";
 
 const navLinks = [
   { href: "/work", label: "Work" },
@@ -16,16 +18,21 @@ export default function SiteHeader() {
           <span className="site-mark__dot" aria-hidden="true" />
           Rami Hanna
         </Link>
-        <nav className="site-nav" aria-label="Primary navigation">
-          {navLinks.map((item) => (
-            <Link key={item.href} href={item.href}>
-              {item.label}
-            </Link>
-          ))}
-          <Link href="/contact" className="site-nav__contact">
-            Contact
-          </Link>
-        </nav>
+        <div className="site-header__nav-group">
+          <nav className="site-nav" aria-label="Primary navigation">
+            {navLinks.map((item) => (
+              <Link key={item.href} href={item.href}>
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+          <nav className="site-socials" aria-label="Professional links">
+            <Link href="https://www.linkedin.com/in/ramiihanna/" target="_blank" rel="noreferrer" aria-label="Rami Hanna on LinkedIn"><FaLinkedinIn aria-hidden="true" /></Link>
+            <Link href="https://github.com/rh5rep" target="_blank" rel="noreferrer" aria-label="Rami Hanna on GitHub"><FaGithub aria-hidden="true" /></Link>
+            <Link href="mailto:s242507@dtu.dk" aria-label="Email Rami Hanna"><HiOutlineEnvelope aria-hidden="true" /></Link>
+          </nav>
+          <Link href="/contact" className="site-nav__contact">Contact</Link>
+        </div>
       </div>
     </header>
   );
