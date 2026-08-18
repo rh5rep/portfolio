@@ -77,6 +77,18 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             <p className="eyebrow">Tools + systems</p>
             <div>{project.stack.map((item) => <span key={item}>{item}</span>)}</div>
           </section>
+          {project.detailImage ? (
+            <figure className="project-detail-image">
+              <Image
+                src={project.detailImage.src}
+                alt={project.detailImage.alt}
+                width={project.detailImage.width}
+                height={project.detailImage.height}
+                sizes="(max-width: 900px) 100vw, 54vw"
+              />
+              <figcaption>Finished wearable prototype.</figcaption>
+            </figure>
+          ) : null}
         </div>
       </section>
 

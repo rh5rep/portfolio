@@ -16,6 +16,12 @@ export type Project = {
     height: number;
     className?: string;
   };
+  detailImage?: {
+    src: string;
+    alt: string;
+    width: number;
+    height: number;
+  };
   link?: { href: string; label: string };
 };
 
@@ -38,10 +44,16 @@ export const projects: Project[] = [
     proof: ["Simulation-to-bench workflow", "Rehabilitation-oriented", "Hardware + measurement"],
     stack: ["Python", "Controls", "Motion tracking", "FDM prototypes"],
     image: {
-      src: "/portfolio/thesis-bench.jpg",
-      alt: "Benchtop setup for Rami Hanna's soft-finger actuator thesis",
-      width: 4032,
-      height: 3024,
+      src: "/portfolio/thesis-wearable-hero.jpg",
+      alt: "Finished wearable soft-finger actuator on a hand",
+      width: 1055,
+      height: 1491,
+    },
+    detailImage: {
+      src: "/portfolio/thesis-wearable-onhand.png",
+      alt: "Finished wearable soft-finger actuator shown on a hand",
+      width: 462,
+      height: 708,
     },
     link: { href: "/pdfs/rami-hanna-thesis.pdf", label: "Read thesis" },
   },
@@ -63,10 +75,10 @@ export const projects: Project[] = [
     proof: ["ROS2 + C++", "Thermal + GPS", "Representative data selection"],
     stack: ["ROS2", "C++", "Python", "UMAP", "HDBSCAN"],
     image: {
-      src: "/portfolio/perplant-thermal-output.png",
-      alt: "Thermal imaging output from the PerPlant sensing workflow",
-      width: 1024,
-      height: 768,
+      src: "/portfolio/perplant-field-aerial.png",
+      alt: "Aerial agricultural field imagery showing the kind of real-world setting PerPlant works in",
+      width: 1177,
+      height: 713,
     },
   },
   {
@@ -87,10 +99,11 @@ export const projects: Project[] = [
     proof: ["IEEE publication", "0.01 mm travel precision", "0.5 g load standard deviation"],
     stack: ["Raspberry Pi", "ESP32", "Load cell", "Embedded control"],
     image: {
-      src: "/portfolio/teradyne-load-cell.png",
-      alt: "Load-cell data visualization from the Teradyne robotic test system",
-      width: 1536,
-      height: 772,
+      src: "/images/RobotRender.jpg",
+      alt: "CAD render of the Teradyne Cartesian robotic test system",
+      width: 1495,
+      height: 473,
+      className: "object-contain",
     },
     link: { href: "/pdfs/modified_capstone.pdf", label: "Read IEEE paper" },
   },
