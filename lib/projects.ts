@@ -22,32 +22,40 @@ export type Project = {
     width: number;
     height: number;
   };
+  gallery: {
+    src: string;
+    alt: string;
+    width: number;
+    height: number;
+    caption: string;
+    className?: string;
+  }[];
   link?: { href: string; label: string };
 };
 
 export const projects: Project[] = [
   {
     slug: "thesis",
-    name: "Soft-finger thesis",
+    name: "Wearable finger-actuator thesis",
     index: "01",
-    category: "Rehabilitation robotics · simulation + validation",
-    title: "Building a measurable path from soft-actuator models to benchtop evidence.",
+    category: "Wearable rehabilitation robotics · modeling + evaluation",
+    title: "A wearable tendon-driven finger actuator, built and evaluated for neurorehabilitation tasks.",
     summary:
-      "A focused engineering study of a variable-stiffness finger actuator for rehabilitation-oriented hardware.",
+      "An M.Sc. engineering feasibility study—from simplified mechanics to repeatable benchtop experiments and an on-hand wearable prototype.",
     context:
-      "The work turns an intuitive assistive-device concept into an inspectable system of geometry, mechanics, control inputs, and repeatable measurements.",
+      "The thesis turns an assistive-device concept into an inspectable system of tendon routing, mechanics, control inputs, and repeatable measurements. It evaluates engineering behavior and wearable transfer—not clinical outcomes.",
     contributions: [
       "Built reduced-order models for finger kinematics, tendon routing, passive torque, leverage, stroke, and tension.",
       "Used Python sweeps to screen stiffness and geometry choices before hardware iteration.",
       "Designed a benchtop validation loop around force, displacement, motion tracking, repeatability, and model error.",
     ],
-    proof: ["Simulation-to-bench workflow", "Rehabilitation-oriented", "Hardware + measurement"],
-    stack: ["Python", "Controls", "Motion tracking", "FDM prototypes"],
+    proof: ["1,000 / 1,000 rigid-fixture cycles", "Wearable-transfer study", "Hardware + measurement"],
+    stack: ["Python", "ESP32-S3", "Motor + encoder control", "FDM prototypes"],
     image: {
-      src: "/portfolio/thesis-wearable-hero.jpg",
+      src: "/portfolio/thesis-wearable-hero-rotated.png",
       alt: "Finished wearable soft-finger actuator on a hand",
-      width: 1055,
-      height: 1491,
+      width: 1491,
+      height: 1055,
     },
     detailImage: {
       src: "/portfolio/thesis-wearable-onhand.png",
@@ -55,6 +63,11 @@ export const projects: Project[] = [
       width: 462,
       height: 708,
     },
+    gallery: [
+      { src: "/portfolio/thesis-bench.jpg", alt: "Benchtop setup for the wearable actuator study", width: 4032, height: 3024, caption: "Benchtop iteration and measurement.", },
+      { src: "/portfolio/thesis-workflow.png", alt: "Modeling and experimental workflow for the thesis", width: 1818, height: 1022, caption: "A model-to-measurement workflow." },
+      { src: "/portfolio/thesis-wearable-onhand.png", alt: "Wearable finger actuator fitted to a hand", width: 462, height: 708, caption: "Final on-hand wearable prototype." },
+    ],
     link: { href: "/pdfs/rami-hanna-thesis.pdf", label: "Read thesis" },
   },
   {
@@ -80,6 +93,10 @@ export const projects: Project[] = [
       width: 1177,
       height: 713,
     },
+    gallery: [
+      { src: "/portfolio/perplant-thermal-output.png", alt: "Thermal imagery output from an agricultural sensing workflow", width: 1512, height: 982, caption: "Thermal data in a field workflow." },
+      { src: "/portfolio/perplant-field-aerial.png", alt: "Agricultural field from above", width: 1177, height: 713, caption: "Field conditions define the real problem." },
+    ],
   },
   {
     slug: "teradyne",
@@ -105,6 +122,11 @@ export const projects: Project[] = [
       height: 473,
       className: "object-contain",
     },
+    gallery: [
+      { src: "/images/Cartesian-Robot.jpg", alt: "Teradyne Cartesian robotic test system", width: 1000, height: 750, caption: "The physical Cartesian test platform." },
+      { src: "/portfolio/teradyne-load-cell.png", alt: "Load-cell readout from the test system", width: 1495, height: 473, caption: "Feedback made the motion measurable." },
+      { src: "/images/RobotPicture.jpg", alt: "Teradyne project team and robot system", width: 1000, height: 750, caption: "The system at the senior-project showcase." },
+    ],
     link: { href: "/pdfs/modified_capstone.pdf", label: "Read IEEE paper" },
   },
   {
@@ -131,6 +153,11 @@ export const projects: Project[] = [
       height: 2622,
       className: "object-top",
     },
+    gallery: [
+      { src: "/portfolio/sunnysips-recommendations.png", alt: "SunnySips outdoor café recommendations", width: 1206, height: 2622, caption: "Recommendations made approachable." },
+      { src: "/portfolio/sunnysips-detail.png", alt: "SunnySips venue detail interface", width: 1206, height: 2622, caption: "Environmental context without the clutter." },
+      { src: "/portfolio/sunnysips-map.png", alt: "SunnySips map interface", width: 1206, height: 2622, caption: "Place, weather, and sunlight in one view." },
+    ],
     link: { href: "https://github.com/rh5rep/SunnySips", label: "View code" },
   },
   {
@@ -156,11 +183,13 @@ export const projects: Project[] = [
       width: 520,
       height: 980,
     },
+    gallery: [
+      { src: "/portfolio/trybe-sessions.png", alt: "TRYBE sessions interface", width: 520, height: 980, caption: "A clearer entry point to trying something new." },
+      { src: "/portfolio/trybe-perks.png", alt: "TRYBE perks interface", width: 520, height: 980, caption: "Partner rules expressed as usable product states." },
+      { src: "/portfolio/trybe-concept.png", alt: "TRYBE concept screen", width: 520, height: 980, caption: "An early product direction." },
+    ],
   },
 ];
-
-export const primaryProjects = projects.slice(0, 3);
-export const supportingProjects = projects.slice(3);
 
 export function getProject(slug: string) {
   return projects.find((project) => project.slug === slug);

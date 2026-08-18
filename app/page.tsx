@@ -17,7 +17,7 @@ export default function Home() {
         </div>
         <div className="hero__content">
           <p className="availability"><span aria-hidden="true" /> Open to robotics engineering roles</p>
-          <p className="hero__kicker">Copenhagen, Denmark · Robotics systems · 2026</p>
+          <p className="hero__kicker">Boston, MA · Robotics systems · 2026</p>
           <h1 id="hero-title">I build robotics systems that <em>help people</em> and work in the real world.</h1>
           <p className="hero__intro">
             I work where software meets sensing, controls, mechanics, and the messy details that
@@ -45,8 +45,10 @@ export default function Home() {
         <nav className="hero__quick-links" aria-label="Explore Rami Hanna's portfolio">
           <Link href="/work">Work</Link>
           <Link href="/profile">Story</Link>
+          <Link href="/writing">Writing</Link>
           <Link href="/resume">Resume</Link>
           <Link href="/life">Life</Link>
+          <Link href="/giving-back">Giving back</Link>
           <Link href="/contact">Contact</Link>
         </nav>
       </section>

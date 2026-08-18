@@ -89,6 +89,28 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
               <figcaption>Finished wearable prototype.</figcaption>
             </figure>
           ) : null}
+          <section className="project-gallery" aria-labelledby="project-gallery-title">
+            <div className="project-gallery__heading">
+              <p className="eyebrow">In the work</p>
+              <h2 id="project-gallery-title">A few details worth getting closer to.</h2>
+              <p>Hover to shift the frame. The images stay still until you choose to inspect them.</p>
+            </div>
+            <div className="project-gallery__grid">
+              {project.gallery.map((image, index) => (
+                <figure key={image.src} className={`project-gallery__item project-gallery__item--${index + 1}`}>
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    width={image.width}
+                    height={image.height}
+                    sizes="(max-width: 800px) 100vw, 34vw"
+                    className={image.className}
+                  />
+                  <figcaption>{image.caption}</figcaption>
+                </figure>
+              ))}
+            </div>
+          </section>
         </div>
       </section>
 

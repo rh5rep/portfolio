@@ -24,7 +24,7 @@ export default function Resume() {
           <div>
             <p className="eyebrow">Resume</p>
             <h1>Robotics engineering across software, sensing, controls, and the physical world.</h1>
-            <p>Based in Copenhagen, building toward roles where technical work can improve lives and make real systems more capable.</p>
+            <p>Based in Boston, building toward roles where technical work can improve lives and make real systems more capable.</p>
           </div>
           <div className="resume-page__actions">
             <Link className="button button--dark" href="/resume.pdf" download="Rami_Hanna_Resume.pdf">Download PDF</Link>
@@ -45,7 +45,7 @@ export default function Resume() {
           <div>
             <p className="eyebrow">Education</p>
             <h2>Technical University of Denmark</h2>
-            <p>Autonomous Systems · robotics, autonomous software, machine learning, computer vision, and simulation.</p>
+            <p>M.Sc. Autonomous Systems · degree requirements completed August 2026. Robotics, autonomous software, machine learning, computer vision, and simulation.</p>
             <h2>Wentworth Institute of Technology</h2>
             <p>B.S. Electromechanical Engineering, Summa Cum Laude · Dean&apos;s Award recipient.</p>
           </div>

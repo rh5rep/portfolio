@@ -8,7 +8,7 @@ export const metadata = {
 
 const experience = [
   ["2025", "PerPlant", "ROS2 field sensing, thermal imagery, GPS metadata, and data-quality workflows for precision agriculture."],
-  ["2024–26", "DTU Autonomous Systems", "Master's work across robotics, simulation, computer vision, and a rehabilitation-oriented soft-finger thesis."],
+  ["2024–26", "DTU Autonomous Systems", "Master's work across robotics, simulation, computer vision, and a wearable finger-actuator thesis for neurorehabilitation tasks."],
   ["2022–23", "Harvard Microrobotics", "Underwater robot fleet interfaces, embedded communication, and mechanical iteration in a startup-style environment."],
   ["2019–22", "DEKA + Raytheon", "Biomedical R&D controls, instrumentation, robot automation, vision systems, and practical test infrastructure."],
 ];

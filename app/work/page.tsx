@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import SiteHeader from "@/components/SiteHeader";
-import { primaryProjects, supportingProjects, type Project } from "@/lib/projects";
+import { projects, type Project } from "@/lib/projects";
 
 export const metadata = {
   title: "Work | Rami Hanna",
@@ -41,21 +41,8 @@ export default function WorkPage() {
           <h1>Engineering for systems that need to be <em>trusted.</em></h1>
           <p>Projects that best represent how I think: turn a physical problem into something observable, testable, and useful.</p>
         </div>
-        <div className="project-grid project-grid--primary">
-          {primaryProjects.map((project) => <WorkCard key={project.slug} project={project} />)}
-        </div>
-      </section>
-
-      <section className="section section--supporting" aria-labelledby="supporting-title">
-        <div className="site-shell">
-          <div className="section-heading">
-            <p className="eyebrow">Also building</p>
-            <h2 id="supporting-title">Technology only matters when people can actually use it.</h2>
-            <p>Independent projects that explore the interface and interaction side of complex real-world conditions.</p>
-          </div>
-          <div className="project-grid project-grid--supporting">
-            {supportingProjects.map((project) => <WorkCard key={project.slug} project={project} />)}
-          </div>
+        <div className="project-grid project-grid--work">
+          {projects.map((project) => <WorkCard key={project.slug} project={project} />)}
         </div>
       </section>
     </main>
