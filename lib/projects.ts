@@ -151,11 +151,10 @@ export const projects: Project[] = [
     proof: ["Prototype systems thinking", "Partner-pilot materials", "Interaction design"],
     stack: ["React", "SwiftUI", "Node.js", "UX systems"],
     image: {
-      src: "/portfolio/trybe-concept.png",
-      alt: "TRYBE mobile app concept",
-      width: 1080,
-      height: 1920,
-      className: "object-top",
+      src: "/portfolio/trybe-boulders-sessions.png",
+      alt: "TRYBE Boulders Sessions mobile interface",
+      width: 520,
+      height: 980,
     },
   },
 ];
