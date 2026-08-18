@@ -26,7 +26,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
     <main>
       <SiteHeader />
       <section className="project-hero site-shell">
-        <Link href="/#work" className="back-link">← Selected work</Link>
+        <Link href="/work" className="back-link">← Selected work</Link>
         <div className="project-hero__grid">
           <div>
             <p className="eyebrow">{project.index} · {project.category}</p>

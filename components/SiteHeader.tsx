@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const navLinks = [
-  { href: "/#work", label: "Work" },
+  { href: "/work", label: "Work" },
   { href: "/profile", label: "Story" },
   { href: "/life", label: "Life" },
   { href: "/resume", label: "Resume" },
@@ -21,7 +21,7 @@ export default function SiteHeader() {
               {item.label}
             </Link>
           ))}
-          <Link href="/#contact" className="site-nav__contact">
+          <Link href="/contact" className="site-nav__contact">
             Contact
           </Link>
         </nav>
