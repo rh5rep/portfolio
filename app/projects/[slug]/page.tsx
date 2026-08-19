@@ -30,6 +30,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         <div className="project-hero__grid">
           <div>
             <p className="eyebrow">{project.index} · {project.category}</p>
+            <p className="project-hero__scope">{project.scope}</p>
             <h1>{project.title}</h1>
             <p className="project-hero__summary">{project.summary}</p>
             <div className="project-hero__actions">
@@ -57,20 +58,24 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
       <section className="project-body site-shell">
         <aside>
-          <p className="eyebrow">The context</p>
+          <p className="eyebrow">The problem</p>
           <p>{project.context}</p>
         </aside>
         <div className="project-body__main">
           <section>
-            <p className="eyebrow">What I contributed</p>
+            <p className="eyebrow">Technical ownership</p>
             <ol className="contribution-list">
               {project.contributions.map((contribution, index) => (
                 <li key={contribution}><span>{String(index + 1).padStart(2, "0")}</span>{contribution}</li>
               ))}
             </ol>
           </section>
+          <section className="project-system">
+            <p className="eyebrow">System architecture</p>
+            <p>{project.system}</p>
+          </section>
           <section className="project-proof">
-            <p className="eyebrow">What it demonstrates</p>
+            <p className="eyebrow">Evidence + outcome</p>
             <div>{project.proof.map((item) => <span key={item}>{item}</span>)}</div>
           </section>
           <section className="project-stack">

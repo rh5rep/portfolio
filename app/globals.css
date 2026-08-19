@@ -276,6 +276,7 @@ body {
 .back-link { display: inline-block; font-size: 13px; font-weight: 700; }
 .project-hero__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(300px, .86fr); gap: clamp(40px, 8vw, 130px); align-items: center; margin-top: 54px; }
 .project-hero h1 { font-size: clamp(43px, 5.4vw, 82px); }
+.project-hero__scope { margin: 10px 0 0; color: #6b9111; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
 .project-hero__summary { max-width: 630px; margin: 25px 0 0; color: var(--quiet); font-size: 19px; line-height: 1.45; }
 .project-hero__actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
 .project-hero__image { min-height: 460px; overflow: hidden; background: #dedfd9; }
@@ -288,6 +289,8 @@ body {
 .contribution-list { display: grid; gap: 22px; margin: 22px 0 0; padding: 0; list-style: none; }
 .contribution-list li { display: grid; grid-template-columns: 48px 1fr; gap: 16px; padding-bottom: 22px; border-bottom: 1px solid var(--rule); font-size: clamp(18px, 1.75vw, 24px); line-height: 1.26; letter-spacing: -.035em; }
 .contribution-list span { color: #6b9111; font-size: 12px; font-weight: 700; letter-spacing: .1em; }
+.project-system { max-width: 700px; border-left: 2px solid var(--green); padding-left: 17px; }
+.project-system > p:last-child { margin: 13px 0 0; color: var(--quiet); font-size: clamp(18px, 1.8vw, 24px); line-height: 1.34; letter-spacing: -.035em; }
 .project-proof, .project-stack { border-top: 1px solid var(--ink); padding-top: 15px; }
 .project-proof > div, .project-stack > div { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
 .project-proof span, .project-stack span, .skill-list span { border: 1px solid var(--rule); padding: 8px 10px; color: #42443e; font-size: 13px; font-weight: 700; }
