@@ -24,10 +24,22 @@ export default function Profile() {
           I am a hands-on robotics engineer who likes the space between software and the physical
           world: signals, sensors, mechanics, experiments, and the people who rely on them.
         </p>
-        <div className="story-stats" aria-label="Career highlights">
-          <article><span>04</span><p>engineering co-ops across robotics, biomedical R&D, and agtech</p></article>
-          <article><span>01</span><p>IEEE-published Cartesian robotics project</p></article>
-          <article><span>M.Sc.</span><p>Autonomous Systems degree requirements completed at DTU in 2026</p></article>
+        <div className="story-signals" aria-label="Career highlights">
+          <article>
+            <p className="eyebrow">Experience</p>
+            <h2>Four engineering co-ops</h2>
+            <p>DEKA · Raytheon · Harvard Microrobotics · PerPlant</p>
+          </article>
+          <article>
+            <p className="eyebrow">Published work</p>
+            <h2>IEEE SII/SICE 2024</h2>
+            <p>Cartesian robotics for connector mating and structured test-data collection.</p>
+          </article>
+          <article>
+            <p className="eyebrow">Education</p>
+            <h2>M.Sc. Autonomous Systems</h2>
+            <p>DTU · thesis defended and degree requirements completed in 2026.</p>
+          </article>
         </div>
       </section>
 
@@ -63,7 +75,7 @@ export default function Profile() {
         <p className="availability"><span aria-hidden="true" /> Open to robotics engineering roles</p>
         <h2>Want the full picture?</h2>
         <div className="contact__links">
-          <Link className="button button--light" href="/resume">Read my resume</Link>
+          <Link className="button button--dark" href="/resume">Read my resume</Link>
           <Link href="mailto:s242507@dtu.dk">Email me ↗</Link>
           <Link href="https://www.linkedin.com/in/ramiihanna/" target="_blank" rel="noreferrer">LinkedIn ↗</Link>
         </div>

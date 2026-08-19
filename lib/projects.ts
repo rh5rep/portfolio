@@ -137,6 +137,7 @@ export const projects: Project[] = [
     gallery: [
       { src: "/images/Cartesian-Robot.jpg", alt: "Teradyne Cartesian robotic test system", width: 1000, height: 750, caption: "The physical Cartesian test platform." },
       { src: "/portfolio/teradyne-load-cell.png", alt: "Load-cell readout from the test system", width: 1495, height: 473, caption: "Feedback made the motion measurable." },
+      { src: "/images/1MateData.png", alt: "Force profile from a connector-mating test", width: 1178, height: 869, caption: "Force data made the connector-mating sequence inspectable.", className: "object-contain" },
       { src: "/images/RobotPicture.jpg", alt: "Teradyne project team and robot system", width: 1000, height: 750, caption: "The system at the senior-project showcase." },
     ],
     link: { href: "/pdfs/modified_capstone.pdf", label: "Read IEEE paper" },
