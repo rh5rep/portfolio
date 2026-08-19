@@ -3,6 +3,25 @@ import Link from "next/link";
 import SiteHeader from "@/components/SiteHeader";
 import { projects, type Project } from "@/lib/projects";
 
+const academicExplorations = [
+  {
+    title: "Autonomy, sensing, and mapping",
+    period: "DTU coursework · 2025",
+    summary: "Robotics coursework across ROS2 occupancy-grid mapping, LiDAR and GNSS/IMU data, point-cloud workflows, and Crazyflie / OptiTrack controller validation.",
+    evidence: ["ROS2", "LiDAR + GNSS/IMU", "Occupancy grids", "Point clouds"],
+    image: "/portfolio/autonomy-coursework-poster.png",
+    alt: "Poster showing autonomy sensor-data and mapping coursework",
+  },
+  {
+    title: "Discrete diffusion for Super Mario levels",
+    period: "Advanced deep learning coursework · 2025",
+    summary: "A PyTorch U-Net diffusion study using one-hot tile representations, with attention to why image metrics alone do not capture structural validity or playability.",
+    evidence: ["PyTorch", "U-Net", "DDPM", "Model evaluation"],
+    image: "/portfolio/adlcv-poster.png",
+    alt: "Poster showing the Super Mario diffusion coursework project",
+  },
+];
+
 export const metadata = {
   title: "Work | Rami Hanna",
   description: "Selected robotics, sensing, controls, and software projects by Rami Hanna.",
@@ -46,6 +65,29 @@ export default function WorkPage() {
         <div className="project-grid project-grid--work">
           {projects.map((project) => <WorkCard key={project.slug} project={project} />)}
         </div>
+
+        <section className="academic-explorations" aria-labelledby="academic-explorations-title">
+          <div className="section-heading">
+            <p className="eyebrow">Academic explorations</p>
+            <h2 id="academic-explorations-title">Coursework that extends the systems story.</h2>
+            <p>Relevant technical studies, kept visibly separate from professional and flagship project work.</p>
+          </div>
+          <div className="academic-explorations__grid">
+            {academicExplorations.map((exploration) => (
+              <article key={exploration.title}>
+                <Image src={exploration.image} alt={exploration.alt} width={1200} height={900} sizes="(max-width: 800px) 100vw, 50vw" />
+                <div>
+                  <p className="eyebrow">{exploration.period}</p>
+                  <h3>{exploration.title}</h3>
+                  <p>{exploration.summary}</p>
+                  <ul aria-label={`${exploration.title} methods`}>
+                    {exploration.evidence.map((item) => <li key={item}>{item}</li>)}
+                  </ul>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
       </section>
     </main>
   );
