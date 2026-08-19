@@ -155,9 +155,8 @@ body {
 .site-header__nav-group { display: flex; align-items: center; gap: 18px; }
 .site-mark { display: inline-flex; align-items: center; gap: 9px; font-size: 13px; font-weight: 700; letter-spacing: .02em; text-transform: uppercase; }
 .site-mark__dot { width: 9px; height: 9px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 4px rgba(183, 255, 60, .22); }
-.site-header__identity { display: flex; align-items: center; gap: 20px; }
-.site-header__availability { display: inline-flex; align-items: center; gap: 8px; margin: 0; color: var(--quiet); font-size: 10px; font-weight: 800; letter-spacing: .1em; line-height: 1; text-transform: uppercase; }
-.site-header__availability span { width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 5px rgba(183, 255, 60, .2); }
+.site-header__identity { display: flex; align-items: center; gap: 16px; }
+.site-header__availability { margin: 0; border-left: 1px solid var(--rule); padding-left: 16px; color: var(--quiet); font-size: 10px; font-weight: 800; letter-spacing: .1em; line-height: 1; text-transform: uppercase; }
 .site-nav { display: flex; align-items: center; gap: 20px; font-size: 13px; font-weight: 600; }
 .site-nav a { transition: color .2s ease; }
 .site-nav a:hover { color: #5d7a19; }
@@ -180,7 +179,7 @@ body {
 .text-link:hover { color: #587813; }
 
 .hero { position: relative; display: grid; min-height: calc(100svh - 64px); grid-template-columns: minmax(0, 1fr) minmax(270px, .7fr); align-items: center; overflow: hidden; padding-top: clamp(64px, 9vw, 136px); padding-bottom: 104px; }
-.hero--home { min-height: calc(100svh - 64px); align-items: start; padding-top: clamp(38px, 4vw, 64px); }
+.hero--home { min-height: calc(100svh - 64px); align-items: start; padding-top: clamp(24px, 2.8vw, 42px); }
 .hero__grid { position: absolute; inset: 0; pointer-events: none; }
 .hero__line { position: absolute; display: block; width: 1px; background: var(--rule); transform: rotate(28deg); transform-origin: top; }
 .hero__line--one { top: -10%; left: 24%; height: 123%; }
@@ -194,6 +193,7 @@ body {
 .hero__content { position: relative; z-index: 1; max-width: 760px; }
 .hero__kicker { margin: 22px 0 0; color: var(--quiet); font-size: 13px; }
 .hero h1, .section h2, .story-page h1, .resume-page h1, .project-hero h1 { margin: 22px 0 0; font-size: clamp(50px, 7.1vw, 104px); font-weight: 650; letter-spacing: -.055em; line-height: .94; }
+.hero--home h1 { font-size: clamp(48px, 6.25vw, 92px); }
 .hero h1 em, .section h2 em, .story-page h1 em { color: #6c9016; font-family: Georgia, serif; font-weight: 400; }
 .hero__intro { max-width: 620px; margin: 26px 0 0; color: #444641; font-size: clamp(17px, 1.55vw, 21px); line-height: 1.48; }
 .hero__actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px; }
@@ -202,8 +202,8 @@ body {
 .hero__portrait-ring { position: absolute; z-index: 0; top: -6%; left: -7%; width: 110%; aspect-ratio: 1; border: 1px solid var(--ink); border-radius: 50%; }
 .hero__portrait-note { position: absolute; z-index: 2; right: -13%; bottom: 17%; width: 146px; margin: 0; font-size: 10px; font-weight: 700; letter-spacing: .18em; line-height: 1.5; writing-mode: vertical-rl; }
 .hero__quick-links { position: absolute; z-index: 2; right: 0; bottom: 30px; left: 0; display: flex; justify-content: space-between; border-top: 1px solid var(--rule); padding-top: 16px; font-size: 15px; font-weight: 700; }
-.hero__quick-links a { display: inline-flex; min-height: 46px; align-items: center; padding: 0 12px; transition: color .2s ease, background .2s ease; }
-.hero__quick-links a:hover { color: #6b9111; }
+.hero__quick-links a { display: inline-flex; min-height: 46px; align-items: center; padding: 0 12px; transition: color .2s ease, background .2s ease, box-shadow .2s ease; }
+.hero__quick-links a:hover { box-shadow: inset 0 -2px 0 var(--green); color: #4f6e0c; }
 
 .section { padding-top: clamp(46px, 6vw, 80px); padding-bottom: 0; }
 .section-heading { display: grid; grid-template-columns: minmax(130px, .32fr) minmax(0, 1fr); gap: 20px; align-items: start; max-width: 1120px; }

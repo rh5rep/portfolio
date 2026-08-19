@@ -8,7 +8,7 @@ export default function Home() {
       <SiteHeader />
       <section className="hero hero--home site-shell" aria-labelledby="hero-title">
         <div className="hero__content">
-          <p className="hero__kicker">Boston, MA · Robotics systems · 2026</p>
+          <p className="hero__kicker">Boston, MA · M.Sc. Autonomous Systems · 2026</p>
           <h1 id="hero-title">I build robotics systems that <em>help people</em> and work in the real world.</h1>
           <p className="hero__intro">
             I work where software meets sensing, controls, mechanics, and the messy details that

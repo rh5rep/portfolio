@@ -19,7 +19,7 @@ export default function SiteHeader() {
             <span className="site-mark__dot" aria-hidden="true" />
             Rami Hanna
           </Link>
-          <p className="site-header__availability"><span aria-hidden="true" /> Open to new roles</p>
+          <p className="site-header__availability">Open to new roles</p>
         </div>
         <div className="site-header__nav-group">
           <nav className="site-nav" aria-label="Primary navigation">
