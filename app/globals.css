@@ -155,6 +155,9 @@ body {
 .site-header__nav-group { display: flex; align-items: center; gap: 18px; }
 .site-mark { display: inline-flex; align-items: center; gap: 9px; font-size: 13px; font-weight: 700; letter-spacing: .02em; text-transform: uppercase; }
 .site-mark__dot { width: 9px; height: 9px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 4px rgba(183, 255, 60, .22); }
+.site-header__identity { display: flex; align-items: center; gap: 20px; }
+.site-header__availability { display: inline-flex; align-items: center; gap: 8px; margin: 0; color: var(--quiet); font-size: 10px; font-weight: 800; letter-spacing: .1em; line-height: 1; text-transform: uppercase; }
+.site-header__availability span { width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 5px rgba(183, 255, 60, .2); }
 .site-nav { display: flex; align-items: center; gap: 20px; font-size: 13px; font-weight: 600; }
 .site-nav a { transition: color .2s ease; }
 .site-nav a:hover { color: #5d7a19; }
@@ -404,6 +407,7 @@ body {
 .travel-page__regions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 28px; background: var(--rule); border: 1px solid var(--rule); }
 .travel-page__regions article { min-height: 130px; padding: 18px; background: var(--paper); }
 .travel-page__regions article > p:last-child { margin: 22px 0 0; color: var(--quiet); font-size: 15px; line-height: 1.45; }
+.travel-page__regions .travel-page__region--coming { background: rgba(183, 255, 60, .08); }
 
 .language-page__intro { max-width: 860px; }
 .language-page h1 { max-width: 780px; margin: 22px 0 0; font-size: clamp(50px, 7.1vw, 104px); font-weight: 650; letter-spacing: -.075em; line-height: .91; }
@@ -465,6 +469,7 @@ body {
 
 @media (max-width: 470px) {
   .site-mark { font-size: 11px; }
+  .site-header__availability { display: none; }
   .site-nav { gap: 9px; }
   .site-nav a:nth-child(2) { display: none; }
   .site-socials a:nth-child(3) { display: none; }

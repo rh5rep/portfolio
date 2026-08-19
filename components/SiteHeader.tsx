@@ -14,10 +14,13 @@ export default function SiteHeader() {
   return (
     <header className="site-header">
       <div className="site-shell site-header__inner">
-        <Link href="/" className="site-mark" aria-label="Rami Hanna home">
-          <span className="site-mark__dot" aria-hidden="true" />
-          Rami Hanna
-        </Link>
+        <div className="site-header__identity">
+          <Link href="/" className="site-mark" aria-label="Rami Hanna home">
+            <span className="site-mark__dot" aria-hidden="true" />
+            Rami Hanna
+          </Link>
+          <p className="site-header__availability"><span aria-hidden="true" /> Open to new roles</p>
+        </div>
         <div className="site-header__nav-group">
           <nav className="site-nav" aria-label="Primary navigation">
             {navLinks.map((item) => (

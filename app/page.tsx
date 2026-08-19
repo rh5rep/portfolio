@@ -8,7 +8,6 @@ export default function Home() {
       <SiteHeader />
       <section className="hero hero--home site-shell" aria-labelledby="hero-title">
         <div className="hero__content">
-          <p className="availability"><span aria-hidden="true" /> Open to robotics engineering roles</p>
           <p className="hero__kicker">Boston, MA · Robotics systems · 2026</p>
           <h1 id="hero-title">I build robotics systems that <em>help people</em> and work in the real world.</h1>
           <p className="hero__intro">
@@ -16,13 +15,8 @@ export default function Home() {
             make a system useful. My goal is to build technology that improves lives—from
             rehabilitation robotics to smarter field systems and safer autonomy.
           </p>
-          <div className="hero__actions">
-            <Link className="button button--dark" href="/work">Selected work</Link>
-            <Link className="button button--quiet" href="/resume">Resume</Link>
-          </div>
         </div>
         <div className="hero__portrait-wrap">
-          <div className="hero__portrait-ring" aria-hidden="true" />
           <Image
             src="/portfolio/rami-profile-2026.jpg"
             alt="Rami Hanna"
