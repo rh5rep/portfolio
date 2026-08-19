@@ -222,8 +222,10 @@ body {
 .project-card--2 .project-card__image { background: #d5d8d0; }
 .project-card--0 .project-card__image img { object-position: center; }
 .project-card__copy { display: flex; height: 100%; flex-direction: column; padding: 24px; }
+.project-card__copy > .project-card__scope { margin: 9px 0 0; color: #6b9111; font-size: 11px; font-weight: 700; letter-spacing: .08em; line-height: 1.35; text-transform: uppercase; }
 .project-card__copy h2, .project-card__copy h3 { margin: 16px 0 0; font-size: clamp(24px, 2.35vw, 37px); letter-spacing: -.055em; line-height: .99; }
 .project-card__copy > p:not(.eyebrow) { margin: 16px 0 0; color: var(--quiet); font-size: 15px; line-height: 1.48; }
+.project-card__copy .project-card__evidence { margin-top: 22px; border-top: 1px solid var(--rule); padding-top: 12px; color: var(--ink); font-size: 12px; font-weight: 700; line-height: 1.35; }
 .project-card__copy .text-link { margin-top: 25px; }
 
 .section--story { display: grid; grid-template-columns: minmax(0, .75fr) minmax(0, 1.25fr); gap: 7vw; align-items: start; }

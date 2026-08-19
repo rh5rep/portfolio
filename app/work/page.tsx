@@ -23,8 +23,10 @@ function WorkCard({ project }: { project: Project }) {
       </Link>
       <div className="project-card__copy">
         <p className="eyebrow">{project.index} · {project.category}</p>
+        <p className="project-card__scope">{project.scope}</p>
         <h2>{project.title}</h2>
         <p>{project.summary}</p>
+        <p className="project-card__evidence">{project.evidence}</p>
         <Link className="text-link" href={`/projects/${project.slug}`}>See the work <span aria-hidden="true">↗</span></Link>
       </div>
     </article>

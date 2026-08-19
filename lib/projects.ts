@@ -3,6 +3,8 @@ export type Project = {
   name: string;
   index: string;
   category: string;
+  scope: string;
+  evidence: string;
   title: string;
   summary: string;
   context: string;
@@ -39,6 +41,8 @@ export const projects: Project[] = [
     name: "Wearable finger-actuator thesis",
     index: "01",
     category: "Wearable rehabilitation robotics · modeling + evaluation",
+    scope: "M.Sc. thesis · 2026",
+    evidence: "1,000 / 1,000 rigid-fixture cycles",
     title: "A wearable tendon-driven finger actuator, built and evaluated for neurorehabilitation tasks.",
     summary:
       "An M.Sc. engineering feasibility study—from simplified mechanics to repeatable benchtop experiments and an on-hand wearable prototype.",
@@ -75,6 +79,8 @@ export const projects: Project[] = [
     name: "PerPlant",
     index: "02",
     category: "Agtech robotics · sensing + data quality",
+    scope: "Robotics co-op · 2025",
+    evidence: "ROS2 thermal sensing + GPS capture",
     title: "Making field sensing and visual-data workflows hold up outside ideal conditions.",
     summary:
       "Robotics co-op work connecting thermal imagery, GPS metadata, ROS2, and more deliberate dataset curation for precision agriculture.",
@@ -103,6 +109,8 @@ export const projects: Project[] = [
     name: "Teradyne robotic test system",
     index: "03",
     category: "Mechatronics · closed-loop automation",
+    scope: "Senior project · 2023",
+    evidence: "IEEE SII/SICE 2024 publication",
     title: "A force-aware Cartesian robot for repeatable connector mating and test data collection.",
     summary:
       "An end-to-end senior project combining embedded control, sensing, automation logic, and a physical robot system.",
@@ -134,6 +142,8 @@ export const projects: Project[] = [
     name: "SunnySips",
     index: "04",
     category: "Independent software · real-world recommendations",
+    scope: "Released independent product",
+    evidence: "SwiftUI + FastAPI environmental modeling",
     title: "Turning weather, geometry, and place into a simple outdoor recommendation experience.",
     summary:
       "A released personal iOS and web project that hides environmental modeling beneath an approachable interface.",
@@ -165,6 +175,8 @@ export const projects: Project[] = [
     name: "TRYBE",
     index: "05",
     category: "Independent prototype · participation systems",
+    scope: "Independent product prototype",
+    evidence: "Partner-pilot materials + interaction design",
     title: "Exploring a more welcoming way into real-world movement and community.",
     summary:
       "A product prototype for beginner-friendly, instructor-led sessions, with careful attention to states, partner rules, and the experience of trying something new.",

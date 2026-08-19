@@ -27,7 +27,7 @@ export default function Profile() {
         <div className="story-stats" aria-label="Career highlights">
           <article><span>04</span><p>engineering co-ops across robotics, biomedical R&D, and agtech</p></article>
           <article><span>01</span><p>IEEE-published Cartesian robotics project</p></article>
-          <article><span>∞</span><p>questions about how systems can be made more useful</p></article>
+          <article><span>M.Sc.</span><p>Autonomous Systems degree requirements completed at DTU in 2026</p></article>
         </div>
       </section>
 
