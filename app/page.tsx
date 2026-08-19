@@ -7,14 +7,6 @@ export default function Home() {
     <main>
       <SiteHeader />
       <section className="hero hero--home site-shell" aria-labelledby="hero-title">
-        <div className="hero__grid" aria-hidden="true">
-          <span className="hero__line hero__line--one" />
-          <span className="hero__line hero__line--two" />
-          <span className="hero__orb hero__orb--one" />
-          <span className="hero__orb hero__orb--two" />
-          <span className="hero__label hero__label--one">SENSE</span>
-          <span className="hero__label hero__label--two">MODEL</span>
-        </div>
         <div className="hero__content">
           <p className="availability"><span aria-hidden="true" /> Open to robotics engineering roles</p>
           <p className="hero__kicker">Boston, MA · Robotics systems · 2026</p>
