@@ -94,7 +94,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
               <figcaption>Finished wearable prototype.</figcaption>
             </figure>
           ) : null}
-          <section className="project-gallery" aria-labelledby="project-gallery-title">
+          {project.gallery.length > 0 ? <section className="project-gallery" aria-labelledby="project-gallery-title">
             <div className="project-gallery__heading">
               <p className="eyebrow">In the work</p>
               <h2 id="project-gallery-title">A few details worth getting closer to.</h2>
@@ -116,6 +116,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
               ))}
             </div>
           </section>
+          : null}
         </div>
       </section>
 

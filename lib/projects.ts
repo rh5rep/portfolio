@@ -143,9 +143,37 @@ export const projects: Project[] = [
     link: { href: "/pdfs/modified_capstone.pdf", label: "Read IEEE paper" },
   },
   {
+    slug: "harvard-microrobotics",
+    name: "Harvard Microrobotics",
+    index: "04",
+    category: "Underwater robotics · interfaces + embedded systems",
+    scope: "Robotics co-op · 2022–23",
+    evidence: "HTML / Flask · sockets · Embedded C · MicroROS",
+    system: "Operator interface → sockets and embedded communication → teleoperated and autonomous fleet workflows.",
+    title: "Making robotic fleet operation more concrete for the people using it.",
+    summary:
+      "Robotics co-op work spanning robot-operation interfaces, embedded communication, and mechanical subsystem integration for underwater robots.",
+    context:
+      "On a startup-style research team, the work connected the tools people used to operate robots with the communication and mechanical details that made the fleet usable.",
+    contributions: [
+      "Developed robot-operation interfaces using HTML, Flask, and sockets.",
+      "Supported teleoperated and autonomous robot workflows with embedded C and MicroROS communication.",
+      "Contributed to planetary-gearbox design and broader subsystem integration.",
+    ],
+    proof: ["Fleet-operation interfaces", "Embedded communication", "Mechanical subsystem integration"],
+    stack: ["Flask", "HTML", "Sockets", "Embedded C", "MicroROS"],
+    image: {
+      src: "/portfolio/harvard-fleet-robots.png",
+      alt: "Fleet Robotics underwater robots against a red wall",
+      width: 2500,
+      height: 1406,
+    },
+    gallery: [],
+  },
+  {
     slug: "sunnysips",
     name: "SunnySips",
-    index: "04",
+    index: "05",
     category: "Independent software · real-world recommendations",
     scope: "Released independent product",
     evidence: "SwiftUI + FastAPI environmental modeling",
@@ -179,7 +207,7 @@ export const projects: Project[] = [
   {
     slug: "trybe",
     name: "TRYBE",
-    index: "05",
+    index: "06",
     category: "Independent prototype · participation systems",
     scope: "Independent product prototype",
     evidence: "Partner-pilot materials + interaction design",
