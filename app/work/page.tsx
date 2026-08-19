@@ -52,6 +52,25 @@ function WorkCard({ project }: { project: Project }) {
   );
 }
 
+function ExperienceCard() {
+  return (
+    <article className="project-card project-card--experience">
+      <div className="experience-card__media" aria-hidden="true">
+        <span>Harvard<br />Microrobotics</span>
+        <p>UNDERWATER ROBOT FLEET<br />INTERFACES + EMBEDDED SYSTEMS</p>
+      </div>
+      <div className="project-card__copy">
+        <p className="eyebrow">06 · Underwater robotics · interfaces + embedded systems</p>
+        <p className="project-card__scope">Robotics co-op · 2022–23</p>
+        <h2>Making robotic fleet operation more concrete for the people using it.</h2>
+        <p>Contributed to teleoperated and autonomous underwater-robot workflows through operation interfaces, embedded communication, and mechanical subsystem integration.</p>
+        <p className="project-card__evidence">HTML / Flask · sockets · Embedded C · MicroROS</p>
+        <Link className="text-link" href="/resume">See experience <span aria-hidden="true">↗</span></Link>
+      </div>
+    </article>
+  );
+}
+
 export default function WorkPage() {
   return (
     <main>
@@ -64,6 +83,7 @@ export default function WorkPage() {
         </div>
         <div className="project-grid project-grid--work">
           {projects.map((project) => <WorkCard key={project.slug} project={project} />)}
+          <ExperienceCard />
         </div>
 
         <section className="academic-explorations" aria-labelledby="academic-explorations-title">

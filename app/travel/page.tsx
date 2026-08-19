@@ -6,6 +6,7 @@ import { totalTravelPlaces, travelLocations, travelRegions } from "./travel-data
 const atlasRegions = [
   ...travelRegions,
   { region: "South America", places: ["Coming soon"], comingSoon: true },
+  { region: "Africa", places: ["Coming soon"], comingSoon: true },
 ];
 
 export const metadata = {
