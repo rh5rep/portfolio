@@ -3,7 +3,13 @@ import SiteHeader from "@/components/SiteHeader";
 import MapPanel from "./map-panel";
 import { totalTravelPlaces, travelLocations, travelRegions } from "./travel-data";
 
-const atlasRegions = [
+type AtlasRegion = {
+  region: string;
+  places: string[];
+  comingSoon?: boolean;
+};
+
+const atlasRegions: AtlasRegion[] = [
   ...travelRegions,
   { region: "South America", places: ["Coming soon"], comingSoon: true },
   { region: "Africa", places: ["Coming soon"], comingSoon: true },
