@@ -16,7 +16,7 @@ export default function ContactPage() {
           <h1>Let&apos;s build something that matters.</h1>
           <p>For roles, research collaborations, mentorship, or a good technical conversation.</p>
           <div className="contact__links">
-            <Link className="button button--light" href="mailto:s242507@dtu.dk">Email me</Link>
+            <Link className="button button--dark" href="mailto:s242507@dtu.dk">Email me</Link>
             <Link href="https://www.linkedin.com/in/ramiihanna/" target="_blank" rel="noreferrer">LinkedIn ↗</Link>
             <Link href="https://github.com/rh5rep" target="_blank" rel="noreferrer">GitHub ↗</Link>
             <Link href="/resume.pdf" download="Rami_Hanna_Robotics_Autonomous_Systems_CV.pdf">Download CV ↓</Link>
