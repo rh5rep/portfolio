@@ -280,7 +280,7 @@ body {
 .contact__links { display: flex; flex-wrap: wrap; gap: 13px 23px; margin-top: 35px; align-items: center; font-size: 14px; font-weight: 700; }
 .contact__links > a:not(.button) { border-bottom: 1px solid currentColor; padding-bottom: 3px; }
 .contact--compact { margin-top: 100px; background: #dce4d2; }
-.contact--page { display: grid; min-height: calc(100svh - 64px); align-items: center; }
+.contact--page { display: grid; min-height: calc(100svh - 64px); align-items: center; background: #dce4d2; }
 
 .project-hero { padding-top: 35px; padding-bottom: 75px; }
 .back-link { display: inline-block; font-size: 13px; font-weight: 700; }
