@@ -5,7 +5,6 @@ import { HiOutlineEnvelope } from "react-icons/hi2";
 const navLinks = [
   { href: "/work", label: "Work" },
   { href: "/profile", label: "Story" },
-  { href: "/writing", label: "Writing" },
   { href: "/life", label: "Life" },
   { href: "/resume", label: "Resume" },
 ];

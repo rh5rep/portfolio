@@ -27,6 +27,8 @@ export const metadata = {
   description: "Selected robotics, sensing, controls, and software projects by Rami Hanna.",
 };
 
+const workProjects = [...projects].sort((a, b) => a.index.localeCompare(b.index));
+
 function WorkCard({ project }: { project: Project }) {
   return (
     <article className="project-card">
@@ -61,10 +63,17 @@ export default function WorkPage() {
         <div className="section-heading">
           <p className="eyebrow">Selected work</p>
           <h1>Engineering for systems that need to be <em>trusted.</em></h1>
-          <p>Projects that best represent how I think: turn a physical problem into something observable, testable, and useful.</p>
+          <p className="section-heading__intro">Projects that best represent how I think: turn a physical problem into something observable, testable, and useful.</p>
+          <ul className="work-focus-list" aria-label="Technical focus areas">
+            <li>ROS2 + C++</li>
+            <li>Embedded interfaces</li>
+            <li>Controls</li>
+            <li>Computer vision</li>
+            <li>Systems integration</li>
+          </ul>
         </div>
         <div className="project-grid project-grid--work">
-          {projects.map((project) => <WorkCard key={project.slug} project={project} />)}
+          {workProjects.map((project) => <WorkCard key={project.slug} project={project} />)}
         </div>
 
         <section className="academic-explorations" aria-labelledby="academic-explorations-title">

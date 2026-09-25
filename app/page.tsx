@@ -31,7 +31,6 @@ export default function Home() {
         <nav className="hero__quick-links" aria-label="Explore Rami Hanna's portfolio">
           <Link href="/work">Work</Link>
           <Link href="/profile">Story</Link>
-          <Link href="/writing">Writing</Link>
           <Link href="/resume">Resume</Link>
           <Link href="/life">Life</Link>
           <Link href="/giving-back">Giving back</Link>

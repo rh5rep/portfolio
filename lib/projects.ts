@@ -111,7 +111,7 @@ export const projects: Project[] = [
   {
     slug: "teradyne",
     name: "Teradyne robotic test system",
-    index: "03",
+    index: "04",
     category: "Mechatronics · closed-loop automation",
     scope: "Senior project · 2023",
     evidence: "IEEE SII/SICE 2024 publication",
@@ -146,7 +146,7 @@ export const projects: Project[] = [
   {
     slug: "harvard-microrobotics",
     name: "Harvard Microrobotics",
-    index: "04",
+    index: "03",
     category: "Underwater robotics · interfaces + embedded systems",
     scope: "Robotics co-op · 2022–23",
     evidence: "HTML / Flask · sockets · Embedded C · MicroROS",
