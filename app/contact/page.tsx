@@ -19,7 +19,7 @@ export default function ContactPage() {
             <Link className="button button--dark" href="mailto:s242507@dtu.dk">Email me</Link>
             <Link href="https://www.linkedin.com/in/ramiihanna/" target="_blank" rel="noreferrer">LinkedIn ↗</Link>
             <Link href="https://github.com/rh5rep" target="_blank" rel="noreferrer">GitHub ↗</Link>
-            <Link href="/resume.pdf" download="Rami_Hanna_Robotics_Autonomous_Systems_CV.pdf">Download CV ↓</Link>
+            <Link href="/resume.pdf" download="Rami_Hanna_Robotics_Systems_Resume.pdf">Download CV ↓</Link>
           </div>
         </div>
       </section>

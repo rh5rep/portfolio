@@ -43,9 +43,9 @@ export const projects: Project[] = [
     index: "01",
     category: "Wearable rehabilitation robotics · modeling + evaluation",
     scope: "M.Sc. thesis · 2026",
-    evidence: "1,000 / 1,000 rigid-fixture cycles",
+    evidence: "1,000 / 1,000 rigid-fixture cycles · supervised 3 interns",
     system: "Reduced-order routing model → ESP32-S3 actuator control → camera and encoder measurement.",
-    title: "A wearable tendon-driven finger actuator, built and evaluated for neurorehabilitation tasks.",
+    title: "A wearable tendon-driven finger actuator, built and evaluated for neuro\u00adrehabilitation tasks.",
     summary:
       "An M.Sc. engineering feasibility study—from simplified mechanics to repeatable benchtop experiments and an on-hand wearable prototype.",
     context:
@@ -54,9 +54,10 @@ export const projects: Project[] = [
       "Built reduced-order models for finger kinematics, tendon routing, passive torque, leverage, stroke, and tension.",
       "Used Python sweeps to screen stiffness and geometry choices before hardware iteration.",
       "Designed a benchtop validation loop around force, displacement, motion tracking, repeatability, and model error.",
+      "Supervised three student interns contributing to fixture, control, computer-vision, and sensing work.",
     ],
-    proof: ["1,000 / 1,000 rigid-fixture cycles", "Wearable-transfer study", "Hardware + measurement"],
-    stack: ["Python", "ESP32-S3", "Motor + encoder control", "FDM prototypes"],
+    proof: ["1,000 / 1,000 rigid-fixture cycles", "97.5% of 49.93° comparator", "3 student interns supervised"],
+    stack: ["Python", "OpenCV", "ESP32-S3", "Motor + encoder control", "FDM prototypes"],
     image: {
       src: "/portfolio/thesis-wearable-hero-rotated.png",
       alt: "Finished wearable soft-finger actuator on a hand",
@@ -82,20 +83,20 @@ export const projects: Project[] = [
     index: "02",
     category: "Agtech robotics · sensing + data quality",
     scope: "Robotics co-op · 2025",
-    evidence: "ROS2 thermal sensing + GPS capture",
-    system: "Thermal camera → ROS2 C++/Python capture → GPS-linked image sets → data-curation workflow.",
+    evidence: "ROS2 · OpenCV · NVIDIA Jetson · MicroROS",
+    system: "Multi-camera + thermal fixture → Jetson/OpenCV + ROS2/MicroROS capture → GPS-linked image sets → data-curation workflow.",
     title: "Making field sensing and visual-data workflows hold up outside ideal conditions.",
     summary:
-      "Robotics co-op work connecting thermal imagery, GPS metadata, ROS2, and more deliberate dataset curation for precision agriculture.",
+      "Robotics co-op work connecting field hardware, ROS2/OpenCV sensing, GPS metadata, and representative data curation for precision agriculture.",
     context:
-      "The challenge was not a clean lab demo: it was making sensing and downstream computer-vision data useful in field conditions with correlated imagery and human annotation constraints.",
+      "The challenge was not a clean lab demo: it was translating farmer feedback into technical requirements, then making sensing and downstream computer-vision data useful under field conditions.",
     contributions: [
-      "Integrated thermal capture with ROS2 publishers/subscribers in C++ and Python.",
-      "Linked field capture to GPS metadata for structured collection.",
-      "Used ROI filtering, detector embeddings, UMAP, HDBSCAN, and grouped splits to create representative annotation batches.",
+      "Integrated thermal/GPS field sensing in C++ and Python using ROS2, OpenCV, NVIDIA Jetson, and MicroROS.",
+      "Redesigned a multi-camera fixture to add thermal imaging and translated farmer feedback into technical requirements.",
+      "Used ROI filtering, detector embeddings, UMAP, HDBSCAN, and grouped splits to create representative annotation and evaluation batches from a 150,000+ image field dataset.",
     ],
-    proof: ["ROS2 + C++", "Thermal + GPS", "Representative data selection"],
-    stack: ["ROS2", "C++", "Python", "UMAP", "HDBSCAN"],
+    proof: ["Thermal + GPS field sensing", "150,000+ image dataset", "Stakeholder-to-requirement translation"],
+    stack: ["ROS2", "C++", "Python", "OpenCV", "NVIDIA Jetson", "MicroROS", "UMAP", "HDBSCAN"],
     image: {
       src: "/portfolio/perplant-field-aerial.png",
       alt: "Aerial agricultural field imagery showing the kind of real-world setting PerPlant works in",
@@ -176,7 +177,7 @@ export const projects: Project[] = [
     index: "05",
     category: "Independent software · real-world recommendations",
     scope: "Released independent product",
-    evidence: "SwiftUI + FastAPI environmental modeling",
+    evidence: "Released iOS/web product · in-person customer discovery",
     system: "Python/FastAPI model pipeline → SwiftUI interface → caching and fallback behavior.",
     title: "Turning weather, geometry, and place into a simple outdoor recommendation experience.",
     summary:
@@ -186,10 +187,11 @@ export const projects: Project[] = [
     contributions: [
       "Built SwiftUI workflows alongside Python/FastAPI data generation.",
       "Modeled sun position, weather, venue context, and urban occlusion.",
-      "Added snapshots, caching/fallback behavior, testing, and release tooling.",
+      "Used in-person café and user discovery to change feature priorities, including future-planning functionality.",
+      "Added caching and fallback behavior, automated testing, Docker, GitHub Actions CI/CD, and release tooling.",
     ],
-    proof: ["Released personal project", "Environmental modeling", "Human-centered interface"],
-    stack: ["SwiftUI", "FastAPI", "Python", "Geospatial data"],
+    proof: ["Released iOS/web product", "Customer discovery changed priorities", "Automated testing + CI/CD"],
+    stack: ["SwiftUI", "FastAPI", "Python", "Docker", "GitHub Actions", "Geospatial data"],
     image: {
       src: "/portfolio/sunnysips-time-it-right.png",
       alt: "SunnySips forecasting and recommended visit-times interface",

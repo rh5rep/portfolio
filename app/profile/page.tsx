@@ -7,10 +7,10 @@ export const metadata = {
 };
 
 const experience = [
-  ["2025", "PerPlant", "ROS2 field sensing, thermal imagery, GPS metadata, and data-quality workflows for precision agriculture."],
-  ["2024–26", "DTU Autonomous Systems", "Master's work across robotics, simulation, computer vision, and a wearable finger-actuator thesis for neurorehabilitation tasks."],
+  ["2025", "PerPlant", "ROS2/OpenCV field sensing on NVIDIA Jetson, thermal imagery, GPS-linked data, and farmer needs translated into technical requirements."],
+  ["2024–26", "DTU Autonomous Systems", "Master's work across robotics, simulation, computer vision, and a validated wearable finger-actuator thesis while supervising three student interns."],
   ["2022–23", "Harvard Microrobotics", "Underwater robot fleet interfaces, embedded communication, and mechanical iteration in a startup-style environment."],
-  ["2019–22", "DEKA + Raytheon", "Biomedical R&D controls, instrumentation, robot automation, vision systems, and practical test infrastructure."],
+  ["2019–22", "DEKA + Raytheon", "Regulated biomedical R&D, controls and instrumentation, plus ownership of a UR5e/PLC/vision automation system from requirements to working hardware."],
 ];
 
 export default function Profile() {
@@ -21,8 +21,9 @@ export default function Profile() {
         <p className="eyebrow">About me</p>
         <h1>I want to build technology that makes life more <em>possible.</em></h1>
         <p className="story-page__lead">
-          I am a hands-on robotics engineer who likes the space between software and the physical
-          world: signals, sensors, mechanics, experiments, and the people who rely on them.
+          I am a robotics systems engineer who likes the space between software and the physical
+          world: embedded interfaces, sensing, controls, perception, experiments, and the people
+          who rely on them.
         </p>
         <div className="story-signals" aria-label="Career highlights">
           <article>

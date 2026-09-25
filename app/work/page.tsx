@@ -36,6 +36,7 @@ function WorkCard({ project }: { project: Project }) {
           alt={project.image.alt}
           width={project.image.width}
           height={project.image.height}
+          priority={project.index === "01"}
           sizes="(max-width: 720px) 100vw, (max-width: 1080px) 50vw, 33vw"
           className={project.image.className}
         />
