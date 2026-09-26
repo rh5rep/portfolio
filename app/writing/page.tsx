@@ -36,7 +36,7 @@ export default function WritingPage() {
           <p className="eyebrow">Rami&apos;s notebook</p>
           <h1>Thoughts from the bench, the field, and the <em>work-in-progress.</em></h1>
           <p>Short, occasional posts on robotics, product, experiments, and whatever I am learning in public. This is intentionally a living page—not a polished archive.</p>
-          <Link className="button button--dark" href="mailto:s242507@dtu.dk?subject=Writing%20note%20or%20conversation">Reply by email</Link>
+          <Link className="button button--dark" href="mailto:rami@rami-hanna.com?subject=Writing%20note%20or%20conversation">Reply by email</Link>
         </header>
         <div className="writing-list writing-list--publication">
           {posts.map((post, index) => (
@@ -51,7 +51,7 @@ export default function WritingPage() {
             </article>
           ))}
         </div>
-        <div className="writing-page__footer"><p>Want to suggest a topic or talk through an idea?</p><Link className="text-link" href="mailto:s242507@dtu.dk?subject=Writing%20or%20project%20note">Get in touch <span aria-hidden="true">↗</span></Link></div>
+        <div className="writing-page__footer"><p>Want to suggest a topic or talk through an idea?</p><Link className="text-link" href="mailto:rami@rami-hanna.com?subject=Writing%20or%20project%20note">Get in touch <span aria-hidden="true">↗</span></Link></div>
       </section>
     </main>
   );

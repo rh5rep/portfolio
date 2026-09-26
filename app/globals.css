@@ -286,6 +286,21 @@ body {
 .contact--compact { margin-top: 100px; background: #dce4d2; }
 .contact--page { display: grid; min-height: calc(100svh - 64px); align-items: center; background: #dce4d2; }
 
+.chat-page { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(340px, .72fr); gap: clamp(54px, 9vw, 140px); align-items: start; min-height: calc(100svh - 64px); padding-top: clamp(76px, 10vw, 140px); padding-bottom: clamp(84px, 11vw, 150px); }
+.chat-page__intro h1 { max-width: 760px; margin: 24px 0 0; font-size: clamp(54px, 7.6vw, 108px); letter-spacing: -.08em; line-height: .87; }
+.chat-page__intro h1 em { color: #658b12; font-family: Georgia, "Times New Roman", serif; font-weight: 400; }
+.chat-page__lead { max-width: 660px; margin: 30px 0 0; color: var(--quiet); font-size: clamp(18px, 1.7vw, 23px); line-height: 1.45; }
+.chat-page__actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 34px; }
+.chat-page__note { max-width: 590px; margin: 22px 0 0; color: var(--quiet); font-size: 13px; line-height: 1.5; }
+.chat-page__details { border-top: 1px solid var(--ink); padding-top: 17px; }
+.chat-page__durations { display: grid; margin-top: 22px; border-bottom: 1px solid var(--rule); }
+.chat-page__durations article { display: grid; grid-template-columns: 38px 1fr; gap: 15px; padding: 23px 0; border-top: 1px solid var(--rule); }
+.chat-page__durations article > span { padding-top: 5px; color: #658b12; font-size: 11px; font-weight: 800; letter-spacing: .12em; }
+.chat-page__durations h2 { margin: 0; font-size: clamp(28px, 3vw, 42px); letter-spacing: -.055em; line-height: 1; }
+.chat-page__durations p { max-width: 310px; margin: 9px 0 0; color: var(--quiet); font-size: 14px; line-height: 1.45; }
+.chat-page__expectation { margin-top: 34px; border-left: 2px solid var(--green); padding-left: 18px; }
+.chat-page__expectation > p:last-child { max-width: 370px; margin: 12px 0 0; color: var(--quiet); font-size: 14px; line-height: 1.5; }
+
 .project-hero { padding-top: 35px; padding-bottom: 75px; }
 .back-link { display: inline-flex; min-height: 44px; align-items: center; font-size: 13px; font-weight: 700; }
 .project-hero__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(300px, .86fr); gap: clamp(40px, 8vw, 130px); align-items: center; margin-top: 54px; }
@@ -488,10 +503,14 @@ body {
   .story-page { margin-inline: auto; }
   .experience, .story-values { padding-top: 86px; }
   .resume-page__heading { grid-template-columns: 1fr; padding-bottom: 52px; }
+  .chat-page { grid-template-columns: 1fr; gap: 58px; min-height: auto; padding-top: 74px; padding-bottom: 92px; }
+  .chat-page__details { max-width: 620px; }
 }
 
 @media (max-width: 520px) {
   .site-nav a:nth-child(2), .site-socials a:nth-child(2), .site-socials a:nth-child(3) { display: none; }
+  .chat-page__actions { flex-direction: column; }
+  .chat-page__actions .button { width: 100%; }
 }
 
 @media (max-width: 470px) {

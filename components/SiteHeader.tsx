@@ -31,7 +31,7 @@ export default function SiteHeader() {
           <nav className="site-socials" aria-label="Professional links">
             <Link href="https://www.linkedin.com/in/ramiihanna/" target="_blank" rel="noreferrer" aria-label="Rami Hanna on LinkedIn"><FaLinkedinIn aria-hidden="true" /></Link>
             <Link href="https://github.com/rh5rep" target="_blank" rel="noreferrer" aria-label="Rami Hanna on GitHub"><FaGithub aria-hidden="true" /></Link>
-            <Link href="mailto:s242507@dtu.dk" aria-label="Email Rami Hanna"><HiOutlineEnvelope aria-hidden="true" /></Link>
+            <Link href="mailto:rami@rami-hanna.com" aria-label="Email Rami Hanna"><HiOutlineEnvelope aria-hidden="true" /></Link>
           </nav>
           <Link href="/contact" className="site-nav__contact">Contact</Link>
         </div>

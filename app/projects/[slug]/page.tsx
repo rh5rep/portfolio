@@ -39,7 +39,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                   {project.link.label}
                 </Link>
               ) : null}
-              <Link className="button button--quiet" href="mailto:s242507@dtu.dk">Get in touch</Link>
+              <Link className="button button--quiet" href="mailto:rami@rami-hanna.com">Get in touch</Link>
             </div>
           </div>
           <div className="project-hero__image">
@@ -122,7 +122,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
       <footer className="project-footer site-shell">
         <p>Open to robotics engineering roles.</p>
-        <Link href="mailto:s242507@dtu.dk" className="text-link">Start a conversation <span aria-hidden="true">↗</span></Link>
+        <Link href="mailto:rami@rami-hanna.com" className="text-link">Start a conversation <span aria-hidden="true">↗</span></Link>
       </footer>
     </main>
   );

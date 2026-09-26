@@ -32,7 +32,7 @@ export default function GivingBackPage() {
               <li>Hands-on technical teaching</li>
               <li>Early product and prototype feedback</li>
             </ul>
-            <Link className="button button--dark" href="mailto:s242507@dtu.dk?subject=Community%20or%20mentorship%20idea">
+            <Link className="button button--dark" href="mailto:rami@rami-hanna.com?subject=Community%20or%20mentorship%20idea">
               Start a conversation
             </Link>
           </aside>

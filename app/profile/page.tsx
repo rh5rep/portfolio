@@ -77,7 +77,7 @@ export default function Profile() {
         <h2>Want the full picture?</h2>
         <div className="contact__links">
           <Link className="button button--dark" href="/resume">Read my resume</Link>
-          <Link href="mailto:s242507@dtu.dk">Email me ↗</Link>
+          <Link href="mailto:rami@rami-hanna.com">Email me ↗</Link>
           <Link href="https://www.linkedin.com/in/ramiihanna/" target="_blank" rel="noreferrer">LinkedIn ↗</Link>
         </div>
       </section>
