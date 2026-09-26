@@ -4,7 +4,7 @@ import SiteHeader from "@/components/SiteHeader";
 export const metadata = {
   title: "Chat | Rami Hanna",
   description:
-    "Schedule a short conversation with Rami Hanna about robotics, technical work, careers, or thoughtful collaboration.",
+    "Find a time to chat with Rami Hanna about robots, travel, cooking, ideas, or whatever is on your mind.",
   robots: {
     index: false,
     follow: false,
@@ -18,9 +18,9 @@ const schedulingUrl = configuredSchedulingUrl?.startsWith("https://")
   : undefined;
 
 const durations = [
-  ["15 min", "A quick introduction or focused question."],
-  ["25 min", "The default for a useful conversation."],
-  ["45 min", "A little more room for technical depth."],
+  ["15 min", "A quick hello, a question, or one good tangent."],
+  ["30 min", "Enough time to settle in and have a real conversation."],
+  ["45 min", "For a story, a deep dive, or a proper rabbit hole."],
 ];
 
 export default function ChatPage() {
@@ -29,16 +29,17 @@ export default function ChatPage() {
       <SiteHeader />
       <section className="chat-page site-shell" aria-labelledby="chat-title">
         <div className="chat-page__intro">
-          <p className="eyebrow">A conversation, not a pitch</p>
-          <h1 id="chat-title">Let&apos;s find a time to <em>talk.</em></h1>
+          <p className="eyebrow">Curiosity welcome</p>
+          <h1 id="chat-title">Let&apos;s have a <em>chat.</em></h1>
           <p className="chat-page__lead">
-            I&apos;m always glad to compare notes on robotics, technical work, career paths, or an
-            idea worth thinking through. Pick the amount of time that fits the conversation.
+            I always love a new perspective and a good conversation. Robots? Travel? Cooking? A
+            half-formed idea? Or maybe you just want to talk to someone. No pitch or polished
+            agenda needed—pick whatever time feels right.
           </p>
           <div className="chat-page__actions">
             {schedulingUrl ? (
               <a className="button button--dark" href={schedulingUrl}>
-                Find a time ↗
+                Pick a time ↗
               </a>
             ) : (
               <Link
@@ -49,7 +50,7 @@ export default function ChatPage() {
               </Link>
             )}
             <Link className="button button--quiet" href="/contact">
-              Other ways to connect
+              Other ways to say hello
             </Link>
           </div>
           <p className="chat-page__note">
@@ -73,10 +74,10 @@ export default function ChatPage() {
             ))}
           </div>
           <div className="chat-page__expectation">
-            <p className="eyebrow">What to expect</p>
+            <p className="eyebrow">Come as you are</p>
             <p>
-              A browser-based video link will be included automatically. If another format is
-              easier, reply to the confirmation and we&apos;ll adjust.
+              No preparation needed. You&apos;ll get a browser-based video link automatically; if
+              another format is easier, just reply and we&apos;ll figure it out.
             </p>
           </div>
         </div>
