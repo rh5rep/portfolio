@@ -15,6 +15,11 @@ export default function Home() {
             messy details that make a system useful. My goal is to build technology that improves
             lives—from rehabilitation robotics to smarter field systems and safer autonomy.
           </p>
+          <div className="hero__actions">
+            <Link className="button button--dark button--chat" href="/chat">
+              Let&apos;s chat <span aria-hidden="true">↗</span>
+            </Link>
+          </div>
         </div>
         <div className="hero__portrait-wrap">
           <Image

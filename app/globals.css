@@ -172,6 +172,8 @@ body {
 .button:hover { transform: translateY(-2px); }
 .button--dark { background: var(--ink); color: var(--paper); }
 .button--dark:hover { background: #353632; }
+.button--chat { gap: 8px; box-shadow: 0 0 0 0 rgba(183, 255, 60, 0); transition: transform .2s ease, background .2s ease, color .2s ease, box-shadow .25s ease; }
+.button--chat:hover, .button--chat:focus-visible { background: var(--ink); box-shadow: 0 0 0 5px rgba(183, 255, 60, .22), 0 12px 30px rgba(79, 110, 12, .18); }
 .button--quiet { background: transparent; }
 .button--quiet:hover { background: #e2e3dc; }
 .button--light { background: var(--green); color: var(--ink); border-color: var(--green); }
