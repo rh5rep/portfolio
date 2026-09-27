@@ -38,7 +38,7 @@ export default function TravelPage() {
             <span><strong>{travelRegions.length}</strong> regions</span>
             <span><strong>Boston</strong> current base</span>
           </div>
-          <Link className="text-link" href="/life">Back to life <span aria-hidden="true">↗</span></Link>
+          <Link className="text-link" href="/life">Back to life</Link>
         </div>
         <div className="travel-page__map"><MapPanel locations={travelLocations} heightClassName="h-[580px]" /></div>
         <div className="travel-page__regions">

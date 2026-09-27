@@ -97,8 +97,8 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
           {project.gallery.length > 0 ? <section className="project-gallery" aria-labelledby="project-gallery-title">
             <div className="project-gallery__heading">
               <p className="eyebrow">In the work</p>
-              <h2 id="project-gallery-title">A few details worth getting closer to.</h2>
-              <p>Hover to shift the frame. The images stay still until you choose to inspect them.</p>
+              <h2 id="project-gallery-title">What the work actually looked like.</h2>
+              <p>The hardware, measurements, and interfaces behind the short version.</p>
             </div>
             <div className="project-gallery__grid">
               {project.gallery.map((image, index) => (
@@ -122,7 +122,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
       <footer className="project-footer site-shell">
         <p>Open to robotics engineering roles.</p>
-        <Link href="mailto:rami@rami-hanna.com" className="text-link">Start a conversation <span aria-hidden="true">↗</span></Link>
+        <Link href="mailto:rami@rami-hanna.com" className="text-link">Start a conversation</Link>
       </footer>
     </main>
   );

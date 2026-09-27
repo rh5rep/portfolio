@@ -4,6 +4,7 @@ import SiteHeader from "@/components/SiteHeader";
 export const metadata = {
   title: "Writing | Rami Hanna",
   description: "Notes from Rami Hanna on robotics, systems, experiments, and the human side of technical work.",
+  robots: { index: false, follow: true },
 };
 
 const posts = [
@@ -51,7 +52,7 @@ export default function WritingPage() {
             </article>
           ))}
         </div>
-        <div className="writing-page__footer"><p>Want to suggest a topic or talk through an idea?</p><Link className="text-link" href="mailto:rami@rami-hanna.com?subject=Writing%20or%20project%20note">Get in touch <span aria-hidden="true">↗</span></Link></div>
+        <div className="writing-page__footer"><p>Want to suggest a topic or talk through an idea?</p><Link className="text-link" href="mailto:rami@rami-hanna.com?subject=Writing%20or%20project%20note">Get in touch</Link></div>
       </section>
     </main>
   );

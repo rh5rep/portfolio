@@ -52,7 +52,7 @@ export default function LearnIt() {
               <Link href="/profile" className={buttonClassName}>
                 Back to about
               </Link>
-              <Link href="/#work" className={buttonClassName}>
+              <Link href="/work" className={buttonClassName}>
                 Current work
               </Link>
             </div>

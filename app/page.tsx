@@ -17,7 +17,7 @@ export default function Home() {
           </p>
           <div className="hero__actions">
             <Link className="button button--dark button--chat" href="/chat">
-              Let&apos;s chat <span aria-hidden="true">↗</span>
+              Let&apos;s chat
             </Link>
           </div>
         </div>

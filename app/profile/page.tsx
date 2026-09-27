@@ -66,9 +66,10 @@ export default function Profile() {
           <h2>I care about the details because that is where trust is built.</h2>
         </div>
         <p>
-          My best work happens when a challenge cannot be separated into “hardware” or “software.”
-          I enjoy identifying the real constraint, making it observable, and working with others to
-          turn it into a system that behaves predictably enough to improve.
+          I usually start by asking what we cannot see yet. Sometimes that means adding a sensor,
+          sometimes it means writing a quick analysis script, and sometimes it means getting the
+          right people around a whiteboard. Once the real constraint is visible, the hardware and
+          software decisions get much less mysterious.
         </p>
       </section>
 
@@ -77,8 +78,8 @@ export default function Profile() {
         <h2>Want the full picture?</h2>
         <div className="contact__links">
           <Link className="button button--dark" href="/resume">Read my resume</Link>
-          <Link href="mailto:rami@rami-hanna.com">Email me ↗</Link>
-          <Link href="https://www.linkedin.com/in/ramiihanna/" target="_blank" rel="noreferrer">LinkedIn ↗</Link>
+          <Link href="mailto:rami@rami-hanna.com">Email me</Link>
+          <Link href="https://www.linkedin.com/in/ramiihanna/" target="_blank" rel="noreferrer">LinkedIn</Link>
         </div>
       </section>
     </main>

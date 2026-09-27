@@ -49,7 +49,7 @@ function WorkCard({ project }: { project: Project }) {
         <h2>{project.title}</h2>
         <p>{project.summary}</p>
         <p className="project-card__evidence">{project.evidence}</p>
-        <Link className="text-link" href={`/projects/${project.slug}`}>See the work <span aria-hidden="true">↗</span></Link>
+        <Link className="text-link" href={`/projects/${project.slug}`}>Open project</Link>
       </div>
     </article>
   );
@@ -62,14 +62,14 @@ export default function WorkPage() {
       <section className="site-shell section section--work-page">
         <div className="section-heading">
           <p className="eyebrow">Selected work</p>
-          <h1>Engineering for systems that need to be <em>trusted.</em></h1>
-          <p className="section-heading__intro">Projects that best represent how I think: turn a physical problem into something observable, testable, and useful.</p>
+          <h1>Where the clean diagram meets the <em>messy real world.</em></h1>
+          <p className="section-heading__intro">These are the projects where I had to turn a physical problem into something I could measure, debug, and improve.</p>
           <ul className="work-focus-list" aria-label="Technical focus areas">
-            <li>ROS2 + C++</li>
-            <li>Embedded interfaces</li>
-            <li>Controls</li>
-            <li>Computer vision</li>
-            <li>Systems integration</li>
+            <li>Robotics software</li>
+            <li>Perception + applied ML</li>
+            <li>Controls + autonomy</li>
+            <li>Sensing + embedded</li>
+            <li>Multidisciplinary R&amp;D</li>
           </ul>
         </div>
         <div className="project-grid project-grid--work">

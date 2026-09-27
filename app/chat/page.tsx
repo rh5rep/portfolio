@@ -39,7 +39,7 @@ export default function ChatPage() {
           <div className="chat-page__actions">
             {schedulingUrl ? (
               <a className="button button--dark" href={schedulingUrl}>
-                Pick a time ↗
+                Pick a time
               </a>
             ) : (
               <Link

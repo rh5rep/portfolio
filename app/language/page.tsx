@@ -30,7 +30,7 @@ export default function LanguagePage() {
             </article>
           ))}
         </div>
-        <div className="page-back-link"><Link className="text-link" href="/life">Back to life <span aria-hidden="true">↗</span></Link><Link className="text-link" href="/travel">Travel atlas <span aria-hidden="true">↗</span></Link></div>
+        <div className="page-back-link"><Link className="text-link" href="/life">Back to life</Link><Link className="text-link" href="/travel">Travel atlas</Link></div>
       </section>
     </main>
   );

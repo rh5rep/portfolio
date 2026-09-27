@@ -44,7 +44,7 @@ export const projects: Project[] = [
     category: "Wearable rehabilitation robotics · modeling + evaluation",
     scope: "M.Sc. thesis · 2026",
     evidence: "1,000 / 1,000 rigid-fixture cycles · supervised 3 interns",
-    system: "Reduced-order routing model → ESP32-S3 actuator control → camera and encoder measurement.",
+    system: "Reduced-order routing model → Arduino Uno motor/encoder control in C → camera and encoder measurement.",
     title: "A wearable tendon-driven finger actuator, built and evaluated for neuro\u00adrehabilitation tasks.",
     summary:
       "An M.Sc. engineering feasibility study—from simplified mechanics to repeatable benchtop experiments and an on-hand wearable prototype.",
@@ -53,11 +53,12 @@ export const projects: Project[] = [
     contributions: [
       "Built reduced-order models for finger kinematics, tendon routing, passive torque, leverage, stroke, and tension.",
       "Used Python sweeps to screen stiffness and geometry choices before hardware iteration.",
+      "Programmed the final Arduino Uno motor/encoder control loop in C and built Python host and analysis tooling.",
       "Designed a benchtop validation loop around force, displacement, motion tracking, repeatability, and model error.",
       "Supervised three student interns contributing to fixture, control, computer-vision, and sensing work.",
     ],
     proof: ["1,000 / 1,000 rigid-fixture cycles", "97.5% of 49.93° comparator", "3 student interns supervised"],
-    stack: ["Python", "OpenCV", "ESP32-S3", "Motor + encoder control", "FDM prototypes"],
+    stack: ["Python", "OpenCV", "Arduino Uno", "C motor + encoder control", "FDM prototypes"],
     image: {
       src: "/portfolio/thesis-wearable-hero-rotated.png",
       alt: "Finished wearable soft-finger actuator on a hand",
@@ -204,7 +205,6 @@ export const projects: Project[] = [
       { src: "/portfolio/sunnysips-recommendations.png", alt: "SunnySips outdoor café recommendations", width: 1206, height: 2622, caption: "Recommendations made approachable." },
       { src: "/portfolio/sunnysips-detail.png", alt: "SunnySips venue detail interface", width: 1206, height: 2622, caption: "Environmental context without the clutter." },
     ],
-    link: { href: "https://github.com/rh5rep/SunnySips", label: "View code" },
   },
   {
     slug: "trybe",
