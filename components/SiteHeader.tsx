@@ -3,10 +3,10 @@ import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { HiOutlineEnvelope } from "react-icons/hi2";
 
 const navLinks = [
-  { href: "/work", label: "Work" },
-  { href: "/profile", label: "Story" },
-  { href: "/life", label: "Life" },
-  { href: "/resume", label: "Resume" },
+  { href: "/work", label: "Work", mobileKey: "work" },
+  { href: "/profile", label: "Story", mobileKey: "story" },
+  { href: "/life", label: "Life", mobileKey: "life" },
+  { href: "/resume", label: "Resume", mobileKey: "resume" },
 ];
 
 export default function SiteHeader() {
@@ -23,7 +23,11 @@ export default function SiteHeader() {
         <div className="site-header__nav-group">
           <nav className="site-nav" aria-label="Primary navigation">
             {navLinks.map((item) => (
-              <Link key={item.href} href={item.href}>
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`site-nav__link site-nav__link--${item.mobileKey}`}
+              >
                 {item.label}
               </Link>
             ))}
