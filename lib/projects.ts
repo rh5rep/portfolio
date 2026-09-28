@@ -19,20 +19,89 @@ export type Project = {
     height: number;
     className?: string;
   };
+  heroImage?: {
+    src: string;
+    alt: string;
+    width: number;
+    height: number;
+    className?: string;
+  };
   detailImage?: {
     src: string;
     alt: string;
     width: number;
     height: number;
   };
-  gallery: {
-    src: string;
-    alt: string;
-    width: number;
-    height: number;
-    caption: string;
-    className?: string;
-  }[];
+  gallery: (
+    | {
+        type?: "image";
+        src: string;
+        alt: string;
+        width: number;
+        height: number;
+        caption: string;
+        className?: string;
+      }
+    | {
+        type: "video";
+        src: string;
+        poster: string;
+        label: string;
+        caption: string;
+        className?: string;
+      }
+  )[];
+  galleryLayout?: "wide-first";
+  caseStudy?: {
+    title: string;
+    intro: string;
+    origin?: string;
+    architecture?: {
+      afterSection: number;
+      label: string;
+      title: string;
+      intro: string;
+      stages: {
+        title: string;
+        body: string;
+        note: string;
+      }[];
+    };
+    evolution?: {
+      afterSection: number;
+      label: string;
+      title: string;
+      intro: string;
+      items: {
+        title: string;
+        body: string;
+        src: string;
+        alt: string;
+        width: number;
+        height: number;
+      }[];
+    };
+    sections: {
+      label: string;
+      title: string;
+      body: string;
+      media:
+        | {
+            type: "image";
+            src: string;
+            alt: string;
+            width: number;
+            height: number;
+          }
+        | {
+            type: "video";
+            src: string;
+            poster: string;
+            label: string;
+          };
+      caption: string;
+    }[];
+  };
   link?: { href: string; label: string };
 };
 
@@ -47,17 +116,18 @@ export const projects: Project[] = [
     system: "Reduced-order routing model → Arduino Uno motor/encoder control in C → camera and encoder measurement.",
     title: "A wearable tendon-driven finger actuator, built and evaluated for neuro\u00adrehabilitation tasks.",
     summary:
-      "An M.Sc. engineering feasibility study—from simplified mechanics to repeatable benchtop experiments and an on-hand wearable prototype.",
+      "An M.Sc. engineering feasibility study spanning simplified mechanics, repeatable benchtop experiments, and an on-hand wearable prototype.",
     context:
-      "The thesis turns an assistive-device concept into an inspectable system of tendon routing, mechanics, control inputs, and repeatable measurements. It evaluates engineering behavior and wearable transfer—not clinical outcomes.",
+      "The thesis turns an assistive-device concept into a working system of tendon routing, mechanics, control, and repeatable measurement. The final prototype moved from rigid benchtop tests to trials on the hand.",
     contributions: [
       "Built reduced-order models for finger kinematics, tendon routing, passive torque, leverage, stroke, and tension.",
       "Used Python sweeps to screen stiffness and geometry choices before hardware iteration.",
       "Programmed the final Arduino Uno motor/encoder control loop in C and built Python host and analysis tooling.",
       "Designed a benchtop validation loop around force, displacement, motion tracking, repeatability, and model error.",
+      "Integrated the wrist unit, tendon path, and finger interface into a wearable prototype for on-hand testing.",
       "Supervised three student interns contributing to fixture, control, computer-vision, and sensing work.",
     ],
-    proof: ["1,000 / 1,000 rigid-fixture cycles", "97.5% of 49.93° comparator", "3 student interns supervised"],
+    proof: ["1,000 / 1,000 rigid-fixture cycles", "97.5% of 49.93° comparator", "On-hand wearable testing", "3 student interns supervised"],
     stack: ["Python", "OpenCV", "Arduino Uno", "C motor + encoder control", "FDM prototypes"],
     image: {
       src: "/portfolio/thesis-wearable-hero-rotated.png",
@@ -65,17 +135,158 @@ export const projects: Project[] = [
       width: 1491,
       height: 1055,
     },
-    detailImage: {
-      src: "/portfolio/thesis-wearable-onhand.png",
-      alt: "Finished wearable soft-finger actuator shown on a hand",
-      width: 462,
-      height: 708,
+    gallery: [],
+    caseStudy: {
+      title: "The decisions behind the final prototype.",
+      intro:
+        "The model did not hand me a finished design. I used it to choose what to build next, measured the drive and load sides separately, and changed the routing when the hardware disagreed.",
+      origin:
+        "Before I modeled the mechanism, I spoke with clinicians and patients about rehabilitation needs and the practical limits of existing devices. Those conversations set the direction for a wearable design that could be tested on the hand.",
+      architecture: {
+        afterSection: 1,
+        label: "Control architecture",
+        title: "The controller changed as the hardware got faster.",
+        intro:
+          "The first rig could wait for the camera. The wearable could not, so timing moved into firmware and vision became a slower correction channel.",
+        stages: [
+          {
+            title: "Visual guidance",
+            body: "The webcam measured angle online between small encoder jogs. Each move ended with a pause and another measurement.",
+            note: "Useful for calibration, too slow for tapping",
+          },
+          {
+            title: "Firmware timing",
+            body: "A half-cosine trajectory ran on the Arduino while encoder and velocity feedback set motor PWM. The camera moved offline.",
+            note: "Deterministic motion on the rigid fixture",
+          },
+          {
+            title: "Two-layer control",
+            body: "The encoder handled the fast inner loop. A bounded camera loop near 50 Hz trimmed the reference as the wearable load path changed.",
+            note: "Fast motor control with load-side correction",
+          },
+        ],
+      },
+      evolution: {
+        afterSection: 3,
+        label: "Wearable evolution",
+        title: "How the wearable changed.",
+        intro:
+          "The hand interface went through rings, straps, a failed resin transmission, and removable guides before the final build.",
+        items: [
+          {
+            title: "Ring concepts",
+            body: "Printed rings tested simple ways to route the tendon around the finger.",
+            src: "/portfolio/thesis/evolution/01-ring-concepts.jpg",
+            alt: "Six early 3D-printed ring concepts arranged on a workbench",
+            width: 1600,
+            height: 1200,
+          },
+          {
+            title: "Adjustable straps",
+            body: "Straps made the finger interface easier to fit and reposition.",
+            src: "/portfolio/thesis/evolution/02-adjustable-straps.jpg",
+            alt: "Early adjustable finger straps guiding tubing along a finger",
+            width: 1098,
+            height: 1400,
+          },
+          {
+            title: "Resin transmission",
+            body: "The rigid resin path failed during development and was dropped.",
+            src: "/portfolio/thesis/evolution/03-resin-transmission.jpg",
+            alt: "Two failed transparent resin transmission pieces from the wearable prototype",
+            width: 1200,
+            height: 1600,
+          },
+          {
+            title: "Velcro interface",
+            body: "A removable guide made placement and rework faster between tests.",
+            src: "/portfolio/thesis/evolution/04-velcro-interface.jpg",
+            alt: "Intermediate wearable interface using a Velcro strap and removable tendon guide",
+            width: 1098,
+            height: 1400,
+          },
+          {
+            title: "Integrated wearable",
+            body: "The final build joined the wrist unit, tendon path, and finger interface.",
+            src: "/portfolio/thesis/evolution/05-integrated-system.png",
+            alt: "Integrated tendon-driven finger actuator worn on a hand",
+            width: 462,
+            height: 708,
+          },
+        ],
+      },
+      sections: [
+        {
+          label: "Measurement loop",
+          title: "The rig made lost motion visible.",
+          body:
+            "The Arduino commanded the motor while the encoder measured the drive side and the camera measured the finger side. That separation mattered. Motor motion alone could not show whether the tendon path actually transferred motion to the load.",
+          media: {
+            type: "image",
+            src: "/portfolio/thesis/system-overview.jpg",
+            alt: "Thesis test setup with finger fixture, Arduino controller, encoder wiring, and camera measurement system",
+            width: 2200,
+            height: 1650,
+          },
+          caption: "The final measurement setup connected motor control, encoder feedback, and camera-side motion tracking.",
+        },
+        {
+          label: "Route A to Route B",
+          title: "A small routing change came from the model.",
+          body:
+            "A reduced-order screen pointed toward moving the fixed guide. I used that result to revise the routing and chose a 29 mm shift near the high end of the screened range.",
+          media: {
+            type: "image",
+            src: "/portfolio/thesis/route-a-b-redesign.png",
+            alt: "Side-by-side diagram comparing the original Route A tendon guide with the revised Route B guide position",
+            width: 1448,
+            height: 1086,
+          },
+          caption: "Route B moved the fixed guide by about 29 mm to change the tendon leverage and available excursion.",
+        },
+        {
+          label: "Rigid validation",
+          title: "The revised setup completed all 1,000 commanded cycles.",
+          body:
+            "The endurance sequence ran 20 consecutive sets of 50 cycles without changing the installation or configuration. Across the run means, measured excursion reached 97.5% of the 49.93 degree engineering reference, with about 0.26% mean period error.",
+          media: {
+            type: "image",
+            src: "/portfolio/thesis/rigid-endurance.png",
+            alt: "Plot of projected marker amplitude across twenty rigid-fixture endurance runs totaling one thousand cycles",
+            width: 975,
+            height: 351,
+          },
+          caption: "Twenty runs, fifty commanded cycles per run. The first-cycle points also show why inspecting individual cycles mattered.",
+        },
+        {
+          label: "Working prototype",
+          title: "The final controller ran on the hand.",
+          body:
+            "The encoder handled the fast motor loop while the camera measured what reached the finger. This run shows the reinforced wearable cycling with the acquisition overlay recording commanded and measured angle.",
+          media: {
+            type: "video",
+            src: "/portfolio/thesis/wearable-motion.mp4",
+            poster: "/portfolio/thesis/wearable-motion-poster.jpg",
+            label: "The final reinforced tendon-driven wearable cycling on a hand with measurement data overlaid",
+          },
+          caption: "An eight-second on-hand run from the final 250:1 test series.",
+        },
+        {
+          label: "Wearable transfer",
+          title: "The wearable exposed the real constraint.",
+          body:
+            "On-hand measurements fell below the commanded excursion even when the motor-side system continued to move. Slack, compliance, calibration, and the changing load path absorbed part of the motion. The wearable load path, rather than motor travel, became the limiting part of the system.",
+          media: {
+            type: "image",
+            src: "/portfolio/thesis/onhand-commanded-measured.png",
+            alt: "Comparison of commanded and camera-measured on-hand projected excursion across three configurations",
+            width: 862,
+            height: 369,
+          },
+          caption: "Camera-side measurements separated commanded motion from the motion that reached the wearable load path.",
+        },
+      ],
     },
-    gallery: [
-      { src: "/portfolio/thesis-bench.jpg", alt: "Benchtop setup for the wearable actuator study", width: 4032, height: 3024, caption: "Benchtop iteration and measurement.", },
-      { src: "/portfolio/thesis-workflow.png", alt: "Modeling and experimental workflow for the thesis", width: 1818, height: 1022, caption: "A model-to-measurement workflow." },
-      { src: "/portfolio/thesis-wearable-onhand.png", alt: "Wearable finger actuator fitted to a hand", width: 462, height: 708, caption: "Final on-hand wearable prototype." },
-    ],
     link: { href: "/pdfs/rami-hanna-thesis.pdf", label: "Read thesis" },
   },
   {
@@ -105,7 +316,7 @@ export const projects: Project[] = [
       height: 713,
     },
     gallery: [
-      { src: "/portfolio/perplant-thermal-output.png", alt: "Thermal imagery output from an agricultural sensing workflow", width: 1512, height: 982, caption: "Thermal data in a field workflow." },
+      { src: "/portfolio/perplant-thermal-output.png", alt: "Thermal imagery output from an agricultural sensing workflow", width: 1512, height: 982, caption: "Thermal data in a field workflow.", className: "thermal-data" },
       { src: "/portfolio/perplant-field-aerial.png", alt: "Agricultural field from above", width: 1177, height: 713, caption: "Field conditions define the real problem." },
     ],
   },
@@ -130,18 +341,86 @@ export const projects: Project[] = [
     proof: ["IEEE publication", "0.01 mm travel precision", "0.5 g load standard deviation"],
     stack: ["Raspberry Pi", "ESP32", "Load cell", "Embedded control"],
     image: {
-      src: "/images/RobotRender.jpg",
-      alt: "CAD render of the Teradyne Cartesian robotic test system",
-      width: 1495,
-      height: 473,
-      className: "object-contain",
+      src: "/portfolio/teradyne-robot.jpg",
+      alt: "Completed Teradyne Cartesian robotic test system installed over the connector fixture",
+      width: 624,
+      height: 468,
     },
-    gallery: [
-      { src: "/images/Cartesian-Robot.jpg", alt: "Teradyne Cartesian robotic test system", width: 1000, height: 750, caption: "The physical Cartesian test platform." },
-      { src: "/portfolio/teradyne-load-cell.png", alt: "Load-cell readout from the test system", width: 1495, height: 473, caption: "Feedback made the motion measurable." },
-      { src: "/images/1MateData.png", alt: "Force profile from a connector-mating test", width: 1178, height: 869, caption: "Force data made the connector-mating sequence inspectable.", className: "object-contain" },
-      { src: "/images/RobotPicture.jpg", alt: "Teradyne project team and robot system", width: 1000, height: 750, caption: "The system at the senior-project showcase." },
-    ],
+    gallery: [],
+    caseStudy: {
+      title: "A robot built around measurable contact.",
+      intro:
+        "The mechanism had to do more than reach the connector. It needed to detect contact, change tools, schedule tests, and leave behind force data that could be inspected afterward.",
+      origin:
+        "Senior engineers at Teradyne described a testing process that still depended on careful manual connector mating and repeatable data collection. That conversation became the brief for the robot.",
+      architecture: {
+        afterSection: 2,
+        label: "Automation architecture",
+        title: "One workflow coordinated motion, tooling, and force.",
+        intro:
+          "The Raspberry Pi ran the operator-facing workflow. Tool changes and connector moves became scheduled robot actions, while the load path stayed measurable throughout the test.",
+        stages: [
+          {
+            title: "Schedule",
+            body: "The Raspberry Pi hosted remote operation, test scheduling, manual controls, and the data viewer.",
+            note: "Python workflow with remote access",
+          },
+          {
+            title: "Change tools",
+            body: "The robot moved to the rack, coupled to the toolhead, and actuated the servo-driven locking shaft before continuing the test.",
+            note: "Automatic pickup and release logic",
+          },
+          {
+            title: "Measure contact",
+            body: "The HX711 sampled the load cell, the ESP32 forwarded force readings, and the Raspberry Pi used and stored that feedback during mating.",
+            note: "Force-aware motion and recorded evidence",
+          },
+        ],
+      },
+      sections: [
+        {
+          label: "Mating cycle",
+          title: "Load feedback turned contact into a control signal.",
+          body:
+            "I programmed the Raspberry Pi and ESP32 workflow that combined robot motion with HX711 load-cell readings. Closed-loop load detection let the system respond to the connector instead of relying on position alone.",
+          media: {
+            type: "video",
+            src: "/portfolio/teradyne/connector-mating.mp4",
+            poster: "/portfolio/teradyne/connector-mating-poster.jpg",
+            label: "Close view of the Cartesian robot mating coaxial connectors",
+          },
+          caption: "A 12-second close view of the tool settling onto a connector and completing the mating step.",
+        },
+        {
+          label: "Automatic tool changer",
+          title: "The robot could pick up and release its own toolhead.",
+          body:
+            "The tool changer used a Maxwell-style kinematic coupling to locate the toolhead repeatably. A servo rotated the locking shaft and compressed a preload spring, while the cable toolhead waited on a rack between operations. I implemented the automatic tool-change logic used by the scheduled test workflow.",
+          media: {
+            type: "image",
+            src: "/portfolio/teradyne/tool-changer-exploded.png",
+            alt: "Exploded CAD view of the servo-actuated automatic tool changer, showing its base plate, locking shafts, preload spring, toolhead plate, and cable toolhead",
+            width: 2136,
+            height: 1279,
+          },
+          caption: "The spring-loaded coupling locked the cable toolhead to the robot and left room for future toolheads.",
+        },
+        {
+          label: "Test evidence",
+          title: "Each connector left a force signature.",
+          body:
+            "The force trace made the mating sequence inspectable across multiple connectors. Together with 0.01 mm travel precision and a measured 0.5 g load standard deviation, it gave the project evidence beyond a working demonstration.",
+          media: {
+            type: "image",
+            src: "/images/4PlugData.png",
+            alt: "Force versus time plot showing four connector-mating events",
+            width: 1100,
+            height: 586,
+          },
+          caption: "Four connector-mating events recorded as force over time.",
+        },
+      ],
+    },
     link: { href: "/pdfs/modified_capstone.pdf", label: "Read IEEE paper" },
   },
   {
@@ -170,7 +449,30 @@ export const projects: Project[] = [
       width: 2500,
       height: 1406,
     },
-    gallery: [],
+    heroImage: {
+      src: "/portfolio/harvard/gearbox-electronics-bench.jpg",
+      alt: "Two open underwater robot drive modules showing motors, gears, electronics, and integration wiring",
+      width: 768,
+      height: 1024,
+    },
+    gallery: [
+      {
+        src: "/portfolio/harvard/gearbox-electronics-bench.jpg",
+        alt: "Two open underwater robot drive modules with motors, planetary gears, control boards, and temporary wiring on a workbench",
+        width: 768,
+        height: 1024,
+        caption: "Two open drive modules during planetary-gearbox and electronics integration.",
+        className: "harvard-hardware",
+      },
+      {
+        type: "video",
+        src: "/portfolio/harvard/gearbox-wiring-prototype.mp4",
+        poster: "/portfolio/harvard/gearbox-wiring-prototype.jpg",
+        label: "Open underwater robot drive module being handled during subsystem bring-up",
+        caption: "A seven-second view of the open drive module during subsystem bring-up.",
+        className: "harvard-hardware",
+      },
+    ],
   },
   {
     slug: "sunnysips",
@@ -205,6 +507,7 @@ export const projects: Project[] = [
       { src: "/portfolio/sunnysips-recommendations.png", alt: "SunnySips outdoor café recommendations", width: 1206, height: 2622, caption: "Recommendations made approachable." },
       { src: "/portfolio/sunnysips-detail.png", alt: "SunnySips venue detail interface", width: 1206, height: 2622, caption: "Environmental context without the clutter." },
     ],
+    galleryLayout: "wide-first",
   },
   {
     slug: "trybe",

@@ -21,7 +21,7 @@ export default function GivingBackPage() {
             </p>
             <p>
               I have supported robotics and programming mentorship and community service, and I
-              enjoy sharing what I learn—especially when a small bit of practical help makes a
+              enjoy sharing what I learn, especially when a small bit of practical help makes a
               complicated path feel more possible.
             </p>
           </div>

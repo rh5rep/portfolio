@@ -13,7 +13,7 @@ export default function Home() {
           <p className="hero__intro">
             I work where robotics software meets sensing, controls, embedded interfaces, and the
             messy details that make a system useful. My goal is to build technology that improves
-            lives—from rehabilitation robotics to smarter field systems and safer autonomy.
+            lives, from rehabilitation robotics to smarter field systems and safer autonomy.
           </p>
           <div className="hero__actions">
             <Link className="button button--dark" href="/work">
@@ -49,6 +49,7 @@ export default function Home() {
           <Link className="hero__quick-link--primary" href="/resume">Resume</Link>
           <Link href="/life">Life</Link>
           <Link href="/giving-back">Giving back</Link>
+          <Link className="hero__quick-link--mobile" href="/chat">Let&apos;s chat</Link>
           <Link className="hero__quick-link--primary" href="/contact">Contact</Link>
         </nav>
       </section>

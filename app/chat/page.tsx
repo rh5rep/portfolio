@@ -34,7 +34,7 @@ export default function ChatPage() {
           <p className="chat-page__lead">
             I always love a new perspective and a good conversation. Robots? Travel? Cooking? A
             half-formed idea? Or maybe you just want to talk to someone. No pitch or polished
-            agenda needed—pick whatever time feels right.
+            agenda needed. Pick whatever time feels right.
           </p>
           <div className="chat-page__actions">
             {schedulingUrl ? (
